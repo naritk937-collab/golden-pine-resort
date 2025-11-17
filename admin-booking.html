@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - จัดการการจอง | Golden Pine Resort</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        .admin-card { transition: all 0.3s ease; }
+        .admin-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .status-pending { background: #fef3c7; color: #92400e; }
+        .status-confirmed { background: #d1fae5; color: #065f46; }
+        .status-rejected { background: #fee2e2; color: #991b1b; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-hotel text-green-600 text-2xl"></i>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">Golden Pine Resort</h1>
+                        <p class="text-sm text-gray-500">Admin Panel - จัดการการจอง</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="refreshBookings()" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-sync-alt mr-2"></i>รีเฟรช
+                    </button>
+                    <a href="index.html" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors">
+                        <i class="fas fa-home mr-2"></i>กลับเว็บไซต์
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow">
+                <div class="flex items-center">
+                    <div class="p-3 bg-blue-100 rounded-full">
+                        <i class="fas fa-calendar-check text-blue-600 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm text-gray-500">การจองทั้งหมด</p>
+                        <p class="text-2xl font-bold text-gray-900" id="total-bookings">0</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow">
+                <div class="flex items-center">
+                    <div class="p-3 bg-yellow-100 rounded-full">
+                        <i class="fas fa-clock text-yellow-600 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm text-gray-500">รอดำเนินการ</p>
+                        <p class="text-2xl font-bold text-gray-900" id="pending-bookings">0</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow">
+                <div class="flex items-center">
+                    <div class="p-3 bg-green-100 rounded-full">
+                        <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm text-gray-500">ยืนยันแล้ว</p>
+                        <p class="text-2xl font-bold text-gray-900" id="confirmed-bookings">0</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow">
+                <div class="flex items-center">
+                    <div class="p-3 bg-red-100 rounded-full">
+                        <i class="fas fa-times-circle text-red-600 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm text-gray-500">ปฏิเสธ</p>
+                        <p class="text-2xl font-bold text-gray-900" id="rejected-bookings">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bookings List -->
+        <div class="bg-white rounded-lg shadow">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <h2 class="text-lg font-semibold text-gray-900">รายการจองห้องพัก</h2>
+            </div>
+            <div class="p-6">
+                <div id="bookings-container">
+                    <div class="text-center py-8 text-gray-500">
+                        <i class="fas fa-inbox text-4xl mb-4"></i>
+                        <p>ไม่มีการจองในขณะนี้</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Response Modal -->
+    <div id="response-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-6 border-b">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold">ตอบกลับลูกค้า</h3>
+                        <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div id="modal-booking-info" class="mb-6 p-4 bg-gray-50 rounded-lg"></div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">สถานะการจอง</label>
+                        <select id="booking-status" class="w-full p-3 border border-gray-300 rounded-lg">
+                            <option value="pending">รอดำเนินการ</option>
+                            <option value="confirmed">ยืนยันการจอง</option>
+                            <option value="rejected">ปฏิเสธการจอง</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">ข้อความตอบกลับ</label>
+                        <textarea id="admin-response" rows="6" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="พิมพ์ข้อความตอบกลับลูกค้า..."></textarea>
+                    </div>
+                    
+                    <div class="flex justify-end space-x-3">
+                        <button onclick="closeModal()" class="px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50">
+                            ยกเลิก
+                        </button>
+                        <button onclick="sendResponse()" class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                            <i class="fas fa-paper-plane mr-2"></i>ส่งตอบกลับ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="booking-system.js"></script>
+    <script>
+        let currentBookingId = null;
+
+        // Load bookings on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadBookings();
+        });
+
+        // Load and display bookings
+        function loadBookings() {
+            const bookings = bookingSystem.getAllBookings();
+            updateStats(bookings);
+            displayBookings(bookings);
+        }
+
+        // Update statistics
+        function updateStats(bookings) {
+            const total = bookings.length;
+            const pending = bookings.filter(b => b.status === 'pending').length;
+            const confirmed = bookings.filter(b => b.status === 'confirmed').length;
+            const rejected = bookings.filter(b => b.status === 'rejected').length;
+
+            document.getElementById('total-bookings').textContent = total;
+            document.getElementById('pending-bookings').textContent = pending;
+            document.getElementById('confirmed-bookings').textContent = confirmed;
+            document.getElementById('rejected-bookings').textContent = rejected;
+        }
+
+        // Display bookings
+        function displayBookings(bookings) {
+            const container = document.getElementById('bookings-container');
+            
+            if (bookings.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-8 text-gray-500">
+                        <i class="fas fa-inbox text-4xl mb-4"></i>
+                        <p>ไม่มีการจองในขณะนี้</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = bookings.map(booking => `
+                <div class="admin-card border border-gray-200 rounded-lg p-6 mb-4">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">${booking.id}</h3>
+                            <p class="text-sm text-gray-500">${new Date(booking.timestamp).toLocaleString('th-TH')}</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-sm font-medium status-${booking.status}">
+                            ${booking.status === 'pending' ? 'รอดำเนินการ' : 
+                              booking.status === 'confirmed' ? 'ยืนยันแล้ว' : 'ปฏิเสธ'}
+                        </span>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <p class="text-sm text-gray-600">ลูกค้า</p>
+                            <p class="font-medium">${booking.customerData.firstName} ${booking.customerData.lastName}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600">โทรศัพท์</p>
+                            <p class="font-medium">${booking.customerData.phone}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600">อีเมล</p>
+                            <p class="font-medium">${booking.customerData.email}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600">ประเภทห้อง</p>
+                            <p class="font-medium">${booking.customerData.roomType || 'ไม่ระบุ'}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600">วันเช็คอิน</p>
+                            <p class="font-medium">${booking.customerData.checkin}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600">วันเช็คเอาต์</p>
+                            <p class="font-medium">${booking.customerData.checkout}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600">จำนวนผู้เข้าพัก</p>
+                            <p class="font-medium">${booking.customerData.guests} คน</p>
+                        </div>
+                    </div>
+                    
+                    ${booking.customerData.message ? `
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-600">ข้อความเพิ่มเติม</p>
+                            <p class="text-gray-800 bg-gray-50 p-3 rounded">${booking.customerData.message}</p>
+                        </div>
+                    ` : ''}
+                    
+                    ${booking.adminResponse ? `
+                        <div class="mb-4 border-t pt-4">
+                            <p class="text-sm text-gray-600">ข้อความตอบกลับ</p>
+                            <p class="text-gray-800 bg-blue-50 p-3 rounded">${booking.adminResponse}</p>
+                            <p class="text-xs text-gray-500 mt-1">ตอบกลับเมื่อ: ${new Date(booking.responseTimestamp).toLocaleString('th-TH')}</p>
+                        </div>
+                    ` : ''}
+                    
+                    <div class="flex justify-end space-x-2">
+                        <a href="tel:${booking.customerData.phone}" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
+                            <i class="fas fa-phone mr-1"></i>โทร
+                        </a>
+                        <a href="mailto:${booking.customerData.email}" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 transition-colors">
+                            <i class="fas fa-envelope mr-1"></i>อีเมล
+                        </a>
+                        <button onclick="openResponseModal('${booking.id}')" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors">
+                            <i class="fas fa-reply mr-1"></i>ตอบกลับ
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Open response modal
+        function openResponseModal(bookingId) {
+            currentBookingId = bookingId;
+            const booking = bookingSystem.getAllBookings().find(b => b.id === bookingId);
+            
+            if (!booking) return;
+            
+            // Fill booking info
+            document.getElementById('modal-booking-info').innerHTML = `
+                <h4 class="font-semibold mb-2">ข้อมูลการจอง: ${booking.id}</h4>
+                <p><strong>ลูกค้า:</strong> ${booking.customerData.firstName} ${booking.customerData.lastName}</p>
+                <p><strong>วันที่:</strong> ${booking.customerData.checkin} ถึง ${booking.customerData.checkout}</p>
+                <p><strong>ห้อง:</strong> ${booking.customerData.roomType || 'ไม่ระบุ'} (${booking.customerData.guests} คน)</p>
+            `;
+            
+            // Set current status
+            document.getElementById('booking-status').value = booking.status;
+            document.getElementById('admin-response').value = booking.adminResponse || '';
+            
+            // Show modal
+            document.getElementById('response-modal').classList.remove('hidden');
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('response-modal').classList.add('hidden');
+            currentBookingId = null;
+        }
+
+        // Send response
+        async function sendResponse() {
+            if (!currentBookingId) return;
+            
+            const status = document.getElementById('booking-status').value;
+            const response = document.getElementById('admin-response').value.trim();
+            
+            if (!response) {
+                alert('กรุณาพิมพ์ข้อความตอบกลับ');
+                return;
+            }
+            
+            try {
+                // Update status
+                bookingSystem.updateBookingStatus(currentBookingId, status, response);
+                
+                // Send email to customer
+                await bookingSystem.sendCustomerResponse(currentBookingId, response);
+                
+                alert('ส่งตอบกลับสำเร็จ!');
+                closeModal();
+                loadBookings();
+                
+            } catch (error) {
+                alert('เกิดข้อผิดพลาด: ' + error.message);
+            }
+        }
+
+        // Refresh bookings
+        function refreshBookings() {
+            loadBookings();
+        }
+
+        // Auto refresh every 30 seconds
+        setInterval(loadBookings, 30000);
+    </script>
+</body>
+</html>

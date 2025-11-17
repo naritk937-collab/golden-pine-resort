@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Pine Resort Chiang Rai | Luxury 4-Star Resort</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Golden Pine Resort Chiang Rai - รีสอร์ต 4 ดาว ใกล้สนามบินแม่ฟ้าหลวง พร้อมสระว่ายน้ำ สปา ฟิตเนส และห้องพักหรูหรา">
+    <meta name="keywords" content="Golden Pine Resort, Chiang Rai, โรงแรม, รีสอร์ต, เชียงราย, สปา, สระว่ายน้ำ, ห้องพัก">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Golden Pine Resort Chiang Rai | Luxury 4-Star Resort">
+    <meta property="og:description" content="Experience luxury at Golden Pine Resort Chiang Rai. 4-star accommodations, spa, pool, and authentic Thai hospitality.">
+    <meta property="og:image" content="img/front1.jpg">
+    <meta property="og:url" content="https://goldenpineresort.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <style>
+        :root {
+            --primary: #2f5d50;
+            --secondary: #40524d;
+            --accent: #86b817;
+            --light: #f1f6f5;
+            --dark: #0d1f1a;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--secondary);
+        }
+        
+        .font-display { font-family: 'Playfair Display', serif; }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(47, 93, 80, 0.9) 0%, rgba(64, 82, 77, 0.8) 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(47, 93, 80, 0.3);
+        }
+        
+        .section-padding { padding: 80px 0; }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Performance optimizations */
+        img {
+            will-change: transform;
+        }
+        
+        .swiper-slide {
+            will-change: transform;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background: var(--accent) !important;
+        }
+        
+        .navbar-scroll {
+            backdrop-filter: blur(10px);
+            background: rgba(47, 93, 80, 0.95);
+        }
+        
+        .text-3d {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 
+                0 2px 4px rgba(0,0,0,0.3),
+                0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 640px) {
+            .section-padding { padding: 40px 0; }
+            .text-3d { font-size: 1.5rem; }
+            .card-hover:hover { transform: none; }
+            .btn-primary:hover { transform: none; }
+        }
+        
+        /* Tablet/iPad */
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .text-3d { font-size: 2.2rem; }
+            .section-padding { padding: 60px 0; }
+        }
+        
+        /* Desktop */
+        @media (min-width: 1025px) {
+            .text-3d { font-size: 3.5rem; }
+        }
+        
+        /* Touch device optimizations */
+        @media (hover: none) {
+            .card-hover:hover { transform: none; }
+            .btn-primary:hover { transform: none; }
+        }
+        
+        /* Bottom Navigation */
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        
+        /* Add bottom padding to body to prevent content from being hidden behind bottom nav */
+        body {
+            padding-bottom: 80px;
+        }
+        
+        /* Touch targets */
+        @media (max-width: 1024px) {
+            button, a {
+                min-height: 44px;
+                min-width: 44px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation (Logo Only) -->
+    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 py-4">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-center items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2 sm:space-x-3">
+                    <img src="img/logo.png" alt="Golden Pine Resort" class="h-12 sm:h-16" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center" style="display: none;">
+                        <i class="fas fa-tree text-white text-lg sm:text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-display text-lg sm:text-2xl font-bold text-white">Golden Pine Resort</h1>
+                        <p class="text-xs text-gray-300 hidden sm:block">Chiang Rai Luxury Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 pb-safe">
+        <div class="flex justify-around items-center py-2">
+            <a href="#home" class="flex flex-col items-center py-2 px-3 text-green-600 transition-colors">
+                <i class="fas fa-home text-xl mb-1"></i>
+                <span class="text-xs font-medium">Home</span>
+            </a>
+            <a href="#about" class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors">
+                <i class="fas fa-info-circle text-xl mb-1"></i>
+                <span class="text-xs font-medium">About</span>
+            </a>
+            <a href="rooms.html" class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors">
+                <i class="fas fa-bed text-xl mb-1"></i>
+                <span class="text-xs font-medium">Rooms</span>
+            </a>
+            <a href="#restaurant" class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors">
+                <i class="fas fa-utensils text-xl mb-1"></i>
+                <span class="text-xs font-medium">Restaurant</span>
+            </a>
+            <a href="gallery.html" class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors">
+                <i class="fas fa-images text-xl mb-1"></i>
+                <span class="text-xs font-medium">Gallery</span>
+            </a>
+            <a href="contact.html" class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors">
+                <i class="fas fa-phone text-xl mb-1"></i>
+                <span class="text-xs font-medium">Contact</span>
+            </a>
+            <a href="booking.html" class="flex flex-col items-center py-2 px-3 text-white bg-green-600 rounded-lg mx-1 transition-colors">
+                <i class="fas fa-calendar-check text-xl mb-1"></i>
+                <span class="text-xs font-medium">จอง</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <!-- Background Slider -->
+        <div class="swiper hero-swiper absolute inset-0">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('img/front1.jpg')"></div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('img/pool- (2).jpg')"></div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('img/garden- (5).jpg')"></div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('img/roomhero1.jpg')"></div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('img/outside- (3).jpg')"></div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="hero-gradient absolute inset-0"></div>
+        <div class="relative z-10 text-center text-white px-6">
+            <h1 class="text-3d font-display mb-6">Golden Pine Resort</h1>
+            <p class="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl mx-auto px-4">รีสอร์ต 4 ดาว ใจกลางเชียงราย</p>
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+                <a href="rooms.html" class="btn-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg">
+                    <i class="fas fa-bed mr-2"></i>ดูห้องพัก
+                </a>
+                <a href="contact.html" class="bg-white text-gray-800 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-phone mr-2"></i>ติดต่อเรา
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section-padding bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-green-600 mb-2">4</div>
+                    <p class="text-gray-600">Star Resort</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-green-600 mb-2">10</div>
+                    <p class="text-gray-600">Minutes to Airport</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-green-600 mb-2">24/7</div>
+                    <p class="text-gray-600">Room Service</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-green-600 mb-2">100%</div>
+                    <p class="text-gray-600">Guest Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-green-600 font-semibold text-sm uppercase tracking-wide">About Golden Pine Resort</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6">Luxury Resort in the Heart of Chiang Rai</h2>
+                    <p class="text-gray-600 text-lg mb-6">
+                        Golden Pine Resort ตั้งอยู่ในอำเภอเมืองเชียงราย จังหวัดเชียงราย ใกล้สนามบินแม่ฟ้าหลวง (ประมาณ 10 นาทีด้วยรถยนต์) และล้อมรอบด้วยทุ่งนาข้าวและไร่สับปะรด
+                    </p>
+                    <p class="text-gray-600 text-lg mb-8">
+                        รีสอร์ตเป็นที่พักระดับ 4 ดาว มีสระว่ายน้ำกลางแจ้ง นวด สปา และฟิตเนสเซ็นเตอร์ ห้องพักทุกห้องมีระเบียงส่วนตัว โทรทัศน์เคเบิล ตู้นิรภัย ตู้เย็น และห้องน้ำพร้อมอ่างอาบน้ำพร้อมฝักบัว
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                            <span>สระว่ายน้ำกลางแจ้ง</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                            <span>Hom Nuan Spa</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                            <span>ฟิตเนสเซ็นเตอร์</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                            <span>บริการเช่ารถ</span>
+                        </div>
+                    </div>
+                    <button class="btn-primary text-white px-8 py-3 rounded-full font-semibold">
+                        <i class="fas fa-info-circle mr-2"></i>ดูรายละเอียดเพิ่มเติม
+                    </button>
+                </div>
+                <div class="relative">
+                    <img src="img/garden-(2).jpg" alt="วิวสวนรีสอร์ต Golden Pine" class="rounded-2xl shadow-2xl" loading="lazy">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-award text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900">4-Star Resort</p>
+                                <p class="text-sm text-gray-600">Luxury Experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms" class="section-padding bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-green-600 font-semibold text-sm uppercase tracking-wide">Accommodations</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6">Luxury Rooms & Suites</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    ห้องพักทุกห้องมีระเบียงส่วนตัว โทรทัศน์เคเบิล ตู้นิรภัย ตู้เย็น และห้องน้ำพร้อมอ่างอาบน้ำพร้อมฝักบัว
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Double Deluxe Room -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-hover">
+                    <div class="relative h-64">
+                        <img src="img/room-52.jpg" alt="ห้อง Double Deluxe" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            King Size Bed
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Double Deluxe Room</h3>
+                        <p class="text-gray-600 mb-4">
+                            ห้องคู่ขนาดใหญ่พร้อมเตียงคิงไซส์ สิ่งอำนวยความสะดวกระดับพรีเมียม Wi‑Fi ฟรี กาแฟ/ชา และน้ำดื่ม 2 ขวดฟรี
+                        </p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-users mr-2"></i>
+                                <span>สูงสุด 2 คน</span>
+                            </div>
+                            <div class="flex items-center text-green-600">
+                                <i class="fas fa-utensils mr-2"></i>
+                                <span>รวมอาหารเช้า</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="text-2xl font-bold text-gray-900">฿3,500</div>
+                            <a href="booking.html" class="btn-primary text-white px-6 py-2 rounded-full font-semibold">
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Twin Deluxe Room -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-hover">
+                    <div class="relative h-64">
+                        <img src="img/room-54.jpg" alt="ห้อง Twin Deluxe" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Twin Beds
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Twin Deluxe Room</h3>
+                        <p class="text-gray-600 mb-4">
+                            ห้องเตียงคู่สองเตียงพร้อมสิ่งอำนวยความสะดวกทันสมัย รวมอาหารเช้า
+                        </p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-users mr-2"></i>
+                                <span>สูงสุด 2 คน</span>
+                            </div>
+                            <div class="flex items-center text-green-600">
+                                <i class="fas fa-utensils mr-2"></i>
+                                <span>รวมอาหารเช้า</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="text-2xl font-bold text-gray-900">฿3,200</div>
+                            <a href="booking.html" class="btn-primary text-white px-6 py-2 rounded-full font-semibold">
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Triple Room -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-hover">
+                    <div class="relative h-64">
+                        <img src="img/room-70.jpg" alt="ห้อง Triple" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute top-4 left-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            3 Beds
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Triple Room</h3>
+                        <p class="text-gray-600 mb-4">
+                            ห้องสำหรับ 3 คน มีเตียงสามเตียง พร้อมพื้นที่กว้างขวางและรวมอาหารเช้า
+                        </p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-users mr-2"></i>
+                                <span>สูงสุด 3 คน</span>
+                            </div>
+                            <div class="flex items-center text-green-600">
+                                <i class="fas fa-utensils mr-2"></i>
+                                <span>รวมอาหารเช้า</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="text-2xl font-bold text-gray-900">฿4,200</div>
+                            <a href="booking.html" class="btn-primary text-white px-6 py-2 rounded-full font-semibold">
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="section-padding">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-green-600 font-semibold text-sm uppercase tracking-wide">Facilities</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6">World-Class Amenities</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    สิ่งอำนวยความสะดวกครบครันสำหรับการพักผ่อนที่สมบูรณ์แบบ
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <div class="text-center p-6 bg-white rounded-2xl shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden">
+                        <img src="img/pool-(1).jpg" alt="สระว่ายน้ำ" class="w-full h-full object-cover rounded-full" loading="lazy">
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">สระว่ายน้ำกลางแจ้ง</h3>
+                    <p class="text-gray-600 text-sm">สระว่ายน้ำขนาดใหญ่พร้อมวิวทิวทัศน์สวยงาม</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-2xl shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden">
+                        <img src="img/res22.jpg" alt="Hom Nuan Spa" class="w-full h-full object-cover rounded-full" loading="lazy">
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Hom Nuan Spa</h3>
+                    <p class="text-gray-600 text-sm">บริการนวดและสปาแบบไทยดั้งเดิม</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-2xl shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden">
+                        <img src="img/gym-(1).jpg" alt="ห้องฟิตเนส" class="w-full h-full object-cover rounded-full" loading="lazy">
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">ห้องฟิตเนส</h3>
+                    <p class="text-gray-600 text-sm">อุปกรณ์ออกกำลังกายครบครันและทันสมัย</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-2xl shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden">
+                        <img src="img/res- (5).jpg" alt="บาร์ในล็อบบี้" class="w-full h-full object-cover rounded-full" loading="lazy">
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">บาร์ในล็อบบี้</h3>
+                    <p class="text-gray-600 text-sm">เครื่องดื่มและค็อกเทลในบรรยากาศผ่อนคลาย</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-2xl shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-wifi text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">ฟรี Wi‑Fi</h3>
+                    <p class="text-gray-600 text-sm">อินเทอร์เน็ตความเร็วสูงทั่วทั้งรีสอร์ต</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-2xl shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-car text-gray-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">ที่จอดรถฟรี</h3>
+                    <p class="text-gray-600 text-sm">ที่จอดรถปลอดภัยและสะดวก</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-2xl shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden">
+                        <img src="img/outside-(9).jpg" alt="บริการเช่ารถ" class="w-full h-full object-cover rounded-full" loading="lazy">
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">บริการเช่ารถ</h3>
+                    <p class="text-gray-600 text-sm">บริการเช่ารถและโต๊ะทัวร์</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-2xl shadow-lg card-hover">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden">
+                        <img src="img/res- (10).jpg" alt="รูมเซอร์วิส" class="w-full h-full object-cover rounded-full" loading="lazy">
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">รูมเซอร์วิส</h3>
+                    <p class="text-gray-600 text-sm">บริการ 06:00–22:00 น. ทุกวัน</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurant Section -->
+    <section id="restaurant" class="section-padding bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-green-600 font-semibold text-sm uppercase tracking-wide">Dining</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6">Sang Chan Restaurant</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    ลิ้มรสอาหารไทยแท้และอาหารนานาชาติในบรรยากาศหรูหราพร้อมบาร์ในล็อบบี้
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="img/res- (2).jpg" alt="ร้านอาหาร Sang Chan" class="rounded-2xl shadow-2xl" loading="lazy">
+                </div>
+                <div>
+                    <h3 class="font-display text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Fine Dining Experience</h3>
+                    <p class="text-gray-600 text-lg mb-6">
+                        Sang Chan Restaurant นำเสนออาหารไทยต้นตำรับและอาหารนานาชาติที่ปรุงด้วยวัตถุดิบคุณภาพสูง
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-utensils text-green-600 mr-4"></i>
+                            <span>อาหารไทยต้นตำรับและอาหารนานาชาติ</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-cocktail text-green-600 mr-4"></i>
+                            <span>บาร์ในล็อบบี้พร้อมเครื่องดื่มหลากหลาย</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-green-600 mr-4"></i>
+                            <span>เปิดบริการทุกวัน 06:00-22:00 น.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-leaf text-green-600 mr-4"></i>
+                            <span>วัตถุดิบสดใหม่จากท้องถิ่น</span>
+                        </div>
+                    </div>
+                    <button class="btn-primary text-white px-8 py-3 rounded-full font-semibold">
+                        <i class="fas fa-book mr-2"></i>สำรองที่นั่ง
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-padding">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-green-600 font-semibold text-sm uppercase tracking-wide">Gallery</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6">Photo Gallery</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto mb-8">
+                    ชมภาพบรรยากาศและสิ่งอำนวยความสะดวกต่างๆ ของ Golden Pine Resort
+                </p>
+                
+                <!-- Gallery Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-3 mb-8">
+                    <button class="gallery-filter active bg-green-600 text-white px-6 py-3 rounded-full font-medium transition-all hover:bg-green-700" data-filter="all">
+                        All Photos
+                    </button>
+                    <button class="gallery-filter bg-white text-gray-700 border border-gray-300 px-6 py-3 rounded-full font-medium transition-all hover:bg-gray-50" data-filter="pool">
+                        Pool
+                    </button>
+                    <button class="gallery-filter bg-white text-gray-700 border border-gray-300 px-6 py-3 rounded-full font-medium transition-all hover:bg-gray-50" data-filter="rooms">
+                        Rooms
+                    </button>
+                    <button class="gallery-filter bg-white text-gray-700 border border-gray-300 px-6 py-3 rounded-full font-medium transition-all hover:bg-gray-50" data-filter="restaurant">
+                        Restaurant
+                    </button>
+                    <button class="gallery-filter bg-white text-gray-700 border border-gray-300 px-6 py-3 rounded-full font-medium transition-all hover:bg-gray-50" data-filter="garden">
+                        Garden
+                    </button>
+                    <button class="gallery-filter bg-white text-gray-700 border border-gray-300 px-6 py-3 rounded-full font-medium transition-all hover:bg-gray-50" data-filter="view">
+                        View
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4" id="gallery-grid">
+                <!-- Pool Images -->
+                <div class="gallery-item" data-category="pool">
+                    <img src="img/pool- (1).jpg" alt="สระว่ายน้ำ" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="pool">
+                    <img src="img/pool- (2).jpg" alt="สระว่ายน้ำ" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="pool">
+                    <img src="img/pool- (3).jpg" alt="สระว่ายน้ำ" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="pool">
+                    <img src="img/poolnight.jpg" alt="สระว่ายน้ำยามค่ำคืน" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="pool">
+                    <img src="img/poolnight (2).jpg" alt="สระว่ายน้ำยามค่ำคืน" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                
+                <!-- Room Images -->
+                <div class="gallery-item" data-category="rooms">
+                    <img src="img/room-52.jpg" alt="ห้องพัก" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="rooms">
+                    <img src="img/room-54.jpg" alt="ห้องพัก" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="rooms">
+                    <img src="img/room-57.jpg" alt="ห้องพัก" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="rooms">
+                    <img src="img/room-70.jpg" alt="ห้องพัก" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="rooms">
+                    <img src="img/room- (1).jpg" alt="ห้องพัก" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                
+                <!-- Restaurant Images -->
+                <div class="gallery-item" data-category="restaurant">
+                    <img src="img/res- (2).jpg" alt="ร้านอาหาร Sang Chan" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="restaurant">
+                    <img src="img/res- (5).jpg" alt="บาร์ในล็อบบี้" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="restaurant">
+                    <img src="img/res- (10).jpg" alt="รูมเซอร์วิส" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="restaurant">
+                    <img src="img/res- (11).jpg" alt="ร้านอาหาร" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="restaurant">
+                    <img src="img/res22.jpg" alt="อาหารไทย" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="restaurant">
+                    <img src="img/res- (1).jpg" alt="บรรยากาศร้านอาหาร" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="restaurant">
+                    <img src="img/res- (3).jpg" alt="อาหารนานาชาติ" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="restaurant">
+                    <img src="img/res- (4).jpg" alt="เครื่องดื่ม" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                
+                <!-- Garden Images -->
+                <div class="gallery-item" data-category="garden">
+                    <img src="img/garden- (1).jpg" alt="สวน" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="garden">
+                    <img src="img/garden- (2).jpg" alt="สวน" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="garden">
+                    <img src="img/garden- (5).jpg" alt="สวน" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="garden">
+                    <img src="img/garden- (6).jpg" alt="สวน" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="garden">
+                    <img src="img/bridge.jpg" alt="สะพานในสวน" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                
+                <!-- View Images -->
+                <div class="sm:col-span-2 sm:row-span-2 gallery-item" data-category="view">
+                    <img src="img/front1.jpg" alt="ด้านหน้ารีสอร์ต" class="w-full h-full object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="view">
+                    <img src="img/outside- (1).jpg" alt="ภายนอก" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="view">
+                    <img src="img/outside- (3).jpg" alt="ภายนอก" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="view">
+                    <img src="img/outside- (5).jpg" alt="ภายนอก" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="view">
+                    <img src="img/outside- (7).jpg" alt="ภายนอก" class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-green-600 font-semibold text-sm uppercase tracking-wide">Contact Us</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6">ติดต่อเรา</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    พร้อมให้บริการและติดต่อสอบถามเพื่อการจองห้องพักและข้อมูลเพิ่มเติม
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Contact Info -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 mb-12 sm:mb-16">
+                <div class="space-y-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="font-semibold text-gray-900 mb-6 text-xl">ข้อมูลการติดต่อ</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">ที่อยู่</h4>
+                                    <p class="text-gray-600">291 หมู่ 4 ตำบลนางแล<br>อำเภอเมืองเชียงราย จังหวัดเชียงราย 57100</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-phone text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">โทรศัพท์</h4>
+                                    <p class="text-gray-600">(+66) 53‑706270‑4</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-envelope text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">อีเมล</h4>
+                                    <p class="text-gray-600">rsvn@goldenpineresorts.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-plane text-orange-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">สนามบิน</h4>
+                                    <p class="text-gray-600">สนามบินแม่ฟ้าหลวง<br>ประมาณ 10 นาทีด้วยรถยนต์</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="font-semibold text-gray-900 mb-6 text-xl">ส่งข้อความถึงเรา</h3>
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">ชื่อ</label>
+                                <input type="text" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="กรุณากรอกชื่อของคุณ">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">นามสกุล</label>
+                                <input type="text" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="กรุณากรอกนามสกุลของคุณ">
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">อีเมล</label>
+                                <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="your@email.com">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">โทรศัพท์</label>
+                                <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="+66 XX XXX XXXX">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">ข้อความ</label>
+                            <textarea rows="5" name="message" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="กรุณาพิมพ์ข้อความของคุณ..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary text-white px-8 py-3 rounded-full font-semibold w-full">
+                            <i class="fas fa-paper-plane mr-2"></i>ส่งข้อความ
+                        </button>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="w-full">
+        <div class="h-80vh w-full" style="height: 80vh;">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1558.1189498115682!2d99.8820986!3d19.9822307!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30d83296068d90f1%3A0x1d4734ccb80f1d53!2sGolden%20Pine%20Resort!5e0!3m2!1sen!2sth!4v1731674410191!5m2!1sen!2sth" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <!-- Logo & Description -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="img/logo.png" alt="Golden Pine Resort" class="h-12" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="w-12 h-12 flex items-center justify-center" style="display: none;">
+                            <i class="fas fa-tree text-green-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-2xl font-bold">Golden Pine Resort</h3>
+                            <p class="text-gray-400 text-sm">Chiang Rai Luxury Experience</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Golden Pine Resort รีสอร์ตหรูหรา 4 ดาว ในใจกลางเชียงราย พร้อมบริการครบครันและสิ่งอำนวยความสะดวกระดับโลก
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-6">ลิงก์ด่วน</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">หน้าแรก</a></li>
+                        <li><a href="index.html#about" class="text-gray-400 hover:text-white transition-colors">เกี่ยวกับเรา</a></li>
+                        <li><a href="rooms.html" class="text-gray-400 hover:text-white transition-colors">ห้องพัก</a></li>
+                        <li><a href="index.html#restaurant" class="text-gray-400 hover:text-white transition-colors">ร้านอาหาร</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-white transition-colors">แกลลอรี่</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">ติดต่อ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-6">ติดต่อเรา</h4>
+                    <div class="space-y-3 text-gray-400">
+                        <p class="flex items-start">
+                            <i class="fas fa-map-marker-alt mr-3 mt-1 text-green-400"></i>
+                            <span>291 หมู่ 4 ตำบลนางแล<br>อำเภอเมืองเชียงราย จังหวัดเชียงราย 57100</span>
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-green-400"></i>
+                            <span>(+66) 53‑706270‑4</span>
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-green-400"></i>
+                            <span>rsvn@goldenpineresorts.com</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Golden Pine Resort. All rights reserved. | Designed with ❤️ in Thailand</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize Swiper
+        const heroSwiper = new Swiper('.hero-swiper', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            }
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('navbar-scroll');
+            } else {
+                navbar.classList.remove('navbar-scroll');
+            }
+        });
+
+
+
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                
+                // Close mobile menu if open
+                if (window.innerWidth < 1024 && isMenuOpen) {
+                    toggleMobileMenu();
+                }
+            });
+        });
+
+        // Gallery filter functionality
+        document.querySelectorAll('.gallery-filter').forEach(button => {
+            button.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                
+                // Update active button
+                document.querySelectorAll('.gallery-filter').forEach(btn => {
+                    btn.classList.remove('active', 'bg-green-600', 'text-white');
+                    btn.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+                });
+                
+                this.classList.add('active', 'bg-green-600', 'text-white');
+                this.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+                
+                // Filter gallery items
+                document.querySelectorAll('.gallery-item').forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Gallery lightbox effect
+        document.querySelectorAll('#gallery img').forEach(img => {
+            img.addEventListener('click', function() {
+                const lightbox = document.createElement('div');
+                lightbox.className = 'fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 cursor-pointer';
+                lightbox.innerHTML = `<img src="${this.src}" class="max-w-full max-h-full object-contain">`;
+                
+                lightbox.addEventListener('click', function() {
+                    document.body.removeChild(lightbox);
+                });
+                
+                document.body.appendChild(lightbox);
+            });
+        });
+    </script>
+
+    <!-- Live Chat - tawk.to -->
+    <div id="fb-root"></div>
+    <div id="fb-customer-chat" class="fb-customerchat"></div>
+    
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    Tawk_API.onLoad = function(){
+        // ตั้งค่าข้อความต้อนรับ
+        Tawk_API.setAttributes({
+            'name' : 'Golden Pine Resort',
+            'email' : 'info@goldenpineresort.com'
+        });
+    };
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/6756c8d02480f5b4f59f4e8a/1ien8h8oo';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+    
+    <!-- Mobile Menu Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const navbar = document.getElementById('navbar');
+        let isMenuOpen = false;
+        
+        console.log('Mobile menu script loaded', btn, menu); // Debug
+        
+        if (btn && menu) {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const icon = btn.querySelector('i');
+                
+                isMenuOpen = !isMenuOpen;
+                console.log('Menu clicked, isOpen:', isMenuOpen); // Debug
+                
+                if (isMenuOpen) {
+                    menu.classList.add('show');
+                    icon.className = 'fas fa-times';
+                } else {
+                    menu.classList.remove('show');
+                    icon.className = 'fas fa-bars';
+                }
+            });
+            
+            // Close menu when clicking links
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (isMenuOpen) {
+                        menu.classList.remove('show');
+                        btn.querySelector('i').className = 'fas fa-bars';
+                        isMenuOpen = false;
+                    }
+                });
+            });
+        }
+        
+        // Navbar scroll effect
+        if (navbar) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('navbar-scroll');
+                } else {
+                    navbar.classList.remove('navbar-scroll');
+                }
+            });
+        }
+    });
+    </script>
+
+</body>
+</html>

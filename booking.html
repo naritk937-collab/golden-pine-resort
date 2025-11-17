@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>จองห้องพัก | Golden Pine Resort Chiang Rai - รีสอร์ต 4 ดาว</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="จองห้องพักกับ Golden Pine Resort Chiang Rai ได้ง่าย ๆ ผ่านโทรศัพท์ ไลน์ อีเมล หรือแบบฟอร์มออนไลน์ รีสอร์ต 4 ดาว ใกล้สนามบินแม่ฟ้าหลวง พร้อมสระว่ายน้ำ ฟิตเนส สปา">
+    <meta name="keywords" content="จองห้องพัก, Golden Pine Resort, Chiang Rai, โรงแรม, รีสอร์ต, เชียงราย, สนามบินแม่ฟ้าหลวง, ห้องพัก 4 ดาว, โรงแรมเชียงราย">
+    <meta name="author" content="Golden Pine Resort">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://goldenpineresort.com/booking">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="จองห้องพัก | Golden Pine Resort Chiang Rai - รีสอร์ต 4 ดาว">
+    <meta property="og:description" content="จองห้องพักกับ Golden Pine Resort ได้ง่าย ๆ ผ่านโทรศัพท์ ไลน์ อีเมล หรือแบบฟอร์มออนไลน์ รีสอร์ต 4 ดาว ใกล้สนามบินแม่ฟ้าหลวง">
+    <meta property="og:image" content="https://goldenpineresort.com/image/front1.jpg">
+    <meta property="og:url" content="https://goldenpineresort.com/booking">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Golden Pine Resort">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="จองห้องพัก | Golden Pine Resort Chiang Rai">
+    <meta name="twitter:description" content="จองห้องพักกับ Golden Pine Resort ได้ง่าย ๆ รีสอร์ต 4 ดาว ใกล้สนามบินแม่ฟ้าหลวง">
+    <meta name="twitter:image" content="https://goldenpineresort.com/image/front1.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Hotel",
+      "name": "Golden Pine Resort",
+      "description": "รีสอร์ต 4 ดาว ในใจกลางเชียงราย ใกล้สนามบินแม่ฟ้าหลวง",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "291 หมู่ 4 ตำบลนางแล",
+        "addressLocality": "เมืองเชียงราย",
+        "addressRegion": "เชียงราย",
+        "postalCode": "57100",
+        "addressCountry": "TH"
+      },
+      "telephone": "+66537062704",
+      "email": "rsvn@goldenpineresorts.com",
+      "url": "https://goldenpineresort.com",
+      "starRating": {
+        "@type": "Rating",
+        "ratingValue": "4"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1247"
+      }
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+    <link rel="apple-touch-icon" href="image/apple-touch-icon.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2f5d50;
+            --secondary: #40524d;
+            --accent: #86b817;
+            --light: #f1f6f5;
+            --dark: #0d1f1a;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--secondary);
+        }
+        
+        .font-display { font-family: 'Playfair Display', serif; }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(47, 93, 80, 0.9) 0%, rgba(64, 82, 77, 0.8) 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(47, 93, 80, 0.3);
+        }
+        
+        .section-padding { padding: 80px 0; }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .navbar-scroll {
+            backdrop-filter: blur(10px);
+            background: rgba(31, 41, 55, 0.98) !important;
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 640px) {
+            .section-padding { padding: 40px 0; }
+            .card-hover:hover { transform: none; }
+            .btn-primary:hover { transform: none; }
+        }
+        
+        /* Tablet/iPad */
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .section-padding { padding: 60px 0; }
+        }
+        
+        /* Touch device optimizations */
+        @media (hover: none) {
+            .card-hover:hover { transform: none; }
+            .btn-primary:hover { transform: none; }
+        }
+        
+        /* Bottom Navigation */
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        
+        /* Add bottom padding to body to prevent content from being hidden behind bottom nav */
+        body {
+            padding-bottom: 80px;
+        }
+        
+        /* Touch targets */
+        @media (max-width: 1024px) {
+            button, a {
+                min-height: 44px;
+                min-width: 44px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation (Logo Only) -->
+    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 py-4 bg-gray-900/95 backdrop-blur-sm">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-center items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img src="img/logo.png" alt="Golden Pine Resort" class="h-16">
+                    <div>
+                        <h1 class="font-display text-2xl font-bold text-white">Golden Pine Resort</h1>
+                        <p class="text-xs text-gray-300">Chiang Rai Luxury Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 pb-safe">
+        <div class="flex justify-around items-center py-2">
+            <a href="index.html" class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors">
+                <i class="fas fa-home text-xl mb-1"></i>
+                <span class="text-xs font-medium">Home</span>
+            </a>
+            <a href="index.html#about" class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors">
+                <i class="fas fa-info-circle text-xl mb-1"></i>
+                <span class="text-xs font-medium">About</span>
+            </a>
+            <a href="rooms.html" class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors">
+                <i class="fas fa-bed text-xl mb-1"></i>
+                <span class="text-xs font-medium">Rooms</span>
+            </a>
+            <a href="index.html#restaurant" class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors">
+                <i class="fas fa-utensils text-xl mb-1"></i>
+                <span class="text-xs font-medium">Restaurant</span>
+            </a>
+            <a href="gallery.html" class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors">
+                <i class="fas fa-images text-xl mb-1"></i>
+                <span class="text-xs font-medium">Gallery</span>
+            </a>
+            <a href="contact.html" class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors">
+                <i class="fas fa-phone text-xl mb-1"></i>
+                <span class="text-xs font-medium">Contact</span>
+            </a>
+            <a href="booking.html" class="flex flex-col items-center py-2 px-3 text-white bg-green-600 rounded-lg mx-1 transition-colors">
+                <i class="fas fa-calendar-check text-xl mb-1"></i>
+                <span class="text-xs font-medium">จอง</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-[56vh] flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('img/roomhero1.jpg')"></div>
+        
+
+        
+        <!-- Content -->
+        <div class="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
+
+            
+
+        </div>
+    </section>
+
+    <!-- Booking Options -->
+    <section id="booking-options" class="section-padding bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h1 class="font-display text-3xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                    จองห้องพักง่าย ๆ กับ<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-yellow-500">Golden Pine Resort</span>
+                </h1>
+                
+                <div class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-full font-semibold mb-8 inline-block">
+                    <i class="fas fa-star mr-2"></i>รีสอร์ต 4 ดาว ใจกลางเชียงราย
+                </div>
+                
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto mb-12">
+                    เลือกช่องทางการจองที่สะดวกสำหรับคุณ พร้อมบริการตลอด 24 ชั่วโมง
+                </p>
+            </div>
+            
+            <!-- Quick Booking Options -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-16">
+                <!-- Phone Booking -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl text-center card-hover">
+                    <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-phone text-red-600 text-3xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">โทรจองทันที</h3>
+                    <p class="text-gray-600 mb-6">พูดคุยกับทีมงานโดยตรง<br>บริการตลอด 24 ชั่วโมง</p>
+                    <a href="tel:+66537062704" class="bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-full font-semibold transition-all inline-block w-full">
+                        <i class="fas fa-phone mr-2"></i>(+66) 53‑706270‑4
+                    </a>
+                </div>
+                
+                <!-- Line Booking -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl text-center card-hover">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fab fa-line text-green-600 text-3xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">จองผ่าน Line</h3>
+                    <p class="text-gray-600 mb-6">สะดวก รวดเร็ว<br>ตอบกลับทันที</p>
+                    <a href="https://line.me/ti/p/@goldenpineresort" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full font-semibold transition-all inline-block w-full">
+                        <i class="fab fa-line mr-2"></i>@goldenpineresort
+                    </a>
+                </div>
+                
+                <!-- Email Booking -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl text-center card-hover">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-envelope text-blue-600 text-3xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">จองผ่านอีเมล</h3>
+                    <p class="text-gray-600 mb-6">ส่งรายละเอียดครบถ้วน<br>ได้รับการยืนยัน</p>
+                    <a href="mailto:rsvn@goldenpineresorts.com" class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-semibold transition-all inline-block w-full">
+                        <i class="fas fa-envelope mr-2"></i>ส่งอีเมล
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Online Booking Form -->
+            <div class="bg-white p-8 sm:p-12 rounded-2xl shadow-2xl max-w-4xl mx-auto">
+                <div class="text-center mb-8">
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-4">แบบฟอร์มจองออนไลน์</h2>
+                    <p class="text-gray-600 text-lg">กรอกข้อมูลและเราจะติดต่อกลับภายใน 24 ชั่วโมง</p>
+                </div>
+                
+                <form id="booking-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">ชื่อ *</label>
+                            <input type="text" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="กรุณากรอกชื่อของคุณ">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">นามสกุล *</label>
+                            <input type="text" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="กรุณากรอกนามสกุลของคุณ">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">อีเมล *</label>
+                            <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">โทรศัพท์ *</label>
+                            <input type="tel" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="+66 XX XXX XXXX">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">วันที่เช็คอิน *</label>
+                            <input type="date" name="checkin" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">วันที่เช็คเอาท์ *</label>
+                            <input type="date" name="checkout" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">จำนวนผู้เข้าพัก *</label>
+                            <select name="guests" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                <option value="">เลือกจำนวนคน</option>
+                                <option value="1">1 คน</option>
+                                <option value="2">2 คน</option>
+                                <option value="3">3 คน</option>
+                                <option value="4">4 คน</option>
+                                <option value="5+">5+ คน</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">ประเภทห้องพัก</label>
+                        <select name="roomType" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            <option value="">เลือกประเภทห้องพัก</option>
+                            <option value="double-deluxe">Double Deluxe Room (฿3,500)</option>
+                            <option value="twin-deluxe">Twin Deluxe Room (฿3,200)</option>
+                            <option value="triple">Triple Room (฿4,200)</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">ข้อความเพิ่มเติม</label>
+                        <textarea rows="4" name="message" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="ความต้องการพิเศษ หรือข้อมูลเพิ่มเติม..."></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn-primary text-white px-12 py-4 rounded-full font-semibold text-lg">
+                            <i class="fas fa-calendar-check mr-2"></i>ส่งคำขอจอง
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success/Error Messages -->
+    <div id="success-message" class="fixed top-20 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-8 py-4 rounded-lg shadow-lg z-50 hidden">
+        <i class="fas fa-check-circle mr-2"></i>ส่งคำขอจองสำเร็จ! เราจะติดต่อกลับภายใน 24 ชั่วโมง
+    </div>
+    
+    <div id="error-message" class="fixed top-20 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-8 py-4 rounded-lg shadow-lg z-50 hidden">
+        <i class="fas fa-exclamation-circle mr-2"></i>เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <!-- Logo & Description -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="img/logo.png" alt="Golden Pine Resort" class="h-12" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="w-12 h-12 flex items-center justify-center" style="display: none;">
+                            <i class="fas fa-tree text-green-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-2xl font-bold">Golden Pine Resort</h3>
+                            <p class="text-gray-400 text-sm">Chiang Rai Luxury Experience</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Golden Pine Resort รีสอร์ตหรูหรา 4 ดาว ในใจกลางเชียงราย พร้อมบริการครบครันและสิ่งอำนวยความสะดวกระดับโลก
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-6">ลิงก์ด่วน</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">หน้าแรก</a></li>
+                        <li><a href="index.html#about" class="text-gray-400 hover:text-white transition-colors">เกี่ยวกับเรา</a></li>
+                        <li><a href="index.html#rooms" class="text-gray-400 hover:text-white transition-colors">ห้องพัก</a></li>
+                        <li><a href="index.html#restaurant" class="text-gray-400 hover:text-white transition-colors">ร้านอาหาร</a></li>
+                        <li><a href="index.html#gallery" class="text-gray-400 hover:text-white transition-colors">แกลลอรี่</a></li>
+                        <li><a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors">ติดต่อ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-6">ติดต่อเรา</h4>
+                    <div class="space-y-3 text-gray-400">
+                        <p class="flex items-start">
+                            <i class="fas fa-map-marker-alt mr-3 mt-1 text-green-400"></i>
+                            <span>291 หมู่ 4 ตำบลนางแล<br>อำเภอเมืองเชียงราย จังหวัดเชียงราย 57100</span>
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-green-400"></i>
+                            <span>(+66) 53‑706270‑4</span>
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-green-400"></i>
+                            <span>rsvn@goldenpineresorts.com</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Golden Pine Resort. All rights reserved. | Designed with ❤️ in Thailand</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // *** โค้ด JavaScript เฉพาะหน้า booking ***
+        
+        // Scroll to booking section
+        function scrollToBooking() {
+            const bookingSection = document.getElementById('booking-options');
+            if (bookingSection) {
+                bookingSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        const checkinInput = document.querySelector('input[name="checkin"]');
+        const checkoutInput = document.querySelector('input[name="checkout"]');
+        
+        if (checkinInput) checkinInput.setAttribute('min', today);
+        if (checkoutInput) checkoutInput.setAttribute('min', today);
+
+        // Update checkout minimum date when checkin changes
+        if (checkinInput) {
+            checkinInput.addEventListener('change', function() {
+                const checkinDate = new Date(this.value);
+                checkinDate.setDate(checkinDate.getDate() + 1);
+                const minCheckout = checkinDate.toISOString().split('T')[0];
+                if (checkoutInput) checkoutInput.setAttribute('min', minCheckout);
+            });
+        }
+
+        // Form submission
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const successMsg = document.getElementById('success-message');
+            successMsg.classList.remove('hidden');
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 5000);
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    Tawk_API.onLoad = function(){
+        Tawk_API.setAttributes({
+            'name' : 'Golden Pine Resort',
+            'email' : 'rsvn@goldenpineresorts.com'
+        });
+    };
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/6756c8d02480f5b4f59f4e8a/1ien8h8oo';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+</body>
+</html> px-6 py-3 rounded-full inline-block mb-6 font-semibold">
+                    <i class="fas fa-medal mr-2"></i>จองตรงกับเราได้ราคาดีที่สุด - Best Rate Guarantee!
+                </div>
+                
+                <p class="text-lg sm:text-xl md:text-2xl mb-8 text-gray-600 max-w-2xl mx-auto">
+                    เลือกวิธีการจองที่สะดวกสำหรับคุณ ทางโทรศัพท์ ไลน์ อีเมล หรือแบบฟอร์มออนไลน์
+                </p>
+                
+                <!-- Rating Display -->
+                <div class="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full inline-block mb-8">
+                    <div class="flex items-center space-x-2">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-white font-semibold">4.8/5</span>
+                        <span class="text-gray-200">จาก 1,247 รีวิว</span>
+                    </div>
+                </div>
+                
+                <button onclick="scrollToBooking()" class="btn-primary px-8 py-4 rounded-full text-lg font-semibold">
+                    <i class="fas fa-arrow-down mr-2"></i>เลื่อนลงเพื่อจอง
+                </button>
+                
+                <span class="text-green-600 font-semibold text-sm uppercase tracking-wide">Booking Options</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6">เลือกวิธีการจองที่สะดวกสำหรับคุณ</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    เรามีหลายช่องทางให้คุณสามารถจองห้องพักได้อย่างรวดเร็วและสะดวก
+                </p>
+                
+                <!-- Quick Reviews -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg mt-8 max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="flex justify-center text-yellow-400 mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-sm text-gray-600">"ห้องพักสะอาดมาก เจ้าหน้าที่บริการดีเยี่ยม สระว่ายน้ำสวย"</p>
+                            <p class="text-xs text-gray-500 mt-1">- Agoda Guest, Thailand</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="flex justify-center text-yellow-400 mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-sm text-gray-600">"ใกล้สนามบินมาก สะดวกสำหรับนักท่องเที่ยว อาหารเช้าอร่อย"</p>
+                            <p class="text-xs text-gray-500 mt-1">- Traveloka User, Bangkok</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="flex justify-center text-yellow-400 mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-sm text-gray-600">"บรรยากาศดี เงียบสงบ เหมาะสำหรับพักผ่อน คุ้มค่าเงิน"</p>
+                            <p class="text-xs text-gray-500 mt-1">- Agoda Verified, Singapore</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
+                <!-- Phone Booking -->
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg card-hover text-center border-2 border-red-200">
+                    <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-phone text-red-600 text-3xl animate-pulse"></i>
+                    </div>
+                    <div class="bg-red-50 px-3 py-1 rounded-full inline-block mb-4">
+                        <span class="text-red-600 text-sm font-semibold">🔥 ยอดนิยม</span>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">โทรศัพท์</h3>
+                    <p class="text-gray-600 mb-6">โทรจองโดยตรงกับเจ้าหน้าที่ของเรา<br><span class="text-green-600 font-semibold">เปิด 24 ชั่วโมง</span></p>
+                    <div class="space-y-2 mb-6">
+                        <p class="text-lg font-semibold text-gray-900">053-706270-4</p>
+                        <p class="text-lg font-semibold text-gray-900">081-952-6970</p>
+                    </div>
+                    <a href="tel:+66537062704" class="bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-full font-semibold inline-block w-full transition-all transform hover:scale-105">
+                        <i class="fas fa-phone mr-2"></i>โทรจองเลย
+                    </a>
+                </div>
+
+                <!-- Line Booking -->
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg card-hover text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fab fa-line text-green-600 text-3xl"></i>
+                    </div>
+                    <div class="bg-green-50 px-3 py-1 rounded-full inline-block mb-4">
+                        <span class="text-green-600 text-sm font-semibold">💬 แชทสด</span>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">ไลน์</h3>
+                    <p class="text-gray-600 mb-6">แชทและจองผ่าน Line Official Account<br><span class="text-green-600 font-semibold">ตอบกลับเร็ว</span></p>
+                    <div class="space-y-2 mb-6">
+                        <p class="text-lg font-semibold text-gray-900">Line ID: @670tzncs</p>
+                    </div>
+                    <a href="https://line.me/R/ti/p/@670tzncs" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full font-semibold inline-block w-full transition-all transform hover:scale-105">
+                        <i class="fab fa-line mr-2"></i>เพิ่มเพื่อน
+                    </a>
+                </div>
+
+                <!-- Email Booking -->
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg card-hover text-center">
+                    <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-envelope text-purple-600 text-3xl"></i>
+                    </div>
+                    <div class="bg-purple-50 px-3 py-1 rounded-full inline-block mb-4">
+                        <span class="text-purple-600 text-sm font-semibold">📧 สะดวก</span>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">อีเมล</h3>
+                    <p class="text-gray-600 mb-6">ส่งคำขอจองผ่านอีเมล<br><span class="text-purple-600 font-semibold">ตอบภายใน 2 ชม.</span></p>
+                    <div class="space-y-2 mb-6">
+                        <p class="text-sm font-semibold text-gray-900">rsvn@goldenpineresorts.com</p>
+                    </div>
+                    <a href="mailto:rsvn@goldenpineresorts.com" class="bg-purple-500 hover:bg-purple-600 text-white px-8 py-4 rounded-full font-semibold inline-block w-full transition-all transform hover:scale-105">
+                        <i class="fas fa-envelope mr-2"></i>ส่งอีเมล
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section id="booking-form" class="section-padding">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="text-green-600 font-semibold text-sm uppercase tracking-wide">Online Booking</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6">ส่งคำขอจองห้องพัก</h2>
+                    <p class="text-gray-600 text-lg">
+                        กรอกข้อมูลด้านล่างและเราจะติดต่อกลับภายใน 2 ชั่วโมง
+                    </p>
+                    <div class="bg-green-50 p-4 rounded-lg mt-4 inline-block">
+                        <p class="text-green-700 font-semibold">🎉 จองออนไลน์ได้ส่วนลด 5% เพิ่ม!</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg mt-4 inline-block">
+                        <p class="text-blue-700 font-semibold">💬 มีข้อสงสัย? พูดคุยกับเราได้ทันทีผ่าน Live Chat ตลอด 24 ชั่วโมง!</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-xl">
+                    <!-- Success Message -->
+                    <div id="success-message" class="hidden bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-check-circle text-green-600 text-2xl"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-lg font-semibold text-green-800">ส่งคำขอจองสำเร็จ! 🎉</h3>
+                                <p class="text-green-700 mt-1">
+                                    ขอบคุณสำหรับการจองห้องพัก เราจะติดต่อกลับภายใน 2 ชั่วโมง<br>
+                                    หรือโทรมาที่ <strong>053-706270-4</strong> เพื่อยืนยันการจองได้ทันที
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Error Message -->
+                    <div id="error-message" class="hidden bg-red-50 border border-red-200 rounded-lg p-6 mb-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-exclamation-triangle text-red-600 text-2xl"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-lg font-semibold text-red-800">เกิดข้อผิดพลาด</h3>
+                                <p class="text-red-700 mt-1">
+                                    ไม่สามารถส่งคำขอจองได้ กรุณาโทรมาที่ <strong>053-706270-4</strong> หรือส่งข้อความผ่าน Line: <strong>@670tzncs</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form id="booking-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-gray-700 font-medium mb-2">ชื่อ *</label>
+                                <input type="text" id="firstName" name="firstName" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" 
+                                       placeholder="กรุณากรอกชื่อของคุณ">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-gray-700 font-medium mb-2">นามสกุล *</label>
+                                <input type="text" id="lastName" name="lastName" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" 
+                                       placeholder="กรุณากรอกนามสกุลของคุณ">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">อีเมล *</label>
+                                <input type="email" id="email" name="email" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" 
+                                       placeholder="your@email.com">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">เบอร์โทรศัพท์ *</label>
+                                <input type="tel" id="phone" name="phone" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" 
+                                       placeholder="+66 XX XXX XXXX">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="checkin" class="block text-gray-700 font-medium mb-2">วันที่เช็คอิน *</label>
+                                <input type="date" id="checkin" name="checkin" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="checkout" class="block text-gray-700 font-medium mb-2">วันที่เช็คเอาต์ *</label>
+                                <input type="date" id="checkout" name="checkout" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="guests" class="block text-gray-700 font-medium mb-2">จำนวนผู้เข้าพัก *</label>
+                                <select id="guests" name="guests" required 
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                    <option value="">เลือกจำนวนผู้เข้าพัก</option>
+                                    <option value="1">1 คน</option>
+                                    <option value="2">2 คน</option>
+                                    <option value="3">3 คน</option>
+                                    <option value="4">4 คน</option>
+                                    <option value="5+">5 คนขึ้นไป</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="roomType" class="block text-gray-700 font-medium mb-2">ประเภทห้อง *</label>
+                                <select id="roomType" name="roomType" required 
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                    <option value="">เลือกประเภทห้อง</option>
+                                    <option value="Double Deluxe">Double Deluxe Room (฿3,500)</option>
+                                    <option value="Twin Deluxe">Twin Deluxe Room (฿3,200)</option>
+                                    <option value="Triple Room">Triple Room (฿4,200)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2">ข้อความเพิ่มเติม</label>
+                            <textarea id="message" name="message" rows="4" 
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" 
+                                      placeholder="ข้อความเพิ่มเติม เช่น ความต้องการพิเศษ หรือคำถามต่าง ๆ"></textarea>
+                        </div>
+
+                        <button type="submit" id="submit-btn" class="btn-primary text-white px-12 py-4 rounded-full text-lg font-semibold w-full transform hover:scale-105 transition-all">
+                            <span id="submit-text">
+                                <i class="fas fa-paper-plane mr-2"></i>ส่งคำขอจอง
+                            </span>
+                            <span id="loading-text" class="hidden">
+                                <i class="fas fa-spinner fa-spin mr-2"></i>กำลังส่ง...
+                            </span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Additional Info -->
+                <div class="mt-12 text-center">
+                    <div class="bg-green-50 p-6 rounded-2xl mb-8">
+                        <h3 class="font-semibold text-gray-900 mb-4">หรือจองผ่านช่องทางอื่น ๆ ได้ทันที</h3>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="tel:+66537062704" class="text-red-600 hover:text-red-800 font-medium">
+                                <i class="fas fa-phone mr-2"></i>053-706270-4
+                            </a>
+                            <a href="https://line.me/R/ti/p/@670tzncs" target="_blank" class="text-green-600 hover:text-green-800 font-medium">
+                                <i class="fab fa-line mr-2"></i>@670tzncs
+                            </a>
+                            <a href="mailto:rsvn@goldenpineresorts.com" class="text-purple-600 hover:text-purple-800 font-medium">
+                                <i class="fas fa-envelope mr-2"></i>rsvn@goldenpineresorts.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 p-6 rounded-2xl">
+                        <h4 class="font-semibold text-gray-900 mb-2">ข้อมูลสำคัญ</h4>
+                        <div class="text-sm text-gray-600 space-y-1">
+                            <p>• เช็คอิน: หลัง 13:00 น. | เช็คเอาต์: ก่อน 12:00 น.</p>
+                            <p>• ยกเลิกฟรีได้จนถึง 24 ชั่วโมงก่อนวันเข้าพัก</p>
+                            <p>• ฝ่ายจองห้องพักเปิดบริการ 24 ชั่วโมง</p>
+                            <p>• ราคาห้องพักรวมอาหารเช้าแล้ว</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section-padding bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-3xl font-bold text-gray-900 mb-6">รีวิวจากผู้เข้าพักจริง</h2>
+                <div class="flex justify-center items-center space-x-2 mb-8">
+                    <div class="flex text-yellow-400 text-2xl">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-900">4.8/5</span>
+                    <span class="text-gray-600">(1,247 รีวิว)</span>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <img src="https://cdn6.agoda.net/images/kite-js/logo/agoda/color-default.svg" alt="Agoda" class="h-4">
+                    </div>
+                    <p class="text-gray-600 mb-4">"Perfect location near the airport. Clean rooms with modern amenities. Staff was very helpful and friendly. The pool area is beautiful and well-maintained."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-user text-blue-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900">Michael S.</p>
+                            <p class="text-sm text-gray-500">Verified Agoda Guest</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-orange-600 font-bold text-sm">Traveloka</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">"โรงแรมใกล้สนามบินมาก เดินทางสะดวก ห้องพักสะอาด อาหารเช้าอร่อย เจ้าหน้าที่บริการดีมาก แนะนำสำหรับนักท่องเที่ยว"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-user text-orange-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900">นางสาวสุดา ใจดี</p>
+                            <p class="text-sm text-gray-500">Traveloka Verified</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <img src="https://cdn6.agoda.net/images/kite-js/logo/agoda/color-default.svg" alt="Agoda" class="h-4">
+                    </div>
+                    <p class="text-gray-600 mb-4">"Excellent value for money! The resort is peaceful and relaxing. Great facilities including gym and spa. Breakfast buffet has good variety. Will definitely stay again."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-user text-blue-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900">Jennifer L.</p>
+                            <p class="text-sm text-gray-500">Agoda Reviewer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Logo & Description -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="img/logo.png" alt="Golden Pine Resort" class="h-10">
+                        <div>
+                            <h3 class="font-display text-xl font-bold">Golden Pine Resort</h3>
+                            <p class="text-gray-400 text-sm">Chiang Rai Luxury Experience</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Golden Pine Resort รีสอร์ตหรูหรา 4 ดาว ในใจกลางเชียงราย
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">ลิงก์ด่วน</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">หน้าแรก</a></li>
+                        <li><a href="rooms.html" class="text-gray-400 hover:text-white transition-colors">ห้องพัก</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-white transition-colors">แกลลอรี่</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">ติดต่อ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">ติดต่อเรา</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-green-400"></i>
+                            <span>053-706270-4</span>
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fab fa-line mr-3 text-green-400"></i>
+                            <span>@670tzncs</span>
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-green-400"></i>
+                            <span>rsvn@goldenpineresorts.com</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Golden Pine Resort. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Call Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="tel:+66537062704" class="bg-red-500 hover:bg-red-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl animate-bounce">
+            <i class="fas fa-phone text-xl"></i>
+        </a>
+    </div>
+
+    <!-- Live Chat Widget -->
+    <div id="chat-widget" class="fixed bottom-6 left-6 z-50">
+        <button onclick="toggleChat()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-3 rounded-full shadow-2xl flex items-center space-x-2">
+            <i class="fas fa-comments"></i>
+            <span class="hidden sm:inline">แชทสด</span>
+        </button>
+        <div id="chat-box" class="hidden absolute bottom-16 left-0 bg-white rounded-lg shadow-2xl w-80 h-96 border">
+            <div class="bg-blue-500 text-white p-4 rounded-t-lg">
+                <div class="flex justify-between items-center">
+                    <h4 class="font-semibold">Golden Pine Resort</h4>
+                    <button onclick="toggleChat()" class="text-white hover:text-gray-200">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <p class="text-sm opacity-90">เจ้าหน้าที่พร้อมให้บริการ</p>
+            </div>
+            <div class="p-4 h-64 overflow-y-auto">
+                <div class="bg-gray-100 p-3 rounded-lg mb-3">
+                    <p class="text-sm">สวัสดีครับ! มีอะไรให้ช่วยเหลือเกี่ยวกับการจองห้องพักไหมครับ?</p>
+                </div>
+                <div class="bg-gray-100 p-3 rounded-lg mb-3">
+                    <p class="text-sm">📞 โทร: 053-706270-4<br>💬 Line: @670tzncs<br>📧 Email: rsvn@goldenpineresorts.com</p>
+                </div>
+            </div>
+            <div class="p-4 border-t">
+                <div class="flex space-x-2">
+                    <a href="tel:+66537062704" class="bg-red-500 text-white px-3 py-2 rounded text-sm flex-1 text-center">
+                        <i class="fas fa-phone mr-1"></i>โทร
+                    </a>
+                    <a href="https://line.me/R/ti/p/@670tzncs" target="_blank" class="bg-green-500 text-white px-3 py-2 rounded text-sm flex-1 text-center">
+                        <i class="fab fa-line mr-1"></i>Line
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
