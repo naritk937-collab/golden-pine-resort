@@ -24,7 +24,10 @@
       property="og:description"
       content="Golden Pine Resort Chiang Rai - รีสอร์ต 4 ดาว ใกล้สนามบินแม่ฟ้าหลวง พร้อมสระว่ายน้ำ สปา ฟิตเนส และห้องพักหรูหรา"
     />
-    <meta property="og:image" content="https://goldenpineresort.com/img/front1.jpg" />
+    <meta
+      property="og:image"
+      content="https://goldenpineresort.com/img/front1.jpg"
+    />
     <meta property="og:url" content="https://goldenpineresort.com/" />
     <meta property="og:type" content="website" />
 
@@ -102,8 +105,9 @@
         padding: 0.6rem 1.1rem;
         border-radius: 999px;
         font-weight: 600;
-        box-shadow: 0 8px 18px rgba(47, 93, 80, 0.25), inset 0 -6px 18px rgba(255,255,255,0.06);
-        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 8px 18px rgba(47, 93, 80, 0.25),
+          inset 0 -6px 18px rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         transition: transform 0.22s ease, box-shadow 0.22s ease;
         text-decoration: none;
         position: relative;
@@ -111,7 +115,8 @@
 
       .btn-primary:hover {
         transform: translateY(-3px);
-        box-shadow: 0 18px 36px rgba(47, 93, 80, 0.28), inset 0 -6px 18px rgba(255,255,255,0.08);
+        box-shadow: 0 18px 36px rgba(47, 93, 80, 0.28),
+          inset 0 -6px 18px rgba(255, 255, 255, 0.08);
       }
 
       .btn-primary:active {
@@ -273,11 +278,11 @@
           <span class="text-xs font-medium">Home</span>
         </a>
         <a
-          href="#about"
+          href="#booking-form"
           class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors"
         >
-          <i class="fas fa-info-circle text-xl mb-1"></i>
-          <span class="text-xs font-medium">About</span>
+          <i class="fas fa-calendar-alt text-xl mb-1"></i>
+          <span class="text-xs font-medium">Booking</span>
         </a>
         <a
           href="rooms.html"
@@ -340,138 +345,56 @@
           <div class="swiper-slide">
             <div
               class="absolute inset-0 bg-cover bg-center"
-              <!-- Amenities Section -->
-              <section class="section-padding">
-                <div class="container mx-auto px-6">
-                  <div class="text-center mb-12">
-                    <span class="text-green-600 font-semibold text-sm uppercase tracking-wide">AMENITIES</span>
-                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-3">Services and facilities designed for your complete relaxation and comfort.</h2>
-                  </div>
+              style="background-image: url('img/room-52.jpg')"
+            ></div>
+          </div>
+          <div class="swiper-slide">
+            <div
+              class="absolute inset-0 bg-cover bg-center"
+              style="background-image: url('img/res- (2).jpg')"
+            ></div>
+          </div>
+        </div>
+      </div>
 
-                  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Card 1 -->
-                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                      <div class="relative">
-                        <img src="img/room-52.jpg" alt="High-Speed Internet" class="w-full h-48 object-cover">
-                        <div class="absolute inset-0 flex items-start justify-center pointer-events-none">
-                          <div class="mt-6 w-12 h-12 bg-white/80 rounded-full flex items-center justify-center shadow-md">
-                            <i class="fas fa-wifi text-green-600 text-xl"></i>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="p-6">
-                        <h3 class="font-display text-xl font-bold mb-2">High-Speed Internet</h3>
-                        <p class="text-gray-600 text-sm mb-4 italic">"Stay connected, whether you're sharing your moments or taking care of business. Complimentary high-speed internet is available throughout the resort."</p>
-                        <div class="flex flex-wrap gap-3 mt-4">
-                          <span class="text-sm text-green-600 flex items-center gap-2"><i class="fas fa-check-circle"></i>24/7 Available</span>
-                          <span class="text-sm text-green-600 flex items-center gap-2"><i class="fas fa-check-circle"></i>High Speed</span>
-                        </div>
-                      </div>
-                    </article>
+      <!-- Gradient Overlay -->
+      <div class="hero-gradient absolute inset-0"></div>
 
-                    <!-- Card 2 -->
-                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                      <div class="relative">
-                        <img src="img/pool-(1).jpg" alt="Serenity Pool" class="w-full h-48 object-cover">
-                        <div class="absolute inset-0 flex items-start justify-center pointer-events-none">
-                          <div class="mt-6 w-12 h-12 bg-white/80 rounded-full flex items-center justify-center shadow-md">
-                            <i class="fas fa-tint text-blue-600 text-xl"></i>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="p-6">
-                        <h3 class="font-display text-xl font-bold mb-2">Serenity Pool</h3>
-                        <p class="text-gray-600 text-sm mb-4 italic">"Dive into tranquility or lounge by the water, surrounded by our lush gardens and the sounds of nature. Your perfect spot to unwind."</p>
-                        <div class="flex flex-wrap gap-3 mt-4">
-                          <span class="text-sm text-green-600 flex items-center gap-2"><i class="fas fa-check-circle"></i>Heated Pool</span>
-                          <span class="text-sm text-green-600 flex items-center gap-2"><i class="fas fa-check-circle"></i>Rice Rice Field View</span>
-                        </div>
-                      </div>
-                    </article>
+      <!-- Content -->
+      <div class="relative z-10 text-center text-white px-6">
+        <h1
+          class="font-display text-3d leading-tight mb-4"
+          style="
+            font-size: clamp(2rem, 5vw, 4rem);
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+          "
+        >
+          Golden Pine Resort
+        </h1>
+        <p class="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+          รีสอร์ต 4 ดาว ใกล้สนามบินแม่ฟ้าหลวง
+          พร้อมสระว่ายน้ำและสิ่งอำนวยความสะดวกครบครัน
+        </p>
+        <a
+          href="booking.html"
+          class="btn-primary text-white px-8 py-4 rounded-full font-semibold text-lg animate-float"
+        >
+          <i class="fas fa-calendar-check mr-2"></i>จองห้องพัก
+        </a>
+      </div>
 
-                    <!-- Card 3 -->
-                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                      <div class="relative">
-                        <img src="img/outside-(9).jpg" alt="Parking" class="w-full h-48 object-cover">
-                        <div class="absolute inset-0 flex items-start justify-center pointer-events-none">
-                          <div class="mt-6 w-12 h-12 bg-white/80 rounded-full flex items-center justify-center shadow-md">
-                            <i class="fas fa-car text-gray-800 text-xl"></i>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="p-6">
-                        <h3 class="font-display text-xl font-bold mb-2">Parking</h3>
-                        <p class="text-gray-600 text-sm mb-4 italic">"Forget the stress of finding a spot. We offer spacious and secure on-site parking, providing convenience and peace of mind from the moment you arrive."</p>
-                        <div class="flex flex-wrap gap-3 mt-4">
-                          <span class="text-sm text-green-600 flex items-center gap-2"><i class="fas fa-check-circle"></i>Secure</span>
-                          <span class="text-sm text-green-600 flex items-center gap-2"><i class="fas fa-check-circle"></i>Valet Service</span>
-                        </div>
-                      </div>
-                    </article>
+      <!-- Swiper Pagination -->
+      <div class="swiper-pagination"></div>
+    </section>
 
-                    <!-- Card 4 -->
-                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                      <div class="relative">
-                        <img src="img/gym-(1).jpg" alt="Modern Fitness Center" class="w-full h-48 object-cover">
-                        <div class="absolute inset-0 flex items-start justify-center pointer-events-none">
-                          <div class="mt-6 w-12 h-12 bg-white/80 rounded-full flex items-center justify-center shadow-md">
-                            <i class="fas fa-heartbeat text-red-500 text-xl"></i>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="p-6">
-                        <h3 class="font-display text-xl font-bold mb-2">Modern Fitness Center</h3>
-                        <p class="text-gray-600 text-sm mb-4 italic">"Cutting-edge fitness facility featuring premium equipment, personal training services, and wellness programs designed to maintain your health routine while traveling."</p>
-                        <div class="flex flex-wrap gap-3 mt-4">
-                          <span class="text-sm text-green-600 flex items-center gap-2"><i class="fas fa-check-circle"></i>24/7 Access</span>
-                          <span class="text-sm text-green-600 flex items-center gap-2"><i class="fas fa-check-circle"></i>Personal Training</span>
-                        </div>
-                      </div>
-                    </article>
-
-                    <!-- Card 5 -->
-                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                      <div class="relative">
-                        <img src="img/res- (2).jpg" alt="Sangchan Restaurant" class="w-full h-48 object-cover">
-                        <div class="absolute inset-0 flex items-start justify-center pointer-events-none">
-                          <div class="mt-6 w-12 h-12 bg-white/80 rounded-full flex items-center justify-center shadow-md">
-                            <i class="fas fa-utensils text-yellow-600 text-xl"></i>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="p-6">
-                        <h3 class="font-display text-xl font-bold mb-2">Sangchan Restaurant</h3>
-                        <p class="text-gray-600 text-sm mb-4 italic">"Award-winning culinary experience featuring international cuisine crafted by renowned chefs. Elegant atmosphere with extensive wine selection and impeccable service."</p>
-                        <div class="flex flex-wrap gap-3 mt-4">
-                          <span class="text-sm text-green-600 flex items-center gap-2"><i class="fas fa-check-circle"></i>Fine Dining</span>
-                          <span class="text-sm text-green-600 flex items-center gap-2"><i class="fas fa-check-circle"></i>Wine Selection</span>
-                        </div>
-                      </div>
-                    </article>
-
-                    <!-- Card 6 -->
-                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                      <div class="relative">
-                        <img src="img/res- (10).jpg" alt="Homnuan Spa" class="w-full h-48 object-cover">
-                        <div class="absolute inset-0 flex items-start justify-center pointer-events-none">
-                          <div class="mt-6 w-12 h-12 bg-white/80 rounded-full flex items-center justify-center shadow-md">
-                            <i class="fas fa-spa text-pink-600 text-xl"></i>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="p-6">
-                        <h3 class="font-display text-xl font-bold mb-2">Homnuan Spa</h3>
-                        <p class="text-gray-600 text-sm mb-4 italic">"Tranquil sanctuary offering therapeutic treatments, rejuvenating massages, and holistic wellness experiences. Escape the everyday stress in our serene environment."</p>
-                        <div class="flex flex-wrap gap-3 mt-4">
-                          <span class="text-sm text-green-600 flex items-center gap-2"><i class="fas fa-check-circle"></i>Full Service</span>
-                          <span class="text-sm text-green-600 flex items-center gap-2"><i class="fas fa-check-circle"></i>Wellness Programs</span>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-              </section>
-              alt="วิวสวนรีสอร์ต Golden Pine"
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="relative">
+            <img
+              src="img/garden- (1).jpg"
+              alt="สวนในรีสอร์ต Golden Pine"
               class="rounded-2xl shadow-2xl"
               loading="lazy"
             />
@@ -489,6 +412,331 @@
                   <p class="text-sm text-gray-600">Luxury Experience</p>
                 </div>
               </div>
+            </div>
+          </div>
+          <div class="lg:pl-8">
+            <span
+              class="text-green-600 font-semibold text-sm uppercase tracking-wide"
+              >เกี่ยวกับเรา</span
+            >
+            <h2
+              class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6"
+            >
+              สัมผัสประสบการณ์การพักผ่อน<br />ที่เหนือระดับใจกลางเชียงราย
+            </h2>
+            <p class="text-gray-600 text-lg mb-6">
+              Golden Pine Resort
+              ตั้งอยู่ท่ามกลางธรรมชาติอันเงียบสงบของจังหวัดเชียงราย
+              เราเป็นรีสอร์ตระดับ 4
+              ดาวที่ผสมผสานความหรูหราเข้ากับวัฒนธรรมล้านนาได้อย่างลงตัว
+              ด้วยทำเลที่สะดวกสบายใกล้สนามบินแม่ฟ้าหลวง
+              ทำให้เราเป็นจุดหมายปลายทางที่สมบูรณ์แบบสำหรับนักเดินทางทุกประเภท
+            </p>
+            <div class="space-y-4 mb-8">
+              <div class="flex items-center">
+                <div
+                  class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4"
+                >
+                  <i class="fas fa-map-marker-alt text-green-600"></i>
+                </div>
+                <span class="text-gray-700"
+                  >ใกล้สนามบินแม่ฟ้าหลวงเพียง 10 นาที</span
+                >
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4"
+                >
+                  <i class="fas fa-concierge-bell text-green-600"></i>
+                </div>
+                <span class="text-gray-700">บริการครบครันระดับ 4 ดาว</span>
+              </div>
+            </div>
+            <a
+              href="contact.html"
+              class="btn-primary text-white px-8 py-3 rounded-full font-semibold"
+            >
+              <i class="fas fa-phone-alt mr-2"></i>ติดต่อเรา
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location & Activities Section -->
+    <section id="activities" class="section-padding bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <span
+            class="text-green-600 font-semibold text-sm uppercase tracking-wide"
+            >Location & Activities</span
+          >
+          <h2
+            class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6"
+          >
+            ทำเลที่ตั้งและกิจกรรมน่าสนใจ
+          </h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+            รีสอร์ตของเราตั้งอยู่ใกล้กับสถานที่ท่องเที่ยวสำคัญและสนามบิน
+            ทำให้คุณเดินทางได้อย่างสะดวกสบายและเต็มที่กับทุกกิจกรรม<br /><span
+              class="text-base text-gray-500"
+              >Our resort is located near major tourist attractions and the
+              airport, allowing for convenient travel.</span
+            >
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+        >
+          <!-- Card 1: Airport -->
+          <div
+            class="relative bg-white rounded-2xl shadow-lg overflow-hidden card-hover group"
+          >
+            <img
+              src="img/airport.jpg"
+              alt="สนามบินแม่ฟ้าหลวง"
+              class="w-full h-40 object-cover"
+              loading="lazy"
+            />
+            <div
+              class="absolute top-3 right-3 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold"
+            >
+              <i class="fas fa-clock mr-1"></i>
+              10 นาที
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-gray-900 mb-2">
+                สนามบินแม่ฟ้าหลวง<br /><span
+                  class="text-sm font-normal text-gray-500"
+                  >Mae Fah Luang Airport</span
+                >
+              </h3>
+              <p class="text-sm text-gray-600">
+                เดินทางสะดวกสบาย เพียง 10 นาทีจากรีสอร์ต<br /><span
+                  class="text-xs text-gray-500"
+                  >Only 10 minutes from the resort.</span
+                >
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2: Wat Huay Pla Kang -->
+          <div
+            class="relative bg-white rounded-2xl shadow-lg overflow-hidden card-hover group"
+          >
+            <img
+              src="img/wat-huai-pla-kang.jpg"
+              alt="วัดห้วยปลากั้ง"
+              class="w-full h-40 object-cover"
+              loading="lazy"
+            />
+            <div
+              class="absolute top-3 right-3 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold"
+            >
+              <i class="fas fa-clock mr-1"></i>
+              15 นาที
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-gray-900 mb-2">
+                วัดห้วยปลากั้ง<br /><span
+                  class="text-sm font-normal text-gray-500"
+                  >Wat Huay Pla Kang</span
+                >
+              </h3>
+              <p class="text-sm text-gray-600">
+                สักการะเจ้าแม่กวนอิมและชมเจดีย์ 9 ชั้น<br /><span
+                  class="text-xs text-gray-500"
+                  >Pay respect to the Guan Yin statue.</span
+                >
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3: Blue Temple -->
+          <div
+            class="relative bg-white rounded-2xl shadow-lg overflow-hidden card-hover group"
+          >
+            <img
+              src="img/blue-temple.jpg"
+              alt="วัดร่องเสือเต้น"
+              class="w-full h-40 object-cover"
+              loading="lazy"
+            />
+            <div
+              class="absolute top-3 right-3 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold"
+            >
+              <i class="fas fa-clock mr-1"></i>
+              20 นาที
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-gray-900 mb-2">
+                วัดร่องเสือเต้น<br /><span
+                  class="text-sm font-normal text-gray-500"
+                  >Blue Temple</span
+                >
+              </h3>
+              <p class="text-sm text-gray-600">
+                ชมความงามของสถาปัตยกรรมสีน้ำเงิน<br /><span
+                  class="text-xs text-gray-500"
+                  >Admire the unique blue architecture.</span
+                >
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4: Singha Park -->
+          <div
+            class="relative bg-white rounded-2xl shadow-lg overflow-hidden card-hover group"
+          >
+            <img
+              src="img/singha-park.jpg"
+              alt="สิงห์ปาร์ค"
+              class="w-full h-40 object-cover"
+              loading="lazy"
+            />
+            <div
+              class="absolute top-3 right-3 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold"
+            >
+              <i class="fas fa-clock mr-1"></i>
+              30 นาที
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-gray-900 mb-2">
+                สิงห์ปาร์ค<br /><span class="text-sm font-normal text-gray-500"
+                  >Singha Park</span
+                >
+              </h3>
+              <p class="text-sm text-gray-600">
+                กิจกรรมหลากหลายท่ามกลางไร่ชา<br /><span
+                  class="text-xs text-gray-500"
+                  >Activities among tea plantations.</span
+                >
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 5: White Temple -->
+          <div
+            class="relative bg-white rounded-2xl shadow-lg overflow-hidden card-hover group"
+          >
+            <img
+              src="img/white-temple.jpg"
+              alt="วัดร่องขุ่น"
+              class="w-full h-40 object-cover"
+              loading="lazy"
+            />
+            <div
+              class="absolute top-3 right-3 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold"
+            >
+              <i class="fas fa-clock mr-1"></i>
+              30 นาที
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-gray-900 mb-2">
+                วัดร่องขุ่น<br /><span class="text-sm font-normal text-gray-500"
+                  >White Temple</span
+                >
+              </h3>
+              <p class="text-sm text-gray-600">
+                วัดพุทธศิลป์ร่วมสมัยอันงดงาม<br /><span
+                  class="text-xs text-gray-500"
+                  >World-famous contemporary Buddhist art.</span
+                >
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 6: Black House -->
+          <div
+            class="relative bg-white rounded-2xl shadow-lg overflow-hidden card-hover group"
+          >
+            <img
+              src="img/black-house.jpg"
+              alt="บ้านดำ"
+              class="w-full h-40 object-cover"
+              loading="lazy"
+            />
+            <div
+              class="absolute top-3 right-3 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold"
+            >
+              <i class="fas fa-clock mr-1"></i>
+              10 นาที
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-gray-900 mb-2">
+                บ้านดำ<br /><span class="text-sm font-normal text-gray-500"
+                  >Black House</span
+                >
+              </h3>
+              <p class="text-sm text-gray-600">
+                พิพิธภัณฑ์ศิลปะโดย อ.ถวัลย์ ดัชนี<br /><span
+                  class="text-xs text-gray-500"
+                  >Art museum by Thawan Duchanee.</span
+                >
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 7: Chiang Rai City -->
+          <div
+            class="relative bg-white rounded-2xl shadow-lg overflow-hidden card-hover group"
+          >
+            <img
+              src="img/chiang-rai-city.jpg"
+              alt="ตัวเมืองเชียงราย"
+              class="w-full h-40 object-cover"
+              loading="lazy"
+            />
+            <div
+              class="absolute top-3 right-3 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold"
+            >
+              <i class="fas fa-clock mr-1"></i>
+              20 นาที
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-gray-900 mb-2">
+                ตัวเมืองเชียงราย<br /><span
+                  class="text-sm font-normal text-gray-500"
+                  >Chiang Rai City</span
+                >
+              </h3>
+              <p class="text-sm text-gray-600">
+                เดินทางสู่ใจกลางเมืองและถนนคนเดิน<br /><span
+                  class="text-xs text-gray-500"
+                  >To the city center & walking street.</span
+                >
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 8: Mae Sai -->
+          <div
+            class="relative bg-white rounded-2xl shadow-lg overflow-hidden card-hover group"
+          >
+            <img
+              src="img/mae-sai.jpg"
+              alt="ด่านแม่สาย"
+              class="w-full h-40 object-cover"
+              loading="lazy"
+            />
+            <div
+              class="absolute top-3 right-3 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold"
+            >
+              <i class="fas fa-clock mr-1"></i>
+              50 นาที
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-gray-900 mb-2">
+                แม่สาย<br /><span class="text-sm font-normal text-gray-500"
+                  >Mae Sai</span
+                >
+              </h3>
+              <p class="text-sm text-gray-600">
+                ตลาดชายแดนไทย-พม่า<br /><span class="text-xs text-gray-500"
+                  >Thai-Myanmar border market.</span
+                >
+              </p>
             </div>
           </div>
         </div>
@@ -661,7 +909,7 @@
     </section>
 
     <!-- Amenities Section -->
-    <section class="section-padding bg-gradient-to-b from-white via-green-50 to-white">
+    <section id="amenities" class="section-padding bg-gray-50">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
           <span
@@ -671,133 +919,372 @@
           <h2
             class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6"
           >
-            บริการและสิ่งอำนวยความสะดวก
+            เติมเต็มการพักผ่อนให้สมบูรณ์แบบ
           </h2>
           <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-            ครบครันทุกสิ่งสำหรับการพักผ่อนที่สมบูรณ์แบบและสะดวกสบาย
+            เราคัดสรรบริการและสิ่งอำนวยความสะดวกที่ครบครัน
+            เพื่อให้ทุกช่วงเวลาของคุณที่นี่พิเศษและน่าจดจำ
           </p>
         </div>
 
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
-        >
-          <!-- Pool -->
-          <div
-            class="group text-center p-8 bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 card-hover border border-blue-200"
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Card 1: Serenity Pool -->
+          <article
+            class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover"
           >
-            <div
-              class="w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300"
-            >
-              <i class="fas fa-water text-white text-3xl"></i>
+            <div class="relative">
+              <img
+                src="img/pool- (2).jpg"
+                alt="Serenity Pool"
+                class="w-full h-48 object-cover"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 flex items-start justify-center pointer-events-none"
+              >
+                <div
+                  class="mt-6 w-12 h-12 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-md"
+                >
+                  <i class="fas fa-tint text-blue-600 text-xl"></i>
+                </div>
+              </div>
             </div>
-            <h3 class="font-display font-bold text-gray-900 mb-3 text-lg">สระว่ายน้ำกลางแจ้ง</h3>
-            <p class="text-gray-700 text-sm leading-relaxed">
-              สระว่ายน้ำขนาดใหญ่พร้อมวิวทิวทัศน์สวยงาม
-            </p>
-          </div>
+            <div class="p-6">
+              <h3 class="font-display text-xl font-bold mb-2">Serenity Pool</h3>
+              <p class="text-gray-600 text-sm mb-4">
+                ดื่มด่ำกับความเงียบสงบ ณ
+                สระว่ายน้ำกลางแจ้งที่ทอดตัวยาวขนานกับวิวทุ่งนาเขียวขจี
+                ให้คุณได้ผ่อนคลายอย่างเต็มที่
+              </p>
+              <div class="flex flex-wrap gap-3 mt-4">
+                <span class="text-sm text-green-600 flex items-center gap-2"
+                  ><i class="fas fa-check-circle"></i>สระน้ำอุ่น</span
+                >
+                <span class="text-sm text-green-600 flex items-center gap-2"
+                  ><i class="fas fa-check-circle"></i>วิวทุ่งนา</span
+                >
+              </div>
+            </div>
+          </article>
 
-          <!-- Spa -->
-          <div
-            class="group text-center p-8 bg-gradient-to-br from-pink-50 to-pink-100 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 card-hover border border-pink-200"
+          <!-- Card 2: Sangchan Restaurant -->
+          <article
+            class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover"
           >
-            <div
-              class="w-20 h-20 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300"
-            >
-              <i class="fas fa-spa text-white text-3xl"></i>
+            <div class="relative">
+              <img
+                src="img/res- (2).jpg"
+                alt="Sangchan Restaurant"
+                class="w-full h-48 object-cover"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 flex items-start justify-center pointer-events-none"
+              >
+                <div
+                  class="mt-6 w-12 h-12 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-md"
+                >
+                  <i class="fas fa-utensils text-yellow-600 text-xl"></i>
+                </div>
+              </div>
             </div>
-            <h3 class="font-display font-bold text-gray-900 mb-3 text-lg">Hom Nuan Spa</h3>
-            <p class="text-gray-700 text-sm leading-relaxed">บริการนวดและสปาแบบไทยดั้งเดิม</p>
-          </div>
+            <div class="p-6">
+              <h3 class="font-display text-xl font-bold mb-2">
+                Sangchan Restaurant
+              </h3>
+              <p class="text-gray-600 text-sm mb-4">
+                สัมผัสประสบการณ์มื้ออาหารสุดพิเศษที่ได้รับรางวัลการันตี
+                บริการทั้งอาหารไทยต้นตำรับและนานาชาติชั้นเลิศโดยเชฟมืออาชีพ
+              </p>
+              <div class="flex flex-wrap gap-3 mt-4">
+                <span class="text-sm text-green-600 flex items-center gap-2"
+                  ><i class="fas fa-check-circle"></i>Fine Dining</span
+                >
+                <span class="text-sm text-green-600 flex items-center gap-2"
+                  ><i class="fas fa-check-circle"></i>มีไวน์ให้เลือก</span
+                >
+              </div>
+            </div>
+          </article>
 
-          <!-- Gym -->
-          <div
-            class="group text-center p-8 bg-gradient-to-br from-orange-50 to-orange-100 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 card-hover border border-orange-200"
+          <!-- Card 3: Homnuan Spa -->
+          <article
+            class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover"
           >
-            <div
-              class="w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300"
-            >
-              <i class="fas fa-dumbbell text-white text-3xl"></i>
+            <div class="relative">
+              <img
+                src="img/spa.jpg"
+                alt="Homnuan Spa"
+                class="w-full h-48 object-cover"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 flex items-start justify-center pointer-events-none"
+              >
+                <div
+                  class="mt-6 w-12 h-12 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-md"
+                >
+                  <i class="fas fa-spa text-pink-600 text-xl"></i>
+                </div>
+              </div>
             </div>
-            <h3 class="font-display font-bold text-gray-900 mb-3 text-lg">ห้องฟิตเนส</h3>
-            <p class="text-gray-700 text-sm leading-relaxed">
-              อุปกรณ์ออกกำลังกายครบครันและทันสมัย
-            </p>
-          </div>
+            <div class="p-6">
+              <h3 class="font-display text-xl font-bold mb-2">Homnuan Spa</h3>
+              <p class="text-gray-600 text-sm mb-4">
+                หลีกหนีความวุ่นวายในสถานที่อันเงียบสงบ
+                พร้อมบริการนวดผ่อนคลายและทรีตเมนต์เพื่อฟื้นฟูร่างกายและจิตใจอย่างสมบูรณ์แบบ
+              </p>
+              <div class="flex flex-wrap gap-3 mt-4">
+                <span class="text-sm text-green-600 flex items-center gap-2"
+                  ><i class="fas fa-check-circle"></i>บริการครบวงจร</span
+                >
+                <span class="text-sm text-green-600 flex items-center gap-2"
+                  ><i class="fas fa-check-circle"></i>โปรแกรมสุขภาพ</span
+                >
+              </div>
+            </div>
+          </article>
 
-          <!-- Restaurant -->
-          <div
-            class="group text-center p-8 bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 card-hover border border-yellow-200"
+          <!-- Card 4: Modern Fitness Center -->
+          <article
+            class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover"
           >
-            <div
-              class="w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300"
-            >
-              <i class="fas fa-utensils text-white text-3xl"></i>
+            <div class="relative">
+              <img
+                src="img/gym- (6).jpg"
+                alt="Modern Fitness Center"
+                class="w-full h-48 object-cover"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 flex items-start justify-center pointer-events-none"
+              >
+                <div
+                  class="mt-6 w-12 h-12 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-md"
+                >
+                  <i class="fas fa-heartbeat text-red-500 text-xl"></i>
+                </div>
+              </div>
             </div>
-            <h3 class="font-display font-bold text-gray-900 mb-3 text-lg">ร้านอาหาร</h3>
-            <p class="text-gray-700 text-sm leading-relaxed">
-              อาหารไทยต้นตำรับและนานาชาติคุณภาพสูง
-            </p>
-          </div>
+            <div class="p-6">
+              <h3 class="font-display text-xl font-bold mb-2">
+                Modern Fitness Center
+              </h3>
+              <p class="text-gray-600 text-sm mb-4">
+                ดูแลสุขภาพของคุณได้ไม่ขาดตอนกับฟิตเนสเซ็นเตอร์ที่ทันสมัย
+                เพียบพร้อมด้วยอุปกรณ์ออกกำลังกายระดับพรีเมียมครบครัน
+              </p>
+              <div class="flex flex-wrap gap-3 mt-4">
+                <span class="text-sm text-green-600 flex items-center gap-2"
+                  ><i class="fas fa-check-circle"></i>เปิด 24/7</span
+                >
+                <span class="text-sm text-green-600 flex items-center gap-2"
+                  ><i class="fas fa-check-circle"></i>เทรนเนอร์ส่วนตัว</span
+                >
+              </div>
+            </div>
+          </article>
 
-          <!-- WiFi -->
-          <div
-            class="group text-center p-8 bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 card-hover border border-cyan-200"
+          <!-- Card 5: High-Speed Internet -->
+          <article
+            class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover"
           >
-            <div
-              class="w-20 h-20 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300"
-            >
-              <i class="fas fa-wifi text-white text-3xl"></i>
+            <div class="relative">
+              <img
+                src="img/room-52.jpg"
+                alt="High-Speed Internet"
+                class="w-full h-48 object-cover"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 flex items-start justify-center pointer-events-none"
+              >
+                <div
+                  class="mt-6 w-12 h-12 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-md"
+                >
+                  <i class="fas fa-wifi text-green-600 text-xl"></i>
+                </div>
+              </div>
             </div>
-            <h3 class="font-display font-bold text-gray-900 mb-3 text-lg">ฟรี Wi-Fi</h3>
-            <p class="text-gray-700 text-sm leading-relaxed">
-              อินเทอร์เน็ตความเร็วสูงทั่วทั้งรีสอร์ต
-            </p>
-          </div>
+            <div class="p-6">
+              <h3 class="font-display text-xl font-bold mb-2">
+                High-Speed Internet
+              </h3>
+              <p class="text-gray-600 text-sm mb-4">
+                ไม่พลาดทุกการติดต่อ ไม่ว่าจะเพื่อธุรกิจหรือแบ่งปันช่วงเวลาดีๆ
+                ด้วยบริการอินเทอร์เน็ตความเร็วสูงฟรีทั่วทั้งรีสอร์ต
+              </p>
+              <div class="flex flex-wrap gap-3 mt-4">
+                <span class="text-sm text-green-600 flex items-center gap-2"
+                  ><i class="fas fa-check-circle"></i>ใช้ได้ 24/7</span
+                >
+                <span class="text-sm text-green-600 flex items-center gap-2"
+                  ><i class="fas fa-check-circle"></i>ความเร็วสูง</span
+                >
+              </div>
+            </div>
+          </article>
 
-          <!-- Parking -->
-          <div
-            class="group text-center p-8 bg-gradient-to-br from-slate-50 to-slate-100 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 card-hover border border-slate-200"
+          <!-- Card 6: Parking -->
+          <article
+            class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover"
           >
-            <div
-              class="w-20 h-20 bg-gradient-to-br from-slate-500 to-slate-700 rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300"
-            >
-              <i class="fas fa-parking text-white text-3xl"></i>
+            <div class="relative">
+              <img
+                src="img/outside- (2).jpg"
+                alt="Parking"
+                class="w-full h-48 object-cover"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 flex items-start justify-center pointer-events-none"
+              >
+                <div
+                  class="mt-6 w-12 h-12 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-md"
+                >
+                  <i class="fas fa-car text-gray-800 text-xl"></i>
+                </div>
+              </div>
             </div>
-            <h3 class="font-display font-bold text-gray-900 mb-3 text-lg">ที่จอดรถฟรี</h3>
-            <p class="text-gray-700 text-sm leading-relaxed">ที่จอดรถปลอดภัยและสะดวก</p>
-          </div>
+            <div class="p-6">
+              <h3 class="font-display text-xl font-bold mb-2">Parking</h3>
+              <p class="text-gray-600 text-sm mb-4">
+                อุ่นใจตั้งแต่วินาทีแรกที่มาถึง
+                ด้วยบริการที่จอดรถส่วนตัวกว้างขวางและปลอดภัย
+                พร้อมบริการรับรถเพื่อความสะดวกสบายสูงสุด
+              </p>
+              <div class="flex flex-wrap gap-3 mt-4">
+                <span class="text-sm text-green-600 flex items-center gap-2"
+                  ><i class="fas fa-check-circle"></i>ปลอดภัย</span
+                >
+                <span class="text-sm text-green-600 flex items-center gap-2"
+                  ><i class="fas fa-check-circle"></i>บริการรับรถ</span
+                >
+              </div>
+            </div>
+          </article>
 
-          <!-- Car Rental -->
-          <div
-            class="group text-center p-8 bg-gradient-to-br from-teal-50 to-teal-100 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 card-hover border border-teal-200"
+          <!-- Card 7: Lobby Bar -->
+          <article
+            class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover"
           >
-            <div
-              class="w-20 h-20 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300"
-            >
-              <i class="fas fa-car text-white text-3xl"></i>
+            <div class="relative">
+              <img
+                src="img/res- (5).jpg"
+                alt="Lobby Bar"
+                class="w-full h-48 object-cover"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 flex items-start justify-center pointer-events-none"
+              >
+                <div
+                  class="mt-6 w-12 h-12 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-md"
+                >
+                  <i class="fas fa-cocktail text-purple-600 text-xl"></i>
+                </div>
+              </div>
             </div>
-            <h3 class="font-display font-bold text-gray-900 mb-3 text-lg">บริการเช่ารถ</h3>
-            <p class="text-gray-700 text-sm leading-relaxed">บริการเช่ารถและโต๊ะทัวร์</p>
-          </div>
+            <div class="p-6">
+              <h3 class="font-display text-xl font-bold mb-2">Lobby Bar</h3>
+              <p class="text-gray-600 text-sm mb-4">
+                ผ่อนคลายกับเครื่องดื่มแก้วโปรดของคุณในบรรยากาศสบายๆ
+                ที่ล็อบบี้บาร์ของเรา
+              </p>
+              <div class="flex flex-wrap gap-3 mt-4">
+                <span class="text-sm text-green-600 flex items-center gap-2"
+                  ><i class="fas fa-check-circle"></i>ค็อกเทลและไวน์</span
+                >
+                <span class="text-sm text-green-600 flex items-center gap-2"
+                  ><i class="fas fa-check-circle"></i>ของว่าง</span
+                >
+              </div>
+            </div>
+          </article>
 
-          <!-- Room Service -->
-          <div
-            class="group text-center p-8 bg-gradient-to-br from-green-50 to-green-100 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 card-hover border border-green-200"
+          <!-- Card 8: 24-Hour Front Desk -->
+          <article
+            class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover"
           >
-            <div
-              class="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300"
-            >
-              <i class="fas fa-bell text-white text-3xl"></i>
+            <div class="relative">
+              <img
+                src="img/outside- (7).jpg"
+                alt="Front Desk"
+                class="w-full h-48 object-cover"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 flex items-start justify-center pointer-events-none"
+              >
+                <div
+                  class="mt-6 w-12 h-12 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-md"
+                >
+                  <i class="fas fa-concierge-bell text-orange-600 text-xl"></i>
+                </div>
+              </div>
             </div>
-            <h3 class="font-display font-bold text-gray-900 mb-3 text-lg">รูมเซอร์วิส</h3>
-            <p class="text-gray-700 text-sm leading-relaxed">บริการ 06:00–22:00 น. ทุกวัน</p>
-          </div>
+            <div class="p-6">
+              <h3 class="font-display text-xl font-bold mb-2">
+                Front Desk [24-hour]
+              </h3>
+              <p class="text-gray-600 text-sm mb-4">
+                ทีมงานของเราพร้อมให้บริการและให้ความช่วยเหลือคุณตลอด 24 ชั่วโมง
+                เพื่อให้การเข้าพักของคุณราบรื่นที่สุด
+              </p>
+              <div class="flex flex-wrap gap-3 mt-4">
+                <span class="text-sm text-green-600 flex items-center gap-2"
+                  ><i class="fas fa-check-circle"></i>บริการ 24 ชั่วโมง</span
+                >
+                <span class="text-sm text-green-600 flex items-center gap-2"
+                  ><i class="fas fa-check-circle"></i>ช่วยเหลือทุกเรื่อง</span
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 9: Live Music -->
+          <article
+            class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover"
+          >
+            <div class="relative">
+              <img
+                src="img/livemusic.jpg"
+                alt="Live Music"
+                class="w-full h-48 object-cover"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 flex items-start justify-center pointer-events-none"
+              >
+                <div
+                  class="mt-6 w-12 h-12 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-md"
+                >
+                  <i class="fas fa-music text-teal-600 text-xl"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-display text-xl font-bold mb-2">Live Music</h3>
+              <p class="text-gray-600 text-sm mb-4">
+                เพลิดเพลินกับดนตรีสดในบรรยากาศสุดชิลล์ พร้อมฟังเพลงเพราะๆ
+                ทุกคืนวันศุกร์และเสาร์
+              </p>
+              <div class="flex flex-wrap gap-3 mt-4">
+                <span class="text-sm text-green-600 flex items-center gap-2"
+                  ><i class="fas fa-check-circle"></i>ทุกคืนวันศุกร์-เสาร์</span
+                >
+                <span class="text-sm text-green-600 flex items-center gap-2"
+                  ><i class="fas fa-check-circle"></i>บรรยากาศดี</span
+                >
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- Restaurant Section -->
-    <section id="restaurant" class="section-padding bg-gray-50">
+    <section id="restaurant" class="section-padding">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
           <span
@@ -856,6 +1343,248 @@
             >
               <i class="fas fa-book mr-2"></i>สำรองที่นั่ง
             </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking-form" class="section-padding">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <span
+              class="text-green-600 font-semibold text-sm uppercase tracking-wide"
+              >Online Booking</span
+            >
+            <h2
+              class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6"
+            >
+              ส่งคำขอจองห้องพัก
+            </h2>
+            <p class="text-gray-600 text-lg">
+              กรอกข้อมูลด้านล่างและเราจะติดต่อกลับเพื่อยืนยันการจองภายใน 2
+              ชั่วโมง
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-xl">
+            <!-- Success Message -->
+            <div
+              id="success-message"
+              class="hidden bg-green-50 border border-green-200 rounded-lg p-6 mb-6"
+            >
+              <div class="flex items-center">
+                <div class="flex-shrink-0">
+                  <i class="fas fa-check-circle text-green-600 text-2xl"></i>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-lg font-semibold text-green-800">
+                    ส่งคำขอจองสำเร็จ! 🎉
+                  </h3>
+                  <p class="text-green-700 mt-1">
+                    ขอบคุณสำหรับการจองห้องพัก
+                    เราจะติดต่อกลับเพื่อยืนยันการจองผ่านอีเมลโดยเร็วที่สุด
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Error Message -->
+            <div
+              id="error-message"
+              class="hidden bg-red-50 border border-red-200 rounded-lg p-6 mb-6"
+            >
+              <div class="flex items-center">
+                <div class="flex-shrink-0">
+                  <i
+                    class="fas fa-exclamation-triangle text-red-600 text-2xl"
+                  ></i>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-lg font-semibold text-red-800">
+                    เกิดข้อผิดพลาด
+                  </h3>
+                  <p class="text-red-700 mt-1">
+                    ไม่สามารถส่งคำขอจองได้ กรุณาโทรหาเราที่
+                    <strong>053-706270-4</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <form
+              action="https://formspree.io/f/xpznvqko"
+              method="POST"
+              id="bookingForm"
+              class="space-y-6"
+            >
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    for="firstName"
+                    class="block text-gray-700 font-medium mb-2"
+                    >ชื่อ *</label
+                  >
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    placeholder="กรุณากรอกชื่อของคุณ"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="lastName"
+                    class="block text-gray-700 font-medium mb-2"
+                    >นามสกุล *</label
+                  >
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    placeholder="กรุณากรอกนามสกุลของคุณ"
+                  />
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    for="email"
+                    class="block text-gray-700 font-medium mb-2"
+                    >อีเมล *</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    placeholder="your@email.com"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="phone"
+                    class="block text-gray-700 font-medium mb-2"
+                    >เบอร์โทรศัพท์ *</label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    placeholder="+66 XX XXX XXXX"
+                  />
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    for="checkin"
+                    class="block text-gray-700 font-medium mb-2"
+                    >วันที่เช็คอิน *</label
+                  >
+                  <input
+                    type="date"
+                    id="checkin"
+                    name="checkin"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="checkout"
+                    class="block text-gray-700 font-medium mb-2"
+                    >วันที่เช็คเอาต์ *</label
+                  >
+                  <input
+                    type="date"
+                    id="checkout"
+                    name="checkout"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  />
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    for="guests"
+                    class="block text-gray-700 font-medium mb-2"
+                    >จำนวนผู้เข้าพัก *</label
+                  >
+                  <select
+                    id="guests"
+                    name="guests"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  >
+                    <option value="">เลือกจำนวนผู้เข้าพัก</option>
+                    <option value="1">1 คน</option>
+                    <option value="2">2 คน</option>
+                    <option value="3">3 คน</option>
+                    <option value="4">4 คน</option>
+                    <option value="5+">5 คนขึ้นไป</option>
+                  </select>
+                </div>
+                <div>
+                  <label
+                    for="roomType"
+                    class="block text-gray-700 font-medium mb-2"
+                    >ประเภทห้อง *</label
+                  >
+                  <select
+                    id="roomType"
+                    name="roomType"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  >
+                    <option value="">เลือกประเภทห้อง</option>
+                    <option value="Double Deluxe">Double Deluxe Room</option>
+                    <option value="Twin Deluxe">Twin Deluxe Room</option>
+                    <option value="Triple Room">Triple Room</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="message"
+                  class="block text-gray-700 font-medium mb-2"
+                  >ข้อความเพิ่มเติม</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  placeholder="ข้อความเพิ่มเติม เช่น ความต้องการพิเศษ หรือคำถามต่าง ๆ"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                id="submit-btn"
+                class="btn-primary text-white px-12 py-4 rounded-full text-lg font-semibold w-full transform hover:scale-105 transition-all flex justify-center items-center"
+              >
+                <span id="submit-text">
+                  <i class="fas fa-paper-plane mr-2"></i>ส่งคำขอจอง
+                </span>
+                <span id="loading-text" class="hidden">
+                  <i class="fas fa-spinner fa-spin mr-2"></i>กำลังส่ง...
+                </span>
+              </button>
+            </form>
           </div>
         </div>
       </div>
@@ -1255,7 +1984,7 @@
                 ส่งข้อความถึงเรา
               </h3>
               <form
-                action="https://formspree.io/f/YOUR_FORM_ID"
+                action="https://formspree.io/f/xpznvqko"
                 method="POST"
                 class="space-y-6"
               >
@@ -1390,25 +2119,25 @@
             </p>
             <div class="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/goldenpineresort"
                 class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
               >
                 <i class="fab fa-facebook-f"></i>
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/goldenpineresort/"
                 class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
               >
                 <i class="fab fa-instagram"></i>
               </a>
               <a
-                href="#"
+                href="https://line.me/R/ti/p/@670tzncs"
                 class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
               >
                 <i class="fab fa-line"></i>
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/"
                 class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
               >
                 <i class="fab fa-youtube"></i>

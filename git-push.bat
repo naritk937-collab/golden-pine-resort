@@ -25,7 +25,7 @@ echo   Push เสร็จสิ้น!
 echo ========================================
 echo.
 echo GitHub Actions กำลัง deploy ไปยัง server...
-echo ตรวจสอบได้ที่: https://github.com/YOUR_USERNAME/golden-pine-resort/actions
+echo ตรวจสอบได้ที่: https://github.com/ชื่อผู้ใช้ของคุณ/golden-pine-resort/actions
 echo.
 echo เว็บไซต์จะอัปเดตใน 1-2 นาที
 echo https://dev.goldenpineresorts.com
