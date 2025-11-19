@@ -23,11 +23,11 @@ jobs:
           protocol: ftp
           port: 21
           
-          # ✅ Path ต้นทาง: ชี้ไปที่โฟลเดอร์หลักของโค้ดใน Repository
-          local-dir: ./golden-pine-resort-main 
+          # ✅ แก้ไข Path ต้นทาง: ต้องมี / ปิดท้ายเพื่อให้ Action รู้ว่าเป็นโฟลเดอร์
+          local-dir: ./golden-pine-resort-main/
           
-          # ✅ Path ปลายทาง: ชี้ไปที่ Root ของ Subdomain ใน Plesk
-          server-dir: /dev.goldenpineresorts.com 
+          # ✅ แก้ไข Path ปลายทาง: ชี้ไปที่ Root ของ Subdomain ใน Plesk
+          server-dir: /dev.goldenpineresorts.com
           
           dangerous-clean-slate: false
           timeout: 60000
