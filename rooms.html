@@ -1,16 +1,806 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ห้องพัก - Golden Pine Resort Chiang Rai</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="ห้องพักหรู 3 รูปแบบที่ Golden Pine Resort Chiang Rai - Double Deluxe, Twin Deluxe, และ Triple Suite พร้อมสิ่งอำนวยความสะดวกครบครัน"
+    />
+    <meta
+      name="keywords"
+      content="ห้องพัก, Golden Pine Resort, Chiang Rai, Double Deluxe, Twin Deluxe, Triple Suite, ที่พักเชียงราย"
+    />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="ห้องพัก | Golden Pine Resort Chiang Rai - รีสอร์ต 4 ดาว"
+    />
+    <meta
+      property="og:description"
+      content="ห้องพักหรู 3 รูปแบบที่ Golden Pine Resort Chiang Rai"
+    />
+    <meta
+      property="og:image"
+      content="https://goldenpineresort.com/img/room-52.jpg"
+    />
+    <meta property="og:url" content="https://goldenpineresort.com/rooms.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <style>
+      :root {
+        --primary: #2f5d50;
+        --secondary: #40524d;
+        --accent: #86b817;
+        --light: #f1f6f5;
+        --dark: #0d1f1a;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        color: var(--secondary);
+      }
+
+      .font-display {
+        font-family: "Playfair Display", serif;
+      }
+
+      .hero-gradient {
+        background: linear-gradient(
+          135deg,
+          rgba(47, 93, 80, 0.9) 0%,
+          rgba(64, 82, 77, 0.8) 100%
+        );
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: linear-gradient(180deg, #86b817 0%, #2f5d50 100%);
+        color: #fff;
+        padding: 0.6rem 1.1rem;
+        border-radius: 999px;
+        font-weight: 600;
+        box-shadow: 0 8px 18px rgba(47, 93, 80, 0.25),
+          inset 0 -6px 18px rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+        text-decoration: none;
+        position: relative;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 18px 36px rgba(47, 93, 80, 0.28),
+          inset 0 -6px 18px rgba(255, 255, 255, 0.08);
+      }
+
+      .btn-primary:active {
+        transform: translateY(-1px) scale(0.997);
+        box-shadow: 0 6px 12px rgba(47, 93, 80, 0.18);
+      }
+
+      .section-padding {
+        padding: 80px 0;
+      }
+
+      .navbar-scroll {
+        backdrop-filter: blur(10px);
+        background: rgba(47, 93, 80, 0.95);
+      }
+
+      /* Swiper Customization */
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: white;
+        background: rgba(0, 0, 0, 0.3);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        transition: background 0.3s ease;
+      }
+      .swiper-button-next:hover,
+      .swiper-button-prev:hover {
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .swiper-pagination-bullet {
+        background: white;
+        opacity: 0.6;
+      }
+      .swiper-pagination-bullet-active {
+        background: var(--accent);
+        opacity: 1;
+      }
+
+      /* Mobile Optimizations */
+      @media (max-width: 640px) {
+        .section-padding {
+          padding: 40px 0;
+        }
+        .btn-primary:hover {
+          transform: none;
+        }
+      }
+
+      /* Tablet/iPad */
+      @media (min-width: 641px) and (max-width: 1024px) {
+        .section-padding {
+          padding: 60px 0;
+        }
+      }
+
+      /* Touch device optimizations */
+      @media (hover: none) {
+        .btn-primary:hover {
+          transform: none;
+        }
+      }
+
+      /* Bottom Navigation */
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+
+      /* Add bottom padding to body to prevent content from being hidden behind bottom nav */
+      body {
+        padding-bottom: 80px;
+      }
+
+      /* Touch targets */
+      @media (max-width: 1024px) {
+        button,
+        a {
+          min-height: 44px;
+          min-width: 44px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Navigation (Logo Only) -->
+    <nav
+      id="navbar"
+      class="fixed w-full top-0 z-50 transition-all duration-300 py-4"
+    >
+      <div class="container mx-auto px-6">
+        <div class="flex justify-center items-center">
+          <!-- Logo -->
+          <div class="flex items-center space-x-2 sm:space-x-3">
+            <img
+              src="img/logo.png"
+              alt="Golden Pine Resort"
+              class="h-12 sm:h-16"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+            />
+            <div
+              class="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center"
+              style="display: none"
+            >
+              <i class="fas fa-tree text-white text-lg sm:text-xl"></i>
+            </div>
+            <div>
+              <h1 class="font-display text-lg sm:text-2xl font-bold text-white">
+                Golden Pine Resort
+              </h1>
+              <p class="text-xs text-gray-300 hidden sm:block">
+                Chiang Rai Luxury Experience
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Bottom Navigation -->
+    <nav
+      class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 pb-safe"
+    >
+      <div class="flex justify-around items-center py-2">
+        <a
+          href="index.html"
+          class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors"
+        >
+          <i class="fas fa-home text-xl mb-1"></i>
+          <span class="text-xs font-medium">Home</span>
+        </a>
+        <a
+          href="index.html#about"
+          class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors"
+        >
+          <i class="fas fa-info-circle text-xl mb-1"></i>
+          <span class="text-xs font-medium">About</span>
+        </a>
+        <a
+          href="rooms.html"
+          class="flex flex-col items-center py-2 px-3 text-green-600 transition-colors"
+        >
+          <i class="fas fa-bed text-xl mb-1"></i>
+          <span class="text-xs font-medium">Rooms</span>
+        </a>
+        <a
+          href="index.html#restaurant"
+          class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors"
+        >
+          <i class="fas fa-utensils text-xl mb-1"></i>
+          <span class="text-xs font-medium">Restaurant</span>
+        </a>
+        <a
+          href="gallery.html"
+          class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors"
+        >
+          <i class="fas fa-images text-xl mb-1"></i>
+          <span class="text-xs font-medium">Gallery</span>
+        </a>
+        <a
+          href="contact.html"
+          class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors"
+        >
+          <i class="fas fa-phone text-xl mb-1"></i>
+          <span class="text-xs font-medium">Contact</span>
+        </a>
+        <a
+          href="booking.html"
+          class="flex flex-col items-center py-2 px-3 text-white bg-green-600 rounded-lg mx-1 transition-colors"
+        >
+          <i class="fas fa-calendar-check text-xl mb-1"></i>
+          <span class="text-xs font-medium">จอง</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="relative h-[60vh] flex items-center justify-center overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-cover bg-center"
+        style="background-image: url('img/roomhero1.jpg')"
+      ></div>
+      <div class="hero-gradient absolute inset-0"></div>
+      <div class="relative z-10 text-center text-white px-6">
+        <h1
+          class="font-display text-3xl sm:text-4xl md:text-6xl font-bold mb-6"
+        >
+          ห้องพักของเรา
+        </h1>
+        <p class="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+          สัมผัสความหรูหราและความสะดวกสบายในอ้อมกอดของธรรมชาติ
+        </p>
+        <a
+          href="#rooms"
+          class="btn-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg"
+        >
+          <i class="fas fa-arrow-down mr-2"></i>ดูห้องพักทั้งหมด
+        </a>
+      </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms" class="section-padding bg-gray-50">
+      <div class="container mx-auto px-6 space-y-16">
+        <!-- Room 1: Double Deluxe -->
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center"
+        >
+          <!-- Image Slider -->
+          <div class="relative rounded-lg overflow-hidden shadow-xl">
+            <div class="swiper room-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="img/room-52.jpg"
+                    alt="Double Deluxe Room"
+                    class="w-full h-96 object-cover rounded-sm"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="img/room-57.jpg"
+                    alt="Double Deluxe Room View"
+                    class="w-full h-96 object-cover rounded-sm"
+                  />
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <!-- Room Details -->
+          <div class="text-center lg:text-left">
+            <span
+              class="text-green-600 font-semibold text-sm uppercase tracking-wide"
+              >เริ่มต้น ฿3,500/คืน</span
+            >
+            <h2
+              class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6"
+            >
+              Double Deluxe Room
+            </h2>
+            <p class="text-gray-600 text-lg mb-8">
+              ห้องพักขนาด 32 ตร.ม. พร้อมเตียงคิงไซส์
+              เหมาะสำหรับคู่รักหรือนักเดินทางที่ต้องการความหรูหราและเป็นส่วนตัว
+              พร้อมระเบียงชมวิวสวน
+            </p>
+            <div class="grid grid-cols-2 gap-4 text-left mb-8">
+              <div class="flex items-center">
+                <i class="fas fa-bed text-green-600 mr-3"></i>
+                <span>1 เตียงคิงไซส์</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-users text-green-600 mr-3"></i>
+                <span>ผู้ใหญ่ 2 คน</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-ruler-combined text-green-600 mr-3"></i>
+                <span>32 ตร.ม.</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-wifi text-green-600 mr-3"></i>
+                <span>ฟรี Wi-Fi</span>
+              </div>
+            </div>
+            <a
+              href="booking.html"
+              class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors"
+            >
+              <i class="fas fa-calendar-check mr-2"></i>จองห้องนี้
+            </a>
+          </div>
+        </div>
+
+        <!-- Room 2: Twin Deluxe -->
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center"
+        >
+          <!-- Room Details -->
+          <div class="text-center lg:text-left lg:order-last">
+            <span
+              class="text-green-600 font-semibold text-sm uppercase tracking-wide"
+              >เริ่มต้น ฿3,200/คืน</span
+            >
+            <h2
+              class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6"
+            >
+              Twin Deluxe Room
+            </h2>
+            <p class="text-gray-600 text-lg mb-8">
+              ห้องพักขนาด 32 ตร.ม. พร้อมเตียงคู่
+              เหมาะสำหรับเพื่อนหรือครอบครัวที่ต้องการความสะดวกสบาย
+              พร้อมสิ่งอำนวยความสะดวกครบครัน
+            </p>
+            <div class="grid grid-cols-2 gap-4 text-left mb-8">
+              <div class="flex items-center">
+                <i class="fas fa-bed text-green-600 mr-3"></i>
+                <span>2 เตียงเดี่ยว</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-users text-green-600 mr-3"></i>
+                <span>ผู้ใหญ่ 2 คน</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-ruler-combined text-green-600 mr-3"></i>
+                <span>32 ตร.ม.</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-mountain text-green-600 mr-3"></i>
+                <span>วิวสวน</span>
+              </div>
+            </div>
+            <a
+              href="booking.html"
+              class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors"
+            >
+              <i class="fas fa-calendar-check mr-2"></i>จองห้องนี้
+            </a>
+          </div>
+
+          <!-- Image Slider -->
+          <div
+            class="relative rounded-lg overflow-hidden shadow-xl lg:order-first"
+          >
+            <div class="swiper room-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="img/room-54.jpg"
+                    alt="Twin Deluxe Room"
+                    class="w-full h-96 object-cover rounded-sm"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="img/room-twin-2.jpg"
+                    alt="Twin Deluxe Room Interior"
+                    class="w-full h-96 object-cover rounded-sm"
+                  />
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room 3: Triple Suite -->
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center"
+        >
+          <!-- Image Slider -->
+          <div class="relative rounded-lg overflow-hidden shadow-xl">
+            <div class="swiper room-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="img/room-70.jpg"
+                    alt="Triple Suite"
+                    class="w-full h-96 object-cover rounded-sm"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="img/room-triple-2.jpg"
+                    alt="Triple Suite Interior"
+                    class="w-full h-96 object-cover rounded-sm"
+                  />
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <!-- Room Details -->
+          <div class="text-center lg:text-left">
+            <span
+              class="text-green-600 font-semibold text-sm uppercase tracking-wide"
+              >เริ่มต้น ฿4,200/คืน</span
+            >
+            <h2
+              class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6"
+            >
+              Triple Suite
+            </h2>
+            <p class="text-gray-600 text-lg mb-8">
+              ห้องสวีทขนาดใหญ่ 40 ตร.ม.
+              เหมาะสำหรับครอบครัวหรือกลุ่มเพื่อนที่ต้องการพื้นที่กว้างขวางเป็นพิเศษ
+              พร้อมเตียงเสริมและพื้นที่นั่งเล่น
+            </p>
+            <div class="grid grid-cols-2 gap-4 text-left mb-8">
+              <div class="flex items-center">
+                <i class="fas fa-bed text-green-600 mr-3"></i>
+                <span>3 เตียงเดี่ยว</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-users text-green-600 mr-3"></i>
+                <span>ผู้ใหญ่ 3 คน</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-ruler-combined text-green-600 mr-3"></i>
+                <span>40 ตร.ม.</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-couch text-green-600 mr-3"></i>
+                <span>พื้นที่นั่งเล่น</span>
+              </div>
+            </div>
+            <a
+              href="booking.html"
+              class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors"
+            >
+              <i class="fas fa-calendar-check mr-2"></i>จองห้องนี้
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="section-padding">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <span
+            class="text-green-600 font-semibold text-sm uppercase tracking-wide"
+            >Room Amenities</span
+          >
+          <h2
+            class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6"
+          >
+            สิ่งอำนวยความสะดวกในห้องพัก
+          </h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+            เราใส่ใจในทุกรายละเอียดเพื่อให้การพักผ่อนของคุณสมบูรณ์แบบที่สุด
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 text-center"
+        >
+          <div class="flex flex-col items-center">
+            <i class="fas fa-wifi text-4xl text-green-600 mb-4"></i>
+            <p class="font-semibold">ฟรี Wi-Fi</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-tv text-4xl text-green-600 mb-4"></i>
+            <p class="font-semibold">ทีวีจอแบน</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-snowflake text-4xl text-green-600 mb-4"></i>
+            <p class="font-semibold">เครื่องปรับอากาศ</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-mug-hot text-4xl text-green-600 mb-4"></i>
+            <p class="font-semibold">กาแฟ/ชา</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-lock text-4xl text-green-600 mb-4"></i>
+            <p class="font-semibold">ตู้เซฟ</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-shower text-4xl text-green-600 mb-4"></i>
+            <p class="font-semibold">ฝักบัว</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-wind text-4xl text-green-600 mb-4"></i>
+            <p class="font-semibold">ไดร์เป่าผม</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-concierge-bell text-4xl text-green-600 mb-4"></i>
+            <p class="font-semibold">รูมเซอร์วิส</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-tshirt text-4xl text-green-600 mb-4"></i>
+            <p class="font-semibold">บริการซักรีด</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <i class="fas fa-parking text-4xl text-green-600 mb-4"></i>
+            <p class="font-semibold">ที่จอดรถฟรี</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+      <div class="container mx-auto px-6">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+        >
+          <!-- Logo & Description -->
+          <div class="lg:col-span-2">
+            <div class="flex items-center space-x-3 mb-6">
+              <img
+                src="img/logo.png"
+                alt="Golden Pine Resort"
+                class="h-12"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+              />
+              <div
+                class="w-12 h-12 flex items-center justify-center"
+                style="display: none"
+              >
+                <i class="fas fa-tree text-green-400 text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-display text-2xl font-bold">
+                  Golden Pine Resort
+                </h3>
+                <p class="text-gray-400 text-sm">
+                  Chiang Rai Luxury Experience
+                </p>
+              </div>
+            </div>
+            <p class="text-gray-400 mb-6 max-w-md">
+              Golden Pine Resort รีสอร์ตหรูหรา 4 ดาว ในใจกลางเชียงราย
+              พร้อมบริการครบครันและสิ่งอำนวยความสะดวกระดับโลก
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="https://www.facebook.com/goldenpineresort"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/goldenpineresort/"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://line.me/R/ti/p/@670tzncs"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
+              >
+                <i class="fab fa-line"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="font-semibold text-lg mb-6">ลิงก์ด่วน</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >หน้าแรก</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#about"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >เกี่ยวกับเรา</a
+                >
+              </li>
+              <li>
+                <a
+                  href="rooms.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >ห้องพัก</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#restaurant"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >ร้านอาหาร</a
+                >
+              </li>
+              <li>
+                <a
+                  href="gallery.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >แกลลอรี่</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >ติดต่อ</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h4 class="font-semibold text-lg mb-6">ติดต่อเรา</h4>
+            <div class="space-y-3 text-gray-400">
+              <p class="flex items-start">
+                <i class="fas fa-map-marker-alt mr-3 mt-1 text-green-400"></i>
+                <span
+                  >291 หมู่ 4 ตำบลนางแล<br />อำเภอเมืองเชียงราย จังหวัดเชียงราย
+                  57100</span
+                >
+              </p>
+              <p class="flex items-center">
+                <i class="fas fa-phone mr-3 text-green-400"></i>
+                <span>(+66) 53‑706270‑4</span>
+              </p>
+              <p class="flex items-center">
+                <i class="fas fa-envelope mr-3 text-green-400"></i>
+                <span>rsvn@goldenpineresorts.com</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400"
+        >
+          <p>
+            &copy; 2024 Golden Pine Resort. All rights reserved. | Designed with
+            ❤️ in Thailand
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+      // Initialize Swiper
+      document.querySelectorAll(".room-swiper").forEach((swiperEl) => {
+        new Swiper(swiperEl, {
+          loop: true,
+          speed: 800,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: swiperEl.querySelector(".swiper-pagination"),
+            clickable: true,
+          },
+          navigation: {
+            nextEl: swiperEl.querySelector(".swiper-button-next"),
             prevEl: swiperEl.querySelector(".swiper-button-prev"),
           },
         });
-      }); // <-- ปิด forEach loop ของ Swiper ที่นี่
+      });
 
       // Navbar Scroll Effect
       window.addEventListener("scroll", function () {
         const navbar = document.getElementById("navbar");
         if (window.scrollY > 50) {
-          navbar.classList.add("navbar-scroll"); // โค้ดส่วนนี้ถูกย้ายออกมาแล้ว
+          navbar.classList.add("navbar-scroll");
         } else {
           navbar.classList.remove("navbar-scroll");
         }
       });
     </script>
 
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      Tawk_API.onLoad = function () {
+        Tawk_API.setAttributes({
+          name: "Golden Pine Resort",
+          email: "rsvn@goldenpineresorts.com",
+        });
+      };
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/6756c8d02480f5b4f59f4e8a/1ien8h8oo";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
+  </body>
+</html>
