@@ -1,35 +1,19 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Golden Pine Resort Chiang Rai - โรงแรม 4 ดาว เชียงราย</title>
+    <title>Golden Pine Resort Chiang Rai | A Sanctuary of Serenity</title>
 
     <!-- SEO Meta Tags -->
     <meta
       name="description"
-      content="Golden Pine Resort Chiang Rai - รีสอร์ต 4 ดาว ใกล้สนามบินแม่ฟ้าหลวง พร้อมสระว่ายน้ำ สปา ฟิตเนส และห้องพักหรูหรา"
+      content="Experience refined relaxation at Golden Pine Resort, a luxury retreat nestled amidst the Lanna charm of Chiang Rai. Close to Mae Fah Luang Airport."
     />
     <meta
       name="keywords"
-      content="Golden Pine Resort, Chiang Rai, โรงแรม, รีสอร์ต, เชียงราย, สปา, สระว่ายน้ำ, ห้องพัก"
+      content="Golden Pine Resort, Chiang Rai, Luxury Resort, Lanna Style, Boutique Hotel, Mae Fah Luang Airport"
     />
-
-    <!-- Open Graph -->
-    <meta
-      property="og:title"
-      content="Golden Pine Resort Chiang Rai | Luxury 4-Star Resort"
-    />
-    <meta
-      property="og:description"
-      content="Golden Pine Resort Chiang Rai - รีสอร์ต 4 ดาว ใกล้สนามบินแม่ฟ้าหลวง พร้อมสระว่ายน้ำ สปา ฟิตเนส และห้องพักหรูหรา"
-    />
-    <meta
-      property="og:image"
-      content="https://goldenpineresort.com/img/front1.jpg"
-    />
-    <meta property="og:url" content="https://goldenpineresort.com/" />
-    <meta property="og:type" content="website" />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -44,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
 
@@ -54,270 +38,152 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <style>
       :root {
-        --primary: #2f5d50;
-        --secondary: #40524d;
-        --accent: #86b817;
-        --light: #f1f6f5;
-        --dark: #0d1f1a;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+        /* Deep Forest Green - Luxury & Calm */
+        --primary: #1a3c34;
+        /* Muted Gold - Exquisite */
+        --gold: #c5a059;
+        --light-gold: #f3e9d2;
+        --text-dark: #2d3748;
+        --text-light: #718096;
       }
 
       body {
         font-family: "Inter", sans-serif;
-        line-height: 1.6;
-        color: var(--secondary);
+        color: var(--text-dark);
+        background-color: #fdfbf7; /* Warm off-white */
       }
 
       .font-display {
         font-family: "Playfair Display", serif;
       }
 
-      .hero-gradient {
+      /* Elegant Gradient Overlay */
+      .hero-overlay {
         background: linear-gradient(
-          135deg,
-          rgba(47, 93, 80, 0.9) 0%,
-          rgba(64, 82, 77, 0.8) 100%
+          to bottom,
+          rgba(26, 60, 52, 0.3) 0%,
+          rgba(26, 60, 52, 0.6) 100%
         );
       }
 
-      .card-hover {
-        transition: all 0.3s ease;
+      .text-gold {
+        color: var(--gold);
       }
 
-      .card-hover:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      .bg-primary {
+        background-color: var(--primary);
       }
 
-      .btn-primary {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        background: linear-gradient(180deg, #86b817 0%, #2f5d50 100%);
-        color: #fff;
-        padding: 0.6rem 1.1rem;
-        border-radius: 999px;
-        font-weight: 600;
-        box-shadow: 0 8px 18px rgba(47, 93, 80, 0.25),
-          inset 0 -6px 18px rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        transition: transform 0.22s ease, box-shadow 0.22s ease;
-        text-decoration: none;
-        position: relative;
+      /* Custom Buttons */
+      .btn-gold {
+        background-color: var(--gold);
+        color: white;
+        transition: all 0.4s ease;
+        letter-spacing: 0.05em;
+      }
+      .btn-gold:hover {
+        background-color: #b08d48;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
       }
 
-      .btn-primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 18px 36px rgba(47, 93, 80, 0.28),
-          inset 0 -6px 18px rgba(255, 255, 255, 0.08);
+      .btn-outline-white {
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        color: white;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        transition: all 0.4s ease;
+      }
+      .btn-outline-white:hover {
+        background: white;
+        color: var(--primary);
       }
 
-      .btn-primary:active {
-        transform: translateY(-1px) scale(0.997);
-        box-shadow: 0 6px 12px rgba(47, 93, 80, 0.18);
+      /* Card Styling */
+      .luxury-card {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .luxury-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
       }
 
-      .section-padding {
-        padding: 80px 0;
-      }
-
-      .animate-float {
-        animation: float 6s ease-in-out infinite;
-      }
-
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-20px);
-        }
-      }
-
-      /* Performance optimizations */
-      img {
-        will-change: transform;
-      }
-
-      .swiper-slide {
-        will-change: transform;
-      }
-
-      .swiper-pagination-bullet-active {
-        background: var(--accent) !important;
-      }
-
+      /* Navigation */
       .navbar-scroll {
+        background: rgba(26, 60, 52, 0.95);
         backdrop-filter: blur(10px);
-        background: rgba(47, 93, 80, 0.95);
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       }
 
-      .text-3d {
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: #ffffff;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2);
+      /* Section Spacing */
+      .section-padding {
+        padding: 100px 0;
       }
 
-      /* Mobile Optimizations */
-      @media (max-width: 640px) {
-        .section-padding {
-          padding: 40px 0;
-        }
-        .text-3d {
-          font-size: 1.5rem;
-        }
-        .card-hover:hover {
-          transform: none;
-        }
-        .btn-primary:hover {
-          transform: none;
-        }
-      }
-
-      /* Tablet/iPad */
-      @media (min-width: 641px) and (max-width: 1024px) {
-        .text-3d {
-          font-size: 2.2rem;
-        }
-        .section-padding {
-          padding: 60px 0;
-        }
-      }
-
-      /* Desktop */
-      @media (min-width: 1025px) {
-        .text-3d {
-          font-size: 3.5rem;
-        }
-      }
-
-      /* Touch device optimizations */
-      @media (hover: none) {
-        .card-hover:hover {
-          transform: none;
-        }
-        .btn-primary:hover {
-          transform: none;
-        }
-      }
-
-      /* Bottom Navigation */
-      .pb-safe {
-        padding-bottom: env(safe-area-inset-bottom);
-      }
-
-      /* Add bottom padding to body to prevent content from being hidden behind bottom nav */
-      body {
-        padding-bottom: 80px;
-      }
-
-      /* Touch targets */
-      @media (max-width: 1024px) {
-        button,
-        a {
-          min-height: 44px;
-          min-width: 44px;
-        }
+      /* Gold Separator */
+      .separator {
+        width: 60px;
+        height: 2px;
+        background-color: var(--gold);
+        margin: 20px auto;
       }
     </style>
   </head>
-  <body>
-    <!-- Top Navigation (Logo Only) -->
+  <body class="antialiased">
+    <!-- Top Navigation -->
     <nav
       id="navbar"
-      class="fixed w-full top-0 z-50 transition-all duration-300 py-4"
+      class="fixed w-full top-0 z-50 transition-all duration-500 py-6"
     >
       <div class="container mx-auto px-6">
-        <div class="flex justify-center items-center">
+        <div class="flex justify-between items-center">
           <!-- Logo -->
-          <div class="flex items-center space-x-2 sm:space-x-3">
+          <a href="index.html" class="flex items-center gap-3 group">
             <img
               src="img/logo.png"
               alt="Golden Pine Resort"
-              class="h-12 sm:h-16"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+              class="h-14 transition-transform group-hover:scale-105"
             />
-            <div
-              class="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center"
-              style="display: none"
-            >
-              <i class="fas fa-tree text-white text-lg sm:text-xl"></i>
-            </div>
-            <div>
-              <h1 class="font-display text-lg sm:text-2xl font-bold text-white">
-                Golden Pine Resort
+            <div class="hidden md:block text-white">
+              <h1 class="font-display text-xl font-medium tracking-wider">
+                GOLDEN PINE
               </h1>
-              <p class="text-xs text-gray-300 hidden sm:block">
-                Chiang Rai Luxury Experience
+              <p class="text-[10px] tracking-[0.2em] uppercase opacity-80">
+                Resort & Spa
               </p>
             </div>
-          </div>
-        </div>
-      </div>
-    </nav>
+          </a>
 
-    <!-- Bottom Navigation -->
-    <nav
-      class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 pb-safe"
-    >
-      <div class="flex justify-around items-center py-2">
-        <a
-          href="#home"
-          class="flex flex-col items-center py-2 px-3 text-green-600 transition-colors"
-        >
-          <i class="fas fa-home text-xl mb-1"></i>
-          <span class="text-xs font-medium">Home</span>
-        </a>
-        <a
-          href="#booking-form"
-          class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors"
-        >
-          <i class="fas fa-calendar-alt text-xl mb-1"></i>
-          <span class="text-xs font-medium">Booking</span>
-        </a>
-        <a
-          href="rooms.html"
-          class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors"
-        >
-          <i class="fas fa-bed text-xl mb-1"></i>
-          <span class="text-xs font-medium">Rooms</span>
-        </a>
-        <a
-          href="#restaurant"
-          class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors"
-        >
-          <i class="fas fa-utensils text-xl mb-1"></i>
-          <span class="text-xs font-medium">Restaurant</span>
-        </a>
-        <a
-          href="gallery.html"
-          class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors"
-        >
-          <i class="fas fa-images text-xl mb-1"></i>
-          <span class="text-xs font-medium">Gallery</span>
-        </a>
-        <a
-          href="contact.html"
-          class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors"
-        >
-          <i class="fas fa-phone text-xl mb-1"></i>
-          <span class="text-xs font-medium">Contact</span>
-        </a>
-        <a
-          href="booking.html"
-          class="flex flex-col items-center py-2 px-3 text-white bg-green-600 rounded-lg mx-1 transition-colors"
-        >
-          <i class="fas fa-calendar-check text-xl mb-1"></i>
-          <span class="text-xs font-medium">จอง</span>
+          <!-- Desktop Menu (Hidden on Mobile) -->
+          <div
+            class="hidden lg:flex items-center space-x-8 text-white text-sm tracking-wide"
+          >
+            <a href="#home" class="hover:text-gold transition-colors">HOME</a>
+            <a href="#about" class="hover:text-gold transition-colors"
+              >THE RESORT</a
+            >
+            <a href="rooms.html" class="hover:text-gold transition-colors"
+              >ACCOMMODATION</a
+            >
+            <a href="#dining" class="hover:text-gold transition-colors"
+              >DINING</a
+            >
+            <a href="contact.html" class="hover:text-gold transition-colors"
+              >CONTACT</a
+            >
+            <a
+              href="booking.html"
+              class="btn-gold px-6 py-2.5 rounded-sm font-medium"
+              >BOOK NOW</a
+            >
+          </div>
         </a>
       </div>
     </nav>
@@ -325,14 +191,14 @@
     <!-- Hero Section -->
     <section
       id="home"
-      class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      class="relative h-screen flex items-center justify-center overflow-hidden"
     >
       <!-- Background Slider -->
       <div class="swiper hero-swiper absolute inset-0">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div
-              class="absolute inset-0 bg-cover bg-center"
+              class="absolute inset-0 bg-cover bg-center transform scale-105 transition-transform duration-[10s]"
               style="background-image: url('img/front1.jpg')"
             ></div>
           </div>
@@ -2320,200 +2186,7 @@
               block: "start",
             });
           }
-
-          // Close mobile menu if open
-          if (window.innerWidth < 1024 && isMenuOpen) {
-            toggleMobileMenu();
-          }
         });
-      });
-
-      // Gallery filter functionality
-      document.querySelectorAll(".gallery-filter").forEach((button) => {
-        button.addEventListener("click", function () {
-          const filter = this.getAttribute("data-filter");
-
-          // Update active button
-          document.querySelectorAll(".gallery-filter").forEach((btn) => {
-            btn.classList.remove("active", "bg-green-600", "text-white");
-            btn.classList.add(
-              "bg-white",
-              "text-gray-700",
-              "border",
-              "border-gray-300"
-            );
-          });
-
-          this.classList.add("active", "bg-green-600", "text-white");
-          this.classList.remove(
-            "bg-white",
-            "text-gray-700",
-            "border",
-            "border-gray-300"
-          );
-
-          // Filter gallery items
-          document.querySelectorAll(".gallery-item").forEach((item) => {
-            if (
-              filter === "all" ||
-              item.getAttribute("data-category") === filter
-            ) {
-              item.style.display = "block";
-            } else {
-              item.style.display = "none";
-            }
-          });
-        });
-      });
-
-      // Gallery lightbox effect
-      document.querySelectorAll("#gallery img").forEach((img) => {
-        img.addEventListener("click", function () {
-          const lightbox = document.createElement("div");
-          lightbox.className =
-            "fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 cursor-pointer";
-          lightbox.innerHTML = `<img src="${this.src}" class="max-w-full max-h-full object-contain">`;
-
-          lightbox.addEventListener("click", function () {
-            document.body.removeChild(lightbox);
-          });
-
-          document.body.appendChild(lightbox);
-        });
-      });
-    </script>
-
-    <!-- Booking Form Submission Script -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const form = document.getElementById("bookingForm");
-        const submitBtn = document.getElementById("submit-btn");
-        const successMsg = document.getElementById("success-message");
-        const errorMsg = document.getElementById("error-message");
-        const submitText = document.getElementById("submit-text");
-        const loadingText = document.getElementById("loading-text");
-
-        // Set minimum date for check-in/check-out
-        const today = new Date().toISOString().split("T")[0];
-        const checkinInput = form.querySelector('input[name="checkin"]');
-        const checkoutInput = form.querySelector('input[name="checkout"]');
-        if (checkinInput) checkinInput.setAttribute("min", today);
-        if (checkoutInput) checkoutInput.setAttribute("min", today);
-
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          const scriptURL =
-            "https://script.google.com/macros/s/AKfycbybRG2IoysYNRxmfyTy3PwMI8vmRumY73ENYJlAv6hhXKCz5qF5jsZo8yjNB4vBqsY4qg/exec";
-
-          submitBtn.disabled = true;
-          submitText.classList.add("hidden");
-          loadingText.classList.remove("hidden");
-
-          fetch(scriptURL, { method: "POST", body: new FormData(form) })
-            .then((response) => {
-              if (response.ok) {
-                successMsg.classList.remove("hidden");
-                errorMsg.classList.add("hidden");
-                form.reset();
-                window.scrollTo({
-                  top: form.offsetTop - 100,
-                  behavior: "smooth",
-                });
-              } else {
-                throw new Error("Network response was not ok.");
-              }
-            })
-            .catch((error) => {
-              console.error("Error!", error.message);
-              errorMsg.classList.remove("hidden");
-              successMsg.classList.add("hidden");
-            })
-            .finally(() => {
-              submitBtn.disabled = false;
-              submitText.classList.remove("hidden");
-              loadingText.classList.add("hidden");
-            });
-        });
-      });
-    </script>
-
-    <!-- Live Chat - tawk.to -->
-    <div id="fb-root"></div>
-    <div id="fb-customer-chat" class="fb-customerchat"></div>
-
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-      var Tawk_API = Tawk_API || {},
-        Tawk_LoadStart = new Date();
-      Tawk_API.onLoad = function () {
-        // ตั้งค่าข้อความต้อนรับ
-        Tawk_API.setAttributes({
-          name: "Golden Pine Resort",
-          email: "info@goldenpineresort.com",
-        });
-      };
-      (function () {
-        var s1 = document.createElement("script"),
-          s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = "https://embed.tawk.to/6756c8d02480f5b4f59f4e8a/1ien8h8oo";
-        s1.charset = "UTF-8";
-        s1.setAttribute("crossorigin", "*");
-        s0.parentNode.insertBefore(s1, s0);
-      })();
-    </script>
-    <!--End of Tawk.to Script-->
-
-    <!-- Mobile Menu Script -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const btn = document.getElementById("mobile-menu-btn");
-        const menu = document.getElementById("mobile-menu");
-        const navbar = document.getElementById("navbar");
-        let isMenuOpen = false;
-
-        console.log("Mobile menu script loaded", btn, menu); // Debug
-
-        if (btn && menu) {
-          btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            const icon = btn.querySelector("i");
-
-            isMenuOpen = !isMenuOpen;
-            console.log("Menu clicked, isOpen:", isMenuOpen); // Debug
-
-            if (isMenuOpen) {
-              menu.classList.add("show");
-              icon.className = "fas fa-times";
-            } else {
-              menu.classList.remove("show");
-              icon.className = "fas fa-bars";
-            }
-          });
-
-          // Close menu when clicking links
-          menu.querySelectorAll("a").forEach((link) => {
-            link.addEventListener("click", () => {
-              if (isMenuOpen) {
-                menu.classList.remove("show");
-                btn.querySelector("i").className = "fas fa-bars";
-                isMenuOpen = false;
-              }
-            });
-          });
-        }
-
-        // Navbar scroll effect
-        if (navbar) {
-          window.addEventListener("scroll", () => {
-            if (window.scrollY > 50) {
-              navbar.classList.add("navbar-scroll");
-            } else {
-              navbar.classList.remove("navbar-scroll");
-            }
-          });
-        }
       });
     </script>
   </body>
