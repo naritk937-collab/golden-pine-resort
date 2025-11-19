@@ -14,7 +14,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Deploy to server via FTP
+      - name: Deploy to dev.goldenpineresorts.com via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: dev.goldenpineresorts.com
@@ -22,8 +22,13 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           port: 21
-          local-dir: ./
-          server-dir: /
+          
+          # ✅ Path ต้นทาง: ชี้ไปที่โฟลเดอร์หลักของโค้ดใน Repository
+          local-dir: ./golden-pine-resort-main 
+          
+          # ✅ Path ปลายทาง: ชี้ไปที่ Root ของ Subdomain ใน Plesk
+          server-dir: /dev.goldenpineresorts.com 
+          
           dangerous-clean-slate: false
           timeout: 60000
           log-level: verbose
