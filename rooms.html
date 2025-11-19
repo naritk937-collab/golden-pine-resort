@@ -214,6 +214,9 @@
         </a>
         <a
           href="rooms.html"
+          class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors"
+        >
+          <i class="fas fa-bed text-xl mb-1"></i>
           <span class="text-xs font-medium">Rooms</span>
         </a>
         <a
@@ -221,6 +224,31 @@
           class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors"
         >
           <i class="fas fa-utensils text-xl mb-1"></i>
+          <span class="text-xs font-medium">Restaurant</span>
+        </a>
+        <a
+          href="gallery.html"
+          class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors"
+        >
+          <i class="fas fa-images text-xl mb-1"></i>
+          <span class="text-xs font-medium">Gallery</span>
+        </a>
+        <a
+          href="contact.html"
+          class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors"
+        >
+          <i class="fas fa-phone text-xl mb-1"></i>
+          <span class="text-xs font-medium">Contact</span>
+        </a>
+        <a
+          href="booking.html"
+          class="flex flex-col items-center py-2 px-3 text-white bg-green-600 rounded-lg mx-1 transition-colors"
+        >
+          <i class="fas fa-calendar-check text-xl mb-1"></i>
+          <span class="text-xs font-medium">จอง</span>
+        </a>
+      </div>
+    </nav>
 
     <!-- Hero Section -->
     <section
@@ -734,33 +762,3 @@
     <!--End of Tawk.to Script-->
   </body>
 </html>
-```
-
-### สรุปการเปลี่ยนแปลง
-
-1.  **นำดีไซน์ใหม่มาปรับใช้:** ผมได้ยกโครงสร้าง, สี, และฟอนต์จาก `index.html` ใหม่มาใช้กับหน้า `rooms.html` ทั้งหมด
-2.  **ปรับปรุง Hero Section:** เปลี่ยนส่วนหัวของหน้าให้เป็นภาพขนาดใหญ่ พร้อมข้อความที่ดูหรูหราและสอดคล้องกับแบรนด์
-3.  **ออกแบบการแสดงผลห้องพักใหม่:**
-    *   เปลี่ยนจากการ์ดเล็กๆ เป็น Section ขนาดใหญ่สำหรับห้องพักแต่ละประเภท
-    *   ใช้ Layout แบบรูปภาพสลับกับข้อความ (ซ้าย-ขวา) เพื่อให้ดูน่าสนใจและไม่น่าเบื่อ
-    *   เพิ่ม **Image Slider** ในแต่ละห้องพักเพื่อให้ลูกค้าสามารถเลื่อนดูภาพหลายๆ มุมได้
-    *   แสดงรายละเอียดสำคัญ (จำนวนผู้เข้าพัก, ขนาดห้อง, ประเภทเตียง) ด้วยไอคอนที่ชัดเจน
-    *   มีปุ่ม **"Book Now"** และราคาที่เห็นได้ชัดเจนสำหรับห้องพักทุกประเภท
-4.  **เพิ่ม Section สิ่งอำนวยความสะดวก:** สร้างส่วนสรุปสิ่งอำนวยความสะดวกในห้องพักทั้งหมดด้วยดีไซน์ที่สะอาดตา
-5.  **เพิ่มแอนิเมชัน:** ใส่แอนิเมชันตอนเลื่อนหน้าจอ (Fade-in) เพื่อให้เว็บไซต์ดูมีชีวิตชีวาและทันสมัยมากขึ้น
-
-### ขั้นตอนต่อไป
-
-คุณสามารถใช้ **GitHub Desktop** เพื่อ Commit และ Push การเปลี่ยนแปลงนี้ขึ้นไปได้เลยครับ:
-
-1.  เปิด **GitHub Desktop**
-2.  คุณจะเห็นไฟล์ `rooms.html` ในรายการ **Changes**
-3.  ใส่ Summary ว่า: `Redesign rooms page to match new brand style`
-4.  กด **Commit to main** และ **Push origin**
-
-หลังจากระบบ Deploy เสร็จเรียบร้อย (Action ขึ้นสีเขียว) และคุณทำการ **Hard Refresh (Ctrl + F5)** ที่หน้าเว็บ `dev.goldenpineresorts.com/rooms.html` คุณจะพบกับหน้าห้องพักโฉมใหม่ที่สวยงามและใช้งานง่ายขึ้นมากครับ!
-
-<!--
-[PROMPT_SUGGESTION]ช่วยปรับปรุงหน้า Gallery ให้เข้ากับดีไซน์ใหม่ด้วย[/PROMPT_SUGGESTION]
-[PROMPT_SUGGESTION]ฉันจะเปลี่ยนรูปภาพในหน้าห้องพักได้อย่างไร?[/PROMPT_SUGGESTION]
--->
