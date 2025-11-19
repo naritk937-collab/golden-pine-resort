@@ -52,6 +52,10 @@ foreach ($file in $filesToSync) {
 
 # Upload img folder
 $winscpScript += "put -r img/`n"
+
+# Upload css and js folders
+$winscpScript += "put -r css/`n"
+$winscpScript += "put -r js/`n"
 $winscpScript += "exit`n"
 
 # Save temporary script

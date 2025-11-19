@@ -1413,12 +1413,7 @@
               </div>
             </div>
 
-            <form
-              action="https://formspree.io/f/xpznvqko"
-              method="POST"
-              id="bookingForm"
-              class="space-y-6"
-            >
+            <form id="bookingForm" class="space-y-6">
               <div class="grid md:grid-cols-2 gap-6">
                 <div>
                   <label
@@ -2331,6 +2326,61 @@
           });
 
           document.body.appendChild(lightbox);
+        });
+      });
+    </script>
+
+    <!-- Booking Form Submission Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("bookingForm");
+        const submitBtn = document.getElementById("submit-btn");
+        const successMsg = document.getElementById("success-message");
+        const errorMsg = document.getElementById("error-message");
+        const submitText = document.getElementById("submit-text");
+        const loadingText = document.getElementById("loading-text");
+
+        // Set minimum date for check-in/check-out
+        const today = new Date().toISOString().split("T")[0];
+        const checkinInput = form.querySelector('input[name="checkin"]');
+        const checkoutInput = form.querySelector('input[name="checkout"]');
+        if (checkinInput) checkinInput.setAttribute("min", today);
+        if (checkoutInput) checkoutInput.setAttribute("min", today);
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const scriptURL =
+            "https://script.google.com/macros/s/AKfycbybRG2IoysYNRxmfyTy3PwMI8vmRumY73ENYJlAv6hhXKCz5qF5jsZo8yjNB4vBqsY4qg/exec";
+
+          submitBtn.disabled = true;
+          submitText.classList.add("hidden");
+          loadingText.classList.remove("hidden");
+
+          fetch(scriptURL, { method: "POST", body: new FormData(form) })
+            .then((response) => {
+              if (response.ok) {
+                successMsg.classList.remove("hidden");
+                errorMsg.classList.add("hidden");
+                form.reset();
+                window.scrollTo({
+                  top: form.offsetTop - 100,
+                  behavior: "smooth",
+                });
+              } else {
+                throw new Error("Network response was not ok.");
+              }
+            })
+            .catch((error) => {
+              console.error("Error!", error.message);
+              errorMsg.classList.remove("hidden");
+              successMsg.classList.add("hidden");
+            })
+            .finally(() => {
+              submitBtn.disabled = false;
+              submitText.classList.remove("hidden");
+              loadingText.classList.add("hidden");
+            });
         });
       });
     </script>
