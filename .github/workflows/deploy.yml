@@ -20,22 +20,10 @@ jobs:
           server: dev.goldenpineresorts.com
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-<<<<<<< HEAD
           protocol: sftp
           port: 22
           local-dir: ./
           server-dir: /public_html/
-=======
-          protocol: ftp
-          port: 21
-          
-          # ✅ แก้ไข Path ต้นทาง: ต้องมี / ปิดท้ายเพื่อให้ Action รู้ว่าเป็นโฟลเดอร์
-          local-dir: ./golden-pine-resort-main/
-          
-          # ✅ แก้ไข Path ปลายทาง: ชี้ไปที่ Root ของ Subdomain ใน Plesk
-          server-dir: /dev.goldenpineresorts.com
-          
->>>>>>> 33313bf17379d9a3f79d1287f949ba809704e0a3
           dangerous-clean-slate: false
           timeout: 60000
           log-level: verbose
