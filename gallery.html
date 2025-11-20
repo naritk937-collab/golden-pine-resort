@@ -48,23 +48,15 @@
 
     <style>
       :root {
-        --primary: #2f5d50;
-        --secondary: #40524d;
-        --accent: #86b817;
-        --light: #f1f6f5;
-        --dark: #0d1f1a;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+        --primary: #1a3c34;
+        --gold: #c5a059;
       }
 
       body {
         font-family: "Inter", sans-serif;
         line-height: 1.6;
-        color: var(--secondary);
+        color: #2d3748;
+        background-color: #f8f7f5;
       }
 
       .font-display {
@@ -73,47 +65,10 @@
 
       .hero-gradient {
         background: linear-gradient(
-          135deg,
-          rgba(47, 93, 80, 0.9) 0%,
-          rgba(64, 82, 77, 0.8) 100%
+          to bottom,
+          rgba(26, 60, 52, 0.3) 0%,
+          rgba(26, 60, 52, 0.6) 100%
         );
-      }
-
-      .card-hover {
-        transition: all 0.3s ease;
-      }
-
-      .card-hover:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      }
-
-      .btn-primary {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        background: linear-gradient(180deg, #86b817 0%, #2f5d50 100%);
-        color: #fff;
-        padding: 0.6rem 1.1rem;
-        border-radius: 999px;
-        font-weight: 600;
-        box-shadow: 0 8px 18px rgba(47, 93, 80, 0.25),
-          inset 0 -6px 18px rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        transition: transform 0.22s ease, box-shadow 0.22s ease;
-        text-decoration: none;
-        position: relative;
-      }
-
-      .btn-primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 18px 36px rgba(47, 93, 80, 0.28),
-          inset 0 -6px 18px rgba(255, 255, 255, 0.08);
-      }
-
-      .btn-primary:active {
-        transform: translateY(-1px) scale(0.997);
-        box-shadow: 0 6px 12px rgba(47, 93, 80, 0.18);
       }
 
       .section-padding {
@@ -121,17 +76,25 @@
       }
 
       .navbar-scroll {
+        background: rgba(26, 60, 52, 0.95);
         backdrop-filter: blur(10px);
-        background: rgba(47, 93, 80, 0.95);
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       }
 
       /* Gallery specific styles */
       .gallery-item {
         cursor: pointer;
         transition: all 0.3s ease;
+        overflow: hidden;
       }
 
-      .gallery-item:hover {
+      .gallery-item img {
+        transition: transform 0.4s ease;
+      }
+
+      .gallery-item:hover img {
         transform: scale(1.05);
       }
 
@@ -160,6 +123,7 @@
         max-width: 90%;
         max-height: 90%;
         object-fit: contain;
+        border-radius: 4px;
       }
 
       .lightbox-close {
@@ -171,39 +135,16 @@
         cursor: pointer;
       }
 
+      .gallery-filter.active {
+        background-color: var(--primary);
+        color: white;
+        border-color: var(--primary);
+      }
+
       /* Mobile Optimizations */
       @media (max-width: 640px) {
         .section-padding {
           padding: 40px 0;
-        }
-        .card-hover:hover {
-          transform: none;
-        }
-        .btn-primary:hover {
-          transform: none;
-        }
-        .gallery-item:hover {
-          transform: none;
-        }
-      }
-
-      /* Tablet/iPad */
-      @media (min-width: 641px) and (max-width: 1024px) {
-        .section-padding {
-          padding: 60px 0;
-        }
-      }
-
-      /* Touch device optimizations */
-      @media (hover: none) {
-        .card-hover:hover {
-          transform: none;
-        }
-        .btn-primary:hover {
-          transform: none;
-        }
-        .gallery-item:hover {
-          transform: none;
         }
       }
 
@@ -212,26 +153,16 @@
         padding-bottom: env(safe-area-inset-bottom);
       }
 
-      /* Add bottom padding to body to prevent content from being hidden behind bottom nav */
       body {
-        padding-bottom: 80px;
-      }
-
-      /* Touch targets */
-      @media (max-width: 1024px) {
-        button,
-        a {
-          min-height: 44px;
-          min-width: 44px;
-        }
+        padding-bottom: 80px; /* For mobile nav */
       }
     </style>
   </head>
-  <body>
-    <!-- Top Navigation (Logo Only) -->
+  <body class="antialiased">
+    <!-- Top Navigation -->
     <nav
       id="navbar"
-      class="fixed w-full top-0 z-50 transition-all duration-300 py-4"
+      class="fixed w-full top-0 z-50 transition-all duration-500 py-6"
     >
       <div class="container mx-auto px-6">
         <div class="flex justify-between items-center">
@@ -252,30 +183,25 @@
             </div>
           </a>
 
-          <!-- Desktop Menu (Hidden on Mobile) -->
+          <!-- Desktop Menu -->
           <div
             class="hidden lg:flex items-center space-x-8 text-white text-sm tracking-wide"
           >
-            <a href="index.html#home" class="hover:text-gold transition-colors"
+            <a href="index.html" class="hover:text-gold transition-colors"
               >HOME</a
-            >
-            <a href="index.html#about" class="hover:text-gold transition-colors"
-              >THE RESORT</a
             >
             <a href="rooms.html" class="hover:text-gold transition-colors"
               >ACCOMMODATION</a
             >
-            <a
-              href="index.html#dining"
-              class="hover:text-gold transition-colors"
-              >DINING</a
+            <a href="gallery.html" class="text-gold transition-colors"
+              >GALLERY</a
             >
             <a href="contact.html" class="hover:text-gold transition-colors"
               >CONTACT</a
             >
             <a
               href="booking.html"
-              class="btn-gold px-6 py-2.5 rounded-sm font-medium"
+              class="bg-gold text-white px-6 py-2.5 rounded-sm font-medium hover:bg-yellow-700 transition-colors"
               >BOOK NOW</a
             >
           </div>
@@ -285,9 +211,8 @@
 
     <!-- Bottom Navigation -->
     <nav
-      class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 pb-safe"
+      class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 pb-safe lg:hidden"
     >
-      <!-- lg:hidden -->
       <div class="flex justify-around items-center py-2">
         <a
           href="index.html"
@@ -343,16 +268,17 @@
         <h1
           class="font-display text-3xl sm:text-4xl md:text-6xl font-bold mb-6"
         >
-          แกลลอรี่
+          Gallery
         </h1>
         <p class="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
-          ดื่มด่ำกับความงามของรีสอร์ตผ่านภาพถ่ายของเรา
+          Immerse yourself in the beauty of our resort through our photo
+          collection.
         </p>
         <a
           href="#gallery-grid"
           class="bg-gold text-white px-8 py-3.5 rounded-sm uppercase text-sm tracking-widest"
         >
-          <i class="fas fa-images mr-2"></i>ดูภาพทั้งหมด
+          <i class="fas fa-images mr-2"></i>View All Photos
         </a>
       </div>
     </section>
@@ -362,59 +288,53 @@
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
           <span
-            class="text-green-600 font-semibold text-sm uppercase tracking-wide"
+            class="text-gold font-semibold text-sm uppercase tracking-widest"
             >Photo Gallery</span
           >
           <h2
-            class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6"
+            class="font-display text-3xl sm:text-4xl font-bold text-primary mt-4 mb-6"
           >
-            ภาพบรรยากาศรีสอร์ต
+            Resort Atmosphere
           </h2>
           <p class="text-gray-600 text-lg max-w-2xl mx-auto mb-8">
-            ชมภาพบรรยากาศและสิ่งอำนวยความสะดวกต่างๆ ของ Golden Pine Resort
+            Explore the atmosphere and facilities of Golden Pine Resort.
           </p>
 
           <!-- Gallery Filter Buttons -->
           <div class="flex flex-wrap justify-center gap-3 mb-8">
             <button
-              class="gallery-filter active bg-primary text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all touch-manipulation"
+              class="gallery-filter active px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all"
               data-filter="all"
-              style="min-height: 44px"
             >
               All Photos
             </button>
             <button
-              class="gallery-filter bg-white text-gray-700 border border-gray-300 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all hover:bg-gray-100 touch-manipulation"
+              class="gallery-filter bg-white text-gray-700 border border-gray-300 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all hover:bg-gray-100"
               data-filter="pool"
-              style="min-height: 44px"
             >
               Pool
             </button>
             <button
-              class="gallery-filter bg-white text-gray-700 border border-gray-300 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all hover:bg-gray-100 touch-manipulation"
+              class="gallery-filter bg-white text-gray-700 border border-gray-300 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all hover:bg-gray-100"
               data-filter="rooms"
-              style="min-height: 44px"
             >
               Rooms
             </button>
             <button
-              class="gallery-filter bg-white text-gray-700 border border-gray-300 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all hover:bg-gray-100 touch-manipulation"
+              class="gallery-filter bg-white text-gray-700 border border-gray-300 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all hover:bg-gray-100"
               data-filter="restaurant"
-              style="min-height: 44px"
             >
               Restaurant
             </button>
             <button
-              class="gallery-filter bg-white text-gray-700 border border-gray-300 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all hover:bg-gray-100 touch-manipulation"
+              class="gallery-filter bg-white text-gray-700 border border-gray-300 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all hover:bg-gray-100"
               data-filter="garden"
-              style="min-height: 44px"
             >
               Garden
             </button>
             <button
-              class="gallery-filter bg-white text-gray-700 border border-gray-300 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all hover:bg-gray-100 touch-manipulation"
+              class="gallery-filter bg-white text-gray-700 border border-gray-300 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all hover:bg-gray-100"
               data-filter="view"
-              style="min-height: 44px"
             >
               View
             </button>
@@ -429,48 +349,32 @@
           <div class="gallery-item" data-category="pool">
             <img
               src="img/pool- (1).jpg"
-              alt="สระว่ายน้ำ"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              alt="Swimming Pool"
+              class="w-full h-64 object-cover rounded-lg shadow-lg"
               loading="lazy"
             />
           </div>
           <div class="gallery-item" data-category="pool">
             <img
               src="img/pool- (2).jpg"
-              alt="สระว่ายน้ำ"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              alt="Swimming Pool"
+              class="w-full h-64 object-cover rounded-lg shadow-lg"
               loading="lazy"
             />
           </div>
           <div class="gallery-item" data-category="pool">
             <img
               src="img/pool- (3).jpg"
-              alt="สระว่ายน้ำ"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              alt="Swimming Pool"
+              class="w-full h-64 object-cover rounded-lg shadow-lg"
               loading="lazy"
             />
           </div>
           <div class="gallery-item" data-category="pool">
             <img
               src="img/poolnight.jpg"
-              alt="สระว่ายน้ำยามค่ำคืน"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="pool">
-            <img
-              src="img/poolnight (2).jpg"
-              alt="สระว่ายน้ำยามค่ำคืน"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="pool">
-            <img
-              src="img/pool- (4).jpg"
-              alt="สระว่ายน้ำ"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              alt="Pool at Night"
+              class="w-full h-64 object-cover rounded-lg shadow-lg"
               loading="lazy"
             />
           </div>
@@ -479,64 +383,32 @@
           <div class="gallery-item" data-category="rooms">
             <img
               src="img/room-52.jpg"
-              alt="ห้องพัก Double Deluxe"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              alt="Double Deluxe Room"
+              class="w-full h-64 object-cover rounded-lg shadow-lg"
               loading="lazy"
             />
           </div>
           <div class="gallery-item" data-category="rooms">
             <img
               src="img/room-54.jpg"
-              alt="ห้องพัก Twin Deluxe"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="rooms">
-            <img
-              src="img/room-57.jpg"
-              alt="ห้องพัก"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              alt="Twin Deluxe Room"
+              class="w-full h-64 object-cover rounded-lg shadow-lg"
               loading="lazy"
             />
           </div>
           <div class="gallery-item" data-category="rooms">
             <img
               src="img/room-70.jpg"
-              alt="ห้องพัก Triple"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="rooms">
-            <img
-              src="img/room- (1).jpg"
-              alt="ห้องพัก"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="rooms">
-            <img
-              src="img/room- (2).jpg"
-              alt="ห้องพัก"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="rooms">
-            <img
-              src="img/room- (3).jpg"
-              alt="ห้องพัก"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              alt="Triple Room"
+              class="w-full h-64 object-cover rounded-lg shadow-lg"
               loading="lazy"
             />
           </div>
           <div class="gallery-item" data-category="rooms">
             <img
               src="img/toilet.jpg"
-              alt="ห้องน้ำ"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              alt="Bathroom"
+              class="w-full h-64 object-cover rounded-lg shadow-lg"
               loading="lazy"
             />
           </div>
@@ -545,64 +417,16 @@
           <div class="gallery-item" data-category="restaurant">
             <img
               src="img/res- (2).jpg"
-              alt="ร้านอาหาร Sang Chan"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="restaurant">
-            <img
-              src="img/res- (5).jpg"
-              alt="บาร์ในล็อบบี้"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="restaurant">
-            <img
-              src="img/res- (10).jpg"
-              alt="รูมเซอร์วิส"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="restaurant">
-            <img
-              src="img/res- (11).jpg"
-              alt="ร้านอาหาร"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              alt="Sang Chan Restaurant"
+              class="w-full h-64 object-cover rounded-lg shadow-lg"
               loading="lazy"
             />
           </div>
           <div class="gallery-item" data-category="restaurant">
             <img
               src="img/res22.jpg"
-              alt="อาหารไทย"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="restaurant">
-            <img
-              src="img/res- (1).jpg"
-              alt="บรรยากาศร้านอาหาร"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="restaurant">
-            <img
-              src="img/res- (3).jpg"
-              alt="อาหารนานาชาติ"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="restaurant">
-            <img
-              src="img/res- (4).jpg"
-              alt="เครื่องดื่ม"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              alt="Thai Food"
+              class="w-full h-64 object-cover rounded-lg shadow-lg"
               loading="lazy"
             />
           </div>
@@ -611,64 +435,16 @@
           <div class="gallery-item" data-category="garden">
             <img
               src="img/garden- (1).jpg"
-              alt="สวน"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="garden">
-            <img
-              src="img/garden- (2).jpg"
-              alt="สวน"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="garden">
-            <img
-              src="img/garden- (5).jpg"
-              alt="สวน"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="garden">
-            <img
-              src="img/garden- (6).jpg"
-              alt="สวน"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              alt="Garden"
+              class="w-full h-64 object-cover rounded-lg shadow-lg"
               loading="lazy"
             />
           </div>
           <div class="gallery-item" data-category="garden">
             <img
               src="img/bridge.jpg"
-              alt="สะพานในสวน"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="garden">
-            <img
-              src="img/garden- (3).jpg"
-              alt="สวน"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="garden">
-            <img
-              src="img/garden- (4).jpg"
-              alt="สวน"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="garden">
-            <img
-              src="img/garden- (7).jpg"
-              alt="สวน"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              alt="Bridge in Garden"
+              class="w-full h-64 object-cover rounded-lg shadow-lg"
               loading="lazy"
             />
           </div>
@@ -680,56 +456,24 @@
           >
             <img
               src="img/front1.jpg"
-              alt="ด้านหน้ารีสอร์ต"
-              class="w-full h-full object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              alt="Resort Front"
+              class="w-full h-full object-cover rounded-lg shadow-lg"
               loading="lazy"
             />
           </div>
           <div class="gallery-item" data-category="view">
             <img
               src="img/outside- (1).jpg"
-              alt="ภายนอก"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="view">
-            <img
-              src="img/outside- (3).jpg"
-              alt="ภายนอก"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="view">
-            <img
-              src="img/outside- (5).jpg"
-              alt="ภายนอก"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="view">
-            <img
-              src="img/outside- (7).jpg"
-              alt="ภายนอก"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallery-item" data-category="view">
-            <img
-              src="img/outside- (9).jpg"
-              alt="ภายนอก"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              alt="Exterior"
+              class="w-full h-64 object-cover rounded-lg shadow-lg"
               loading="lazy"
             />
           </div>
           <div class="gallery-item" data-category="view">
             <img
               src="img/outside1.jpg"
-              alt="ภายนอก"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              alt="Exterior"
+              class="w-full h-64 object-cover rounded-lg shadow-lg"
               loading="lazy"
             />
           </div>
@@ -740,30 +484,30 @@
     <!-- Lightbox -->
     <div id="lightbox" class="lightbox">
       <span class="lightbox-close">&times;</span>
-      <img id="lightbox-img" src="" alt="" />
+      <img id="lightbox-img" src="" alt="Enlarged gallery image" />
     </div>
 
     <!-- CTA Section -->
     <section class="section-padding bg-primary">
       <div class="container mx-auto px-6 text-center">
         <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-6">
-          ประทับใจกับบรรยากาศของเราแล้วใช่ไหม?
+          Impressed with our atmosphere?
         </h2>
         <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          มาสัมผัสประสบการณ์จริงที่ Golden Pine Resort
+          Come experience it for real at Golden Pine Resort.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="booking.html"
             class="bg-gold text-white px-8 py-3.5 rounded-sm uppercase text-sm tracking-widest"
           >
-            <i class="fas fa-calendar-check mr-2"></i>จองห้องพัก
+            <i class="fas fa-calendar-check mr-2"></i>Book a Room
           </a>
           <a
             href="tel:+66537062704"
             class="border border-white/80 text-white px-8 py-3.5 rounded-sm uppercase text-sm tracking-widest hover:bg-white hover:text-primary transition-colors"
           >
-            <i class="fas fa-phone mr-2"></i>โทรสอบถาม
+            <i class="fas fa-phone mr-2"></i>Call Us
           </a>
         </div>
       </div>
@@ -789,18 +533,21 @@
             <div class="flex space-x-4">
               <a
                 href="https://www.facebook.com/goldenpineresort"
+                target="_blank"
                 class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold transition-colors"
               >
                 <i class="fab fa-facebook-f"></i>
               </a>
               <a
                 href="https://www.instagram.com/goldenpineresort/"
+                target="_blank"
                 class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold transition-colors"
               >
                 <i class="fab fa-instagram"></i>
               </a>
               <a
                 href="https://line.me/R/ti/p/@670tzncs"
+                target="_blank"
                 class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold transition-colors"
               >
                 <i class="fab fa-line"></i>
@@ -830,39 +577,29 @@
           <!-- Links -->
           <div>
             <h4 class="font-display text-lg mb-6 text-gold">Explore</h4>
-            <ul class="space-y-3">
+            <ul class="space-y-3 text-sm text-gray-300">
               <li>
-                <a
-                  href="index.html"
-                  class="text-gray-400 hover:text-white transition-colors"
+                <a href="index.html" class="hover:text-gold transition-colors"
                   >Home</a
                 >
               </li>
               <li>
-                <a
-                  href="rooms.html"
-                  class="text-gray-400 hover:text-white transition-colors"
+                <a href="rooms.html" class="hover:text-gold transition-colors"
                   >Accommodation</a
                 >
               </li>
               <li>
-                <a
-                  href="gallery.html"
-                  class="text-gray-400 hover:text-white transition-colors"
+                <a href="gallery.html" class="hover:text-gold transition-colors"
                   >Gallery</a
                 >
               </li>
               <li>
-                <a
-                  href="index.html#contact"
-                  class="text-gray-400 hover:text-white transition-colors"
+                <a href="contact.html" class="hover:text-gold transition-colors"
                   >Location</a
                 >
               </li>
               <li>
-                <a
-                  href="booking.html"
-                  class="text-gray-400 hover:text-white transition-colors"
+                <a href="booking.html" class="hover:text-gold transition-colors"
                   >Check Availability</a
                 >
               </li>
@@ -882,12 +619,17 @@
       </div>
     </footer>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
     <!-- Custom JavaScript -->
     <script>
-      // *** โค้ด JavaScript เฉพาะหน้า gallery ***
+      // Navbar Scroll Effect
+      window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("navbar-scroll");
+        } else {
+          navbar.classList.remove("navbar-scroll");
+        }
+      });
 
       // Gallery filter functionality
       document.querySelectorAll(".gallery-filter").forEach((button) => {
@@ -896,7 +638,7 @@
 
           // Update active button
           document.querySelectorAll(".gallery-filter").forEach((btn) => {
-            btn.classList.remove("active", "bg-primary", "text-white");
+            btn.classList.remove("active");
             btn.classList.add(
               "bg-white",
               "text-gray-700",
@@ -905,7 +647,7 @@
             );
           });
 
-          this.classList.add("active", "bg-primary", "text-white");
+          this.classList.add("active");
           this.classList.remove(
             "bg-white",
             "text-gray-700",
