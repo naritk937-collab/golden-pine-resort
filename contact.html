@@ -26,7 +26,7 @@
     />
     <meta
       property="og:image"
-      content="https://goldenpineresort.com/img/outside- (3).jpg"
+      content="https://goldenpineresort.com/img/front1.jpg"
     />
     <meta
       property="og:url"
@@ -51,13 +51,11 @@
 
     <style>
       :root {
-        /* Deep Forest Green - Luxury & Calm */
-        --primary: #1a3c34; 
-        /* Muted Gold - Exquisite */
-        --gold: #c5a059;
-        --light-gold: #f3e9d2;
-        --text-dark: #2d3748;
-        --text-light: #718096;
+        --primary: #2f5d50;
+        --secondary: #40524d;
+        --accent: #86b817;
+        --light: #f1f6f5;
+        --dark: #0d1f1a;
       }
 
       * {
@@ -69,8 +67,7 @@
       body {
         font-family: "Inter", sans-serif;
         line-height: 1.6;
-        color: var(--text-dark);
-        background-color: #fdfbf7; /* Warm off-white */
+        color: var(--secondary);
       }
 
       .font-display {
@@ -79,9 +76,9 @@
 
       .hero-gradient {
         background: linear-gradient(
-          to bottom,
-          rgba(26, 60, 52, 0.3) 0%,
-          rgba(26, 60, 52, 0.6) 100%
+          135deg,
+          rgba(47, 93, 80, 0.9) 0%,
+          rgba(64, 82, 77, 0.8) 100%
         );
       }
 
@@ -94,20 +91,32 @@
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
       }
 
-      .text-gold {
-        color: var(--gold);
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: linear-gradient(180deg, #86b817 0%, #2f5d50 100%);
+        color: #fff;
+        padding: 0.6rem 1.1rem;
+        border-radius: 999px;
+        font-weight: 600;
+        box-shadow: 0 8px 18px rgba(47, 93, 80, 0.25),
+          inset 0 -6px 18px rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+        text-decoration: none;
+        position: relative;
       }
 
-      .btn-gold {
-        background-color: var(--gold);
-        color: white;
-        transition: all 0.4s ease;
-        letter-spacing: 0.05em;
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 18px 36px rgba(47, 93, 80, 0.28),
+          inset 0 -6px 18px rgba(255, 255, 255, 0.08);
       }
-      .btn-gold:hover {
-        background-color: #b08d48;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
+
+      .btn-primary:active {
+        transform: translateY(-1px) scale(0.997);
+        box-shadow: 0 6px 12px rgba(47, 93, 80, 0.18);
       }
 
       .section-padding {
@@ -115,11 +124,8 @@
       }
 
       .navbar-scroll {
-        background: rgba(26, 60, 52, 0.95);
         backdrop-filter: blur(10px);
-        padding-top: 1rem !important;
-        padding-bottom: 1rem !important;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        background: rgba(47, 93, 80, 0.95);
       }
 
       /* Mobile Optimizations */
@@ -128,6 +134,9 @@
           padding: 40px 0;
         }
         .card-hover:hover {
+          transform: none;
+        }
+        .btn-primary:hover {
           transform: none;
         }
       }
@@ -144,6 +153,9 @@
         .card-hover:hover {
           transform: none;
         }
+        .btn-primary:hover {
+          transform: none;
+        }
       }
 
       /* Bottom Navigation */
@@ -153,7 +165,7 @@
 
       /* Add bottom padding to body to prevent content from being hidden behind bottom nav */
       body {
-        padding-bottom: 80px; /* For mobile nav */
+        padding-bottom: 80px;
       }
 
       /* Touch targets */
@@ -167,30 +179,57 @@
     </style>
   </head>
   <body>
+    <!-- Top Navigation (Logo Only) -->
     <nav
       id="navbar"
-      class="fixed w-full top-0 z-50 transition-all duration-500 py-6"
+      class="fixed w-full top-0 z-50 transition-all duration-300 py-4"
     >
       <div class="container mx-auto px-6">
         <div class="flex justify-between items-center">
           <!-- Logo -->
-            <a href="/index.html" class="flex items-center gap-3 group">
-                <img src="/img/logo.png" alt="Golden Pine Resort" class="h-14 transition-transform group-hover:scale-105">
-                <div class="hidden md:block text-white">
-                    <h1 class="font-display text-xl font-medium tracking-wider">GOLDEN PINE</h1>
-                    <p class="text-[10px] tracking-[0.2em] uppercase opacity-80">Resort & Spa</p>
-                </div>
-            </a>
-
-            <!-- Desktop Menu (Hidden on Mobile) -->
-            <div class="hidden lg:flex items-center space-x-8 text-white text-sm tracking-wide">
-                <a href="/index.html#home" class="hover:text-gold transition-colors">HOME</a>
-                <a href="/index.html#about" class="hover:text-gold transition-colors">THE RESORT</a>
-                <a href="/rooms.html" class="hover:text-gold transition-colors">ACCOMMODATION</a>
-                <a href="/index.html#dining" class="hover:text-gold transition-colors">DINING</a>
-                <a href="/contact.html" class="text-gold transition-colors">CONTACT</a>
-                <a href="/booking.html" class="btn-gold px-6 py-2.5 rounded-sm font-medium">BOOK NOW</a>
+          <a href="index.html" class="flex items-center gap-3 group">
+            <img
+              src="img/logo.png"
+              alt="Golden Pine Resort"
+              class="h-14 transition-transform group-hover:scale-105"
+            />
+            <div class="hidden md:block text-white">
+              <h1 class="font-display text-xl font-medium tracking-wider">
+                GOLDEN PINE
+              </h1>
+              <p class="text-[10px] tracking-[0.2em] uppercase opacity-80">
+                Resort & Spa
+              </p>
             </div>
+          </a>
+
+          <!-- Desktop Menu (Hidden on Mobile) -->
+          <div
+            class="hidden lg:flex items-center space-x-8 text-white text-sm tracking-wide"
+          >
+            <a href="index.html#home" class="hover:text-gold transition-colors"
+              >HOME</a
+            >
+            <a href="index.html#about" class="hover:text-gold transition-colors"
+              >THE RESORT</a
+            >
+            <a href="rooms.html" class="hover:text-gold transition-colors"
+              >ACCOMMODATION</a
+            >
+            <a
+              href="index.html#dining"
+              class="hover:text-gold transition-colors"
+              >DINING</a
+            >
+            <a href="contact.html" class="text-gold transition-colors"
+              >CONTACT</a
+            >
+            <a
+              href="booking.html"
+              class="btn-gold px-6 py-2.5 rounded-sm font-medium"
+              >BOOK NOW</a
+            >
+          </div>
         </div>
       </div>
     </nav>
@@ -200,24 +239,41 @@
       class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 pb-safe lg:hidden"
     >
       <div class="flex justify-around items-center py-2">
-        <a href="/index.html" class="flex flex-col items-center py-2 px-3 text-gray-400 hover:text-primary">
+        <a
+          href="index.html"
+          class="flex flex-col items-center py-2 px-3 text-gray-400 hover:text-primary"
+        >
           <i class="fas fa-home text-xl mb-1"></i>
           <span class="text-[10px] font-medium">Home</span>
         </a>
-        <a href="/rooms.html" class="flex flex-col items-center py-2 px-3 text-gray-400 hover:text-primary">
+        <a
+          href="rooms.html"
+          class="flex flex-col items-center py-2 px-3 text-gray-400 hover:text-primary"
+        >
           <i class="fas fa-bed text-xl mb-1"></i>
           <span class="text-[10px] font-medium">Rooms</span>
         </a>
-        <a href="/booking.html" class="flex flex-col items-center justify-center -mt-8">
-            <div class="w-14 h-14 bg-gold rounded-full flex items-center justify-center shadow-lg text-white">
-                <i class="fas fa-calendar-check text-xl"></i>
-            </div>
+        <a
+          href="booking.html"
+          class="flex flex-col items-center justify-center -mt-8"
+        >
+          <div
+            class="w-14 h-14 bg-gold rounded-full flex items-center justify-center shadow-lg text-white"
+          >
+            <i class="fas fa-calendar-check text-xl"></i>
+          </div>
         </a>
-        <a href="/gallery.html" class="flex flex-col items-center py-2 px-3 text-gray-400 hover:text-primary">
+        <a
+          href="gallery.html"
+          class="flex flex-col items-center py-2 px-3 text-gray-400 hover:text-primary"
+        >
           <i class="fas fa-images text-xl mb-1"></i>
           <span class="text-[10px] font-medium">Gallery</span>
         </a>
-            <a href="/contact.html" class="flex flex-col items-center py-2 px-3 text-primary">
+        <a
+          href="contact.html"
+          class="flex flex-col items-center py-2 px-3 text-primary"
+        >
           <i class="fas fa-phone text-xl mb-1"></i>
           <span class="text-[10px] font-medium">Contact</span>
         </a>
@@ -226,27 +282,27 @@
 
     <!-- Hero Section -->
     <section
-      class="relative h-[50vh] flex items-center justify-center overflow-hidden"
+      class="relative h-[60vh] flex items-center justify-center overflow-hidden"
     >
       <div
         class="absolute inset-0 bg-cover bg-center"
-        style="background-image: url('/img/outside- (3).jpg')"
+        style="background-image: url('img/outside- (3).jpg')"
       ></div>
-      <div class="hero-gradient absolute inset-0 z-10"></div>
+      <div class="hero-gradient absolute inset-0"></div>
       <div class="relative z-10 text-center text-white px-6">
         <h1
           class="font-display text-3xl sm:text-4xl md:text-6xl font-bold mb-6"
         >
-          Contact Us
+          ติดต่อเรา
         </h1>
         <p class="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
           เราพร้อมให้ความช่วยเหลือและตอบทุกข้อสงสัยของคุณ
         </p>
         <a
           href="#contact"
-          class="btn-gold px-8 py-3.5 rounded-sm uppercase text-sm tracking-widest"
+          class="btn-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg"
         >
-          Get In Touch
+          <i class="fas fa-arrow-down mr-2"></i>ดูช่องทางการติดต่อ
         </a>
       </div>
     </section>
@@ -256,22 +312,22 @@
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
           <span
-            class="text-gold font-semibold text-sm uppercase tracking-widest"
+            class="text-green-600 font-semibold text-sm uppercase tracking-wide"
             >Contact Us</span
           >
           <h2
-            class="font-display text-3xl sm:text-4xl font-bold text-primary mt-4 mb-6"
+            class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6"
           >
             ติดต่อเรา
           </h2>
-          <p class="text-text-light text-lg max-w-2xl mx-auto">
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">
             เรายินดีให้ความช่วยเหลือในทุกข้อสงสัย
             ไม่ว่าจะเป็นการจองห้องพักหรือสอบถามข้อมูลเพิ่มเติม
           </p>
         </div>
 
         <!-- Contact Methods -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-16">
           <!-- Phone -->
           <div
             class="bg-white p-8 rounded-2xl shadow-xl text-center card-hover"
@@ -295,7 +351,7 @@
             </div>
             <a
               href="tel:+66537062704"
-              class="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-sm font-semibold transition-all inline-block w-full"
+              class="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-full font-semibold transition-all inline-block w-full"
             >
               <i class="fas fa-phone mr-2"></i>โทรเลย
             </a>
@@ -320,7 +376,7 @@
             <a
               href="https://line.me/R/ti/p/@670tzncs"
               target="_blank"
-              class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-sm font-semibold transition-all inline-block w-full"
+              class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-semibold transition-all inline-block w-full"
             >
               <i class="fab fa-line mr-2"></i>เพิ่มเพื่อน
             </a>
@@ -348,17 +404,17 @@
             </div>
             <a
               href="mailto:rsvn@goldenpineresorts.com"
-              class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-sm font-semibold transition-all inline-block w-full"
+              class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full font-semibold transition-all inline-block w-full"
             >
               <i class="fas fa-envelope mr-2"></i>ส่งอีเมล
             </a>
           </div>
         </div>
 
-        <div class="max-w-6xl mx-auto bg-white rounded-sm shadow-2xl overflow-hidden">
-          <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
             <!-- Contact Info -->
-            <div class="p-8 lg:p-12">
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
               <h3 class="font-semibold text-gray-900 mb-6 text-xl">
                 ข้อมูลการติดต่อ
               </h3>
@@ -368,7 +424,7 @@
                   <div
                     class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
                   >
-                    <i class="fas fa-map-marker-alt text-gold"></i>
+                    <i class="fas fa-map-marker-alt text-green-600"></i>
                   </div>
                   <div>
                     <h4 class="font-semibold text-gray-900 mb-1">ที่อยู่</h4>
@@ -383,7 +439,7 @@
                   <div
                     class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
                   >
-                    <i class="fas fa-phone text-gold"></i>
+                    <i class="fas fa-phone text-blue-600"></i>
                   </div>
                   <div>
                     <h4 class="font-semibold text-gray-900 mb-1">โทรศัพท์</h4>
@@ -397,7 +453,7 @@
                   <div
                     class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
                   >
-                    <i class="fas fa-envelope text-gold"></i>
+                    <i class="fas fa-envelope text-purple-600"></i>
                   </div>
                   <div>
                     <h4 class="font-semibold text-gray-900 mb-1">อีเมล</h4>
@@ -409,7 +465,7 @@
                   <div
                     class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
                   >
-                    <i class="fas fa-plane text-gold"></i>
+                    <i class="fas fa-plane text-orange-600"></i>
                   </div>
                   <div>
                     <h4 class="font-semibold text-gray-900 mb-1">สนามบิน</h4>
@@ -423,7 +479,7 @@
                   <div
                     class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
                   >
-                    <i class="fab fa-line text-gold"></i>
+                    <i class="fab fa-line text-green-600"></i>
                   </div>
                   <div>
                     <h4 class="font-semibold text-gray-900 mb-1">
@@ -459,12 +515,12 @@
             </div>
 
             <!-- Contact Form -->
-            <div class="bg-gray-50 p-8 lg:p-12">
-              <h3 class="font-display text-2xl text-primary mb-2">
-                Send Us a Message
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+              <h3 class="font-semibold text-gray-900 mb-6 text-xl">
+                ส่งข้อความถึงเรา
               </h3>
-              <p class="text-text-light mb-6">
-                หากท่านมีคำถามทั่วไป
+              <p class="text-gray-600 mb-6 text-sm">
+                หากคุณมีคำถามทั่วไป
                 สามารถกรอกแบบฟอร์มด้านล่างนี้เพื่อให้เราติดต่อกลับ
               </p>
 
@@ -496,7 +552,7 @@
                       type="text"
                       name="firstName"
                       required
-                      class="w-full px-4 py-3 border border-gray-300 rounded-sm focus:ring-2 focus:ring-gold focus:border-transparent"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                       placeholder="กรุณากรอกชื่อของคุณ"
                     />
                   </div>
@@ -508,7 +564,7 @@
                       type="text"
                       name="lastName"
                       required
-                      class="w-full px-4 py-3 border border-gray-300 rounded-sm focus:ring-2 focus:ring-gold focus:border-transparent"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                       placeholder="กรุณากรอกนามสกุลของคุณ"
                     />
                   </div>
@@ -523,7 +579,7 @@
                       type="email"
                       name="email"
                       required
-                      class="w-full px-4 py-3 border border-gray-300 rounded-sm focus:ring-2 focus:ring-gold focus:border-transparent"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -534,7 +590,7 @@
                     <input
                       type="tel"
                       name="phone"
-                      class="w-full px-4 py-3 border border-gray-300 rounded-sm focus:ring-2 focus:ring-gold focus:border-transparent"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                       placeholder="+66 XX XXX XXXX"
                     />
                   </div>
@@ -546,7 +602,7 @@
                   >
                   <select
                     name="subject"
-                    class="w-full px-4 py-3 border border-gray-300 rounded-sm focus:ring-2 focus:ring-gold focus:border-transparent"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   >
                     <option value="">เลือกหัวข้อ</option>
                     <option value="จองห้องพัก">จองห้องพัก</option>
@@ -564,7 +620,7 @@
                     rows="5"
                     name="message"
                     required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-sm focus:ring-2 focus:ring-gold focus:border-transparent"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="กรุณาพิมพ์ข้อความของคุณ..."
                   ></textarea>
                 </div>
@@ -572,10 +628,10 @@
                 <button
                   type="submit"
                   id="submit-btn"
-                  class="btn-gold w-full py-3 rounded-sm uppercase text-sm tracking-widest"
+                  class="btn-primary text-white px-8 py-3 rounded-full font-semibold w-full"
                 >
                   <span id="submit-text">
-                    ติดต่อเจ้าหน้าที่
+                    <i class="fas fa-paper-plane mr-2"></i>ส่งข้อความ
                   </span>
                   <span id="loading-text" class="hidden">
                     <i class="fas fa-spinner fa-spin mr-2"></i>กำลังส่ง...
@@ -593,15 +649,15 @@
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
           <span
-            class="text-gold font-semibold text-sm uppercase tracking-widest"
+            class="text-green-600 font-semibold text-sm uppercase tracking-wide"
             >FAQ</span
           >
           <h2
-            class="font-display text-3xl sm:text-4xl font-bold text-primary mt-4 mb-6"
+            class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6"
           >
             คำถามที่พบบ่อย (FAQ)
           </h2>
-          <p class="text-text-light text-lg max-w-2xl mx-auto">
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">
             ค้นหาคำตอบสำหรับคำถามที่พบบ่อยเกี่ยวกับการเข้าพักที่ Golden Pine
             Resort<br />Find answers to common questions about staying at Golden
             Pine Resort.
@@ -610,7 +666,7 @@
 
         <div class="max-w-3xl mx-auto space-y-4">
           <!-- FAQ Item 1 -->
-          <details class="group bg-white p-6 rounded-sm shadow-sm">
+          <details class="group bg-white p-6 rounded-lg shadow-sm">
             <summary
               class="flex justify-between items-center font-semibold cursor-pointer text-gray-900"
             >
@@ -637,7 +693,7 @@
           </details>
 
           <!-- FAQ Item 2 -->
-          <details class="group bg-white p-6 rounded-sm shadow-sm">
+          <details class="group bg-white p-6 rounded-lg shadow-sm">
             <summary
               class="flex justify-between items-center font-semibold cursor-pointer text-gray-900"
             >
@@ -663,7 +719,7 @@
           </details>
 
           <!-- FAQ Item 3 -->
-          <details class="group bg-white p-6 rounded-sm shadow-sm">
+          <details class="group bg-white p-6 rounded-lg shadow-sm">
             <summary
               class="flex justify-between items-center font-semibold cursor-pointer text-gray-900"
             >
@@ -687,7 +743,7 @@
           </details>
 
           <!-- FAQ Item 4 -->
-          <details class="group bg-white p-6 rounded-sm shadow-sm">
+          <details class="group bg-white p-6 rounded-lg shadow-sm">
             <summary
               class="flex justify-between items-center font-semibold cursor-pointer text-gray-900"
             >
@@ -719,22 +775,22 @@
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
           <span
-            class="text-gold font-semibold text-sm uppercase tracking-widest"
+            class="text-green-600 font-semibold text-sm uppercase tracking-wide"
             >Testimonials</span
           >
           <h2
-            class="font-display text-3xl sm:text-4xl font-bold text-primary mt-4 mb-6"
+            class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6"
           >
             เสียงตอบรับจากลูกค้าของเรา
           </h2>
-          <p class="text-text-light text-lg max-w-2xl mx-auto">
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">
             อ่านรีวิวจากผู้เข้าพักจริงที่ประทับใจในบริการและบรรยากาศของเรา
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <!-- Agoda Review -->
-          <div class="bg-white p-8 rounded-sm shadow-lg">
+          <div class="bg-white p-8 rounded-2xl shadow-lg">
             <div class="flex justify-between items-center mb-4">
               <div class="flex text-yellow-400">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i
@@ -765,7 +821,7 @@
           </div>
 
           <!-- Booking.com Review -->
-          <div class="bg-white p-8 rounded-sm shadow-lg">
+          <div class="bg-white p-8 rounded-2xl shadow-lg">
             <div class="flex justify-between items-center mb-4">
               <div class="flex text-yellow-400">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i
@@ -797,7 +853,7 @@
           </div>
 
           <!-- Trip.com Review -->
-          <div class="bg-white p-8 rounded-sm shadow-lg">
+          <div class="bg-white p-8 rounded-2xl shadow-lg">
             <div class="flex justify-between items-center mb-4">
               <div class="flex text-yellow-400">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i
@@ -824,7 +880,7 @@
           </div>
 
           <!-- Expedia Review -->
-          <div class="bg-white p-8 rounded-sm shadow-lg">
+          <div class="bg-white p-8 rounded-2xl shadow-lg">
             <div class="flex justify-between items-center mb-4">
               <div class="flex text-yellow-400">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i
@@ -855,13 +911,28 @@
     </section>
 
     <!-- Map Section -->
-    <section class="w-full">
-      <div class="h-96 w-full">
+    <section class="section-padding bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <span
+            class="text-green-600 font-semibold text-sm uppercase tracking-wide"
+            >Location</span
+          >
+          <h2
+            class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6"
+          >
+            แผนที่และการเดินทาง
+          </h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+            รีสอร์ตของเราตั้งอยู่ในทำเลที่เดินทางสะดวก
+            ใกล้สนามบินและสถานที่ท่องเที่ยวสำคัญ
+          </p>
+        </div>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1558.1189498115682!2d99.8820986!3d19.9822307!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30d83296068d90f1%3A0x1d4734ccb80f1d53!2sGolden%20Pine%20Resort!5e0!3m2!1sen!2sth!4v1731674410191!5m2!1sen!2sth"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15055.93925578798!2d99.8782013449082!3d20.008061672398924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30d83296068d90f1%3A0x1d4734ccb80f1d53!2sGolden%20Pine%20Resort!5e0!3m2!1sen!2sth!4v1731674410192!5m2!1sen!2sth"
           width="100%"
-          height="100%"
-          style="border: 0"
+          height="500"
+          class="rounded-lg shadow-xl border-0"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
@@ -871,125 +942,146 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-primary text-white pt-20 pb-10 border-t border-white/10">
+    <footer class="bg-gray-900 text-white py-16">
       <div class="container mx-auto px-6">
         <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
         >
           <!-- Logo & Description -->
-          <div>
-            <h3 class="font-display text-2xl mb-6 tracking-wide">GOLDEN PINE</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6">
-              A sanctuary of serenity in Chiang Rai. Experience the essence of Lanna hospitality in a luxurious natural setting.
+          <div class="lg:col-span-2">
+            <div class="flex items-center space-x-3 mb-6">
+              <img
+                src="img/logo.png"
+                alt="Golden Pine Resort"
+                class="h-12"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+              />
+              <div
+                class="w-12 h-12 flex items-center justify-center"
+                style="display: none"
+              >
+                <i class="fas fa-tree text-green-400 text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-display text-2xl font-bold">
+                  Golden Pine Resort
+                </h3>
+                <p class="text-gray-400 text-sm">
+                  Chiang Rai Luxury Experience
+                </p>
+              </div>
+            </div>
+            <p class="text-gray-400 mb-6 max-w-md">
+              Golden Pine Resort รีสอร์ตหรูหรา 4 ดาว ในใจกลางเชียงราย
+              พร้อมบริการครบครันและสิ่งอำนวยความสะดวกระดับโลก
             </p>
-            <div class="flex gap-4">
+            <div class="flex space-x-4">
               <a
                 href="https://www.facebook.com/goldenpineresort"
-                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold transition-colors"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
               >
                 <i class="fab fa-facebook-f"></i>
               </a>
               <a
                 href="https://www.instagram.com/goldenpineresort/"
-                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold transition-colors"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
               >
                 <i class="fab fa-instagram"></i>
               </a>
               <a
                 href="https://line.me/R/ti/p/@670tzncs"
-                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold transition-colors"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
               >
                 <i class="fab fa-line"></i>
               </a>
               <a
                 href="https://www.youtube.com/"
-                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold transition-colors"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
               >
                 <i class="fab fa-youtube"></i>
               </a>
             </div>
           </div>
 
-          <!-- Contact -->
-          <div>
-            <h4 class="font-display text-lg mb-6 text-gold">Contact Us</h4>
-            <ul class="space-y-4 text-sm text-gray-300">
-              <li class="flex items-start gap-3">
-                <i class="fas fa-map-marker-alt mt-1 text-gold"></i>
-                <span>291 Moo 4, Nang Lae,<br>Muang Chiang Rai, 57100</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <i class="fas fa-phone text-gold"></i>
-                <span>(+66) 53‑706270‑4</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <i class="fas fa-envelope text-gold"></i>
-                <span>rsvn@goldenpineresorts.com</span>
-              </li>
-            </ul>
-          </div>
-
           <!-- Quick Links -->
           <div>
-            <h4 class="font-display text-lg mb-6 text-gold">Explore</h4>
-            <ul class="space-y-3 text-sm text-gray-300">
+            <h4 class="font-semibold text-lg mb-6">ลิงก์ด่วน</h4>
+            <ul class="space-y-3">
               <li>
                 <a
-                  href="/index.html"
-                  class="hover:text-gold transition-colors"
-                  >Home</a
+                  href="index.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >หน้าแรก</a
                 >
               </li>
               <li>
                 <a
-                  href="/rooms.html"
-                  class="hover:text-gold transition-colors"
-                  >Accommodation</a
+                  href="index.html#about"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >เกี่ยวกับเรา</a
                 >
               </li>
               <li>
                 <a
-                  href="/gallery.html"
-                  class="hover:text-gold transition-colors"
-                  >Gallery</a
+                  href="rooms.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >ห้องพัก</a
                 >
               </li>
               <li>
                 <a
-                  href="/contact.html"
-                  class="hover:text-gold transition-colors"
-                  >Location</a
+                  href="index.html#restaurant"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >ร้านอาหาร</a
                 >
               </li>
               <li>
                 <a
-                  href="/booking.html"
-                  class="hover:text-gold transition-colors"
-                  >Check Availability</a
+                  href="gallery.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >แกลลอรี่</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >ติดต่อ</a
                 >
               </li>
             </ul>
           </div>
 
-          <!-- Newsletter (Optional for luxury look) -->
+          <!-- Contact Info -->
           <div>
-            <h4 class="font-display text-lg mb-6 text-gold">Newsletter</h4>
-            <p class="text-xs text-gray-400 mb-4">Subscribe for exclusive offers and updates.</p>
-            <form class="flex flex-col gap-3">
-              <input type="email" placeholder="Email Address" class="bg-white/5 border border-white/10 px-4 py-3 text-sm focus:outline-none focus:border-gold text-white placeholder-gray-500">
-              <button class="btn-gold py-3 text-xs font-bold uppercase tracking-widest">Subscribe</button>
-            </form>
+            <h4 class="font-semibold text-lg mb-6">ติดต่อเรา</h4>
+            <div class="space-y-3 text-gray-400">
+              <p class="flex items-start">
+                <i class="fas fa-map-marker-alt mr-3 mt-1 text-green-400"></i>
+                <span
+                  >291 หมู่ 4 ตำบลนางแล<br />อำเภอเมืองเชียงราย จังหวัดเชียงราย
+                  57100</span
+                >
+              </p>
+              <p class="flex items-center">
+                <i class="fas fa-phone mr-3 text-green-400"></i>
+                <span>(+66) 53‑706270‑4</span>
+              </p>
+              <p class="flex items-center">
+                <i class="fas fa-envelope mr-3 text-green-400"></i>
+                <span>rsvn@goldenpineresorts.com</span>
+              </p>
+            </div>
           </div>
         </div>
 
         <div
-          class="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500"
+          class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400"
         >
-          <p>&copy; 2025 Golden Pine Resort. All Rights Reserved.</p>
-          <div class="flex gap-6 mt-4 md:mt-0">
-            <a href="#" class="hover:text-white">Privacy Policy</a>
-            <a href="#" class="hover:text-white">Terms & Conditions</a>
-          </div>
+          <p>
+            &copy; 2024 Golden Pine Resort. All rights reserved. | Designed with
+            ❤️ in Thailand
+          </p>
         </div>
       </div>
     </footer>
