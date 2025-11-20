@@ -23,7 +23,7 @@ jobs:
           protocol: ftp
           port: 21
           local-dir: ./
-                  server-dir: /dev.goldenpineresorts.com/
+          server-dir: /dev.goldenpineresorts.com/
           dangerous-clean-slate: false
           timeout: 60000
           log-level: verbose
