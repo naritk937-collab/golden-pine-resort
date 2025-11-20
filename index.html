@@ -39,12 +39,12 @@
     />
 
     <!-- AOS Animation CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <style>
       :root {
         /* Deep Forest Green - Luxury & Calm */
-        --primary: #1a3c34; 
+        --primary: #1a3c34;
         /* Muted Gold - Exquisite */
         --gold: #c5a059;
         --light-gold: #f3e9d2;
@@ -93,9 +93,9 @@
       }
 
       .btn-outline-white {
-        border: 1px solid rgba(255,255,255,0.8);
+        border: 1px solid rgba(255, 255, 255, 0.8);
         color: white;
-        background: rgba(255,255,255,0.1);
+        background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(5px);
         transition: all 0.4s ease;
       }
@@ -119,7 +119,7 @@
         backdrop-filter: blur(10px);
         padding-top: 1rem !important;
         padding-bottom: 1rem !important;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       }
 
       /* Section Spacing */
@@ -137,69 +137,124 @@
     </style>
   </head>
   <body class="antialiased">
-    
     <!-- Top Navigation -->
-    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-500 py-6">
+    <nav
+      id="navbar"
+      class="fixed w-full top-0 z-50 transition-all duration-500 py-6"
+    >
       <div class="container mx-auto px-6">
         <div class="flex justify-between items-center">
-            <!-- Logo -->
-            <a href="index.html" class="flex items-center gap-3 group">
-                <img src="img/logo.png" alt="Golden Pine Resort" class="h-14 transition-transform group-hover:scale-105">
-                <div class="hidden md:block text-white">
-                    <h1 class="font-display text-xl font-medium tracking-wider">GOLDEN PINE</h1>
-                    <p class="text-[10px] tracking-[0.2em] uppercase opacity-80">Resort & Spa</p>
-                </div>
-            </a>
-
-            <!-- Desktop Menu (Hidden on Mobile) -->
-            <div class="hidden lg:flex items-center space-x-8 text-white text-sm tracking-wide">
-                <a href="#home" class="hover:text-gold transition-colors">HOME</a>
-                <a href="#about" class="hover:text-gold transition-colors">THE RESORT</a>
-                <a href="rooms.html" class="hover:text-gold transition-colors">ACCOMMODATION</a>
-                <a href="#dining" class="hover:text-gold transition-colors">DINING</a>
-                <a href="contact.html" class="hover:text-gold transition-colors">CONTACT</a>
-                <a href="booking.html" class="btn-gold px-6 py-2.5 rounded-sm font-medium">BOOK NOW</a>
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center gap-3 group">
+            <img
+              src="img/logo.png"
+              alt="Golden Pine Resort"
+              class="h-14 transition-transform group-hover:scale-105"
+            />
+            <div class="hidden md:block text-white">
+              <h1 class="font-display text-xl font-medium tracking-wider">
+                GOLDEN PINE
+              </h1>
+              <p class="text-[10px] tracking-[0.2em] uppercase opacity-80">
+                Resort & Spa
+              </p>
             </div>
+          </a>
+
+          <!-- Desktop Menu (Hidden on Mobile) -->
+          <div
+            class="hidden lg:flex items-center space-x-8 text-white text-sm tracking-wide"
+          >
+            <a href="#home" class="hover:text-gold transition-colors">HOME</a>
+            <a href="#about" class="hover:text-gold transition-colors"
+              >THE RESORT</a
+            >
+            <a href="rooms.html" class="hover:text-gold transition-colors"
+              >ACCOMMODATION</a
+            >
+            <a href="#dining" class="hover:text-gold transition-colors"
+              >DINING</a
+            >
+            <a href="contact.html" class="hover:text-gold transition-colors"
+              >CONTACT</a
+            >
+            <a
+              href="booking.html"
+              class="btn-gold px-6 py-2.5 rounded-sm font-medium"
+              >BOOK NOW</a
+            >
+          </div>
         </div>
       </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="home"
+      class="relative h-screen flex items-center justify-center overflow-hidden"
+    >
       <!-- Background Slider -->
       <div class="swiper hero-swiper absolute inset-0">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="absolute inset-0 bg-cover bg-center transform scale-105 transition-transform duration-[10s]" style="background-image: url('img/front1.jpg')"></div>
+            <div
+              class="absolute inset-0 bg-cover bg-center transform scale-105 transition-transform duration-[10s]"
+              style="background-image: url('img/front1.jpg')"
+            ></div>
           </div>
           <div class="swiper-slide">
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('img/pool- (2).jpg')"></div>
+            <div
+              class="absolute inset-0 bg-cover bg-center"
+              style="background-image: url('img/pool- (2).jpg')"
+            ></div>
           </div>
           <div class="swiper-slide">
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('img/roomhero1.jpg')"></div>
+            <div
+              class="absolute inset-0 bg-cover bg-center"
+              style="background-image: url('img/roomhero1.jpg')"
+            ></div>
           </div>
         </div>
       </div>
 
       <!-- Overlay & Content -->
       <div class="hero-overlay absolute inset-0 z-10"></div>
-      
-      <div class="relative z-20 text-center text-white px-4 max-w-5xl mx-auto" data-aos="fade-up" data-aos-duration="1200">
-        <p class="text-gold tracking-[0.2em] uppercase text-sm md:text-base mb-4 font-medium">Welcome to Chiang Rai</p>
-        <h1 class="font-display text-4xl md:text-6xl lg:text-7xl leading-tight mb-6">
-          A Sanctuary of Serenity <br>
+
+      <div
+        class="relative z-20 text-center text-white px-4 max-w-5xl mx-auto"
+        data-aos="fade-up"
+        data-aos-duration="1200"
+      >
+        <p
+          class="text-gold tracking-[0.2em] uppercase text-sm md:text-base mb-4 font-medium"
+        >
+          Welcome to Chiang Rai
+        </p>
+        <h1
+          class="font-display text-4xl md:text-6xl lg:text-7xl leading-tight mb-6"
+        >
+          A Sanctuary of Serenity <br />
           <span class="italic font-light opacity-90">Amidst Lanna Charm</span>
         </h1>
         <div class="separator mb-8"></div>
-        <p class="font-light text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Immerse yourself in a refined relaxation experience, nestled within the breathtaking natural beauty of Northern Thailand.
+        <p
+          class="font-light text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed"
+        >
+          Immerse yourself in a refined relaxation experience, nestled within
+          the breathtaking natural beauty of Northern Thailand.
         </p>
-        
+
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="rooms.html" class="btn-gold px-8 py-3.5 rounded-sm uppercase text-sm tracking-widest">
+          <a
+            href="rooms.html"
+            class="btn-gold px-8 py-3.5 rounded-sm uppercase text-sm tracking-widest"
+          >
             Explore Suites
           </a>
-          <a href="gallery.html" class="btn-outline-white px-8 py-3.5 rounded-sm uppercase text-sm tracking-widest">
+          <a
+            href="gallery.html"
+            class="btn-outline-white px-8 py-3.5 rounded-sm uppercase text-sm tracking-widest"
+          >
             View Gallery
           </a>
         </div>
@@ -210,50 +265,83 @@
     <section id="about" class="section-padding bg-white">
       <div class="container mx-auto px-6">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
-          
           <!-- Text Content -->
           <div data-aos="fade-right">
-            <span class="text-gold font-medium tracking-widest text-sm uppercase block mb-2">About Us</span>
+            <span
+              class="text-gold font-medium tracking-widest text-sm uppercase block mb-2"
+              >About Us</span
+            >
             <h2 class="font-display text-4xl text-primary mb-6 leading-tight">
-              Refined Luxury in the <br> Heart of Nature
+              Refined Luxury in the <br />
+              Heart of Nature
             </h2>
             <p class="text-gray-600 mb-6 leading-relaxed">
-              Distinguished by its exquisite Applied Lanna architecture, <strong>Golden Pine Resort</strong> harmoniously blends with the tranquil surroundings of lush rice paddies and Nang Lae pineapple plantations. 
+              Distinguished by its exquisite Applied Lanna architecture,
+              <strong>Golden Pine Resort</strong> harmoniously blends with the
+              tranquil surroundings of lush rice paddies and Nang Lae pineapple
+              plantations.
             </p>
             <p class="text-gray-600 mb-8 leading-relaxed">
-              We are dedicated to providing exclusive privacy and meticulous service to ensure that every moment of your stay becomes a cherished memory. Whether you seek a peaceful retreat or a cultural journey, we are your sanctuary.
+              We are dedicated to providing exclusive privacy and meticulous
+              service to ensure that every moment of your stay becomes a
+              cherished memory. Whether you seek a peaceful retreat or a
+              cultural journey, we are your sanctuary.
             </p>
 
             <div class="grid grid-cols-2 gap-6 mb-8">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-[#f3e9d2] flex items-center justify-center text-primary">
-                        <i class="fas fa-star text-sm"></i>
-                    </div>
-                    <span class="text-sm font-medium text-primary uppercase tracking-wide">4-Star Luxury</span>
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-[#f3e9d2] flex items-center justify-center text-primary"
+                >
+                  <i class="fas fa-star text-sm"></i>
                 </div>
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-[#f3e9d2] flex items-center justify-center text-primary">
-                        <i class="fas fa-leaf text-sm"></i>
-                    </div>
-                    <span class="text-sm font-medium text-primary uppercase tracking-wide">Nature Retreat</span>
+                <span
+                  class="text-sm font-medium text-primary uppercase tracking-wide"
+                  >4-Star Luxury</span
+                >
+              </div>
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-[#f3e9d2] flex items-center justify-center text-primary"
+                >
+                  <i class="fas fa-leaf text-sm"></i>
                 </div>
+                <span
+                  class="text-sm font-medium text-primary uppercase tracking-wide"
+                  >Nature Retreat</span
+                >
+              </div>
             </div>
 
-            <a href="#about" class="inline-flex items-center text-primary font-medium border-b border-primary pb-1 hover:text-gold hover:border-gold transition-all uppercase text-xs tracking-widest">
+            <a
+              href="#about"
+              class="inline-flex items-center text-primary font-medium border-b border-primary pb-1 hover:text-gold hover:border-gold transition-all uppercase text-xs tracking-widest"
+            >
               Read Our Story <i class="fas fa-long-arrow-alt-right ml-2"></i>
             </a>
           </div>
 
           <!-- Image Collage -->
           <div class="relative" data-aos="fade-left">
-            <div class="aspect-[4/5] w-3/4 ml-auto rounded-lg overflow-hidden shadow-2xl">
-                <img src="img/garden-(2).jpg" alt="Golden Pine Garden" class="w-full h-full object-cover">
+            <div
+              class="aspect-[4/5] w-3/4 ml-auto rounded-lg overflow-hidden shadow-2xl"
+            >
+              <img
+                src="img/garden-(2).jpg"
+                alt="Golden Pine Garden"
+                class="w-full h-full object-cover"
+              />
             </div>
-            <div class="absolute bottom-10 left-0 w-2/3 aspect-video rounded-lg overflow-hidden shadow-2xl border-4 border-white">
-                <img src="img/pool- (3).jpg" alt="Golden Pine Pool" class="w-full h-full object-cover">
+            <div
+              class="absolute bottom-10 left-0 w-2/3 aspect-video rounded-lg overflow-hidden shadow-2xl border-4 border-white"
+            >
+              <img
+                src="img/pool- (3).jpg"
+                alt="Golden Pine Pool"
+                class="w-full h-full object-cover"
+              />
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -262,233 +350,626 @@
     <section class="section-padding bg-[#F9F9F9]">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16" data-aos="fade-up">
-          <span class="text-gold font-medium tracking-widest text-sm uppercase">Accommodations</span>
-          <h2 class="font-display text-4xl text-primary mt-3 mb-4">Your Private Sanctuary</h2>
+          <span class="text-gold font-medium tracking-widest text-sm uppercase"
+            >Accommodations</span
+          >
+          <h2 class="font-display text-4xl text-primary mt-3 mb-4">
+            Your Private Sanctuary
+          </h2>
           <div class="separator"></div>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-          
           <!-- Room 1 -->
-          <div class="group luxury-card bg-white pb-6 rounded-sm overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="group luxury-card bg-white pb-6 rounded-sm overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <div class="relative h-72 overflow-hidden">
-              <img src="img/room-52.jpg" alt="Double Deluxe" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-              <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+              <img
+                src="img/room-52.jpg"
+                alt="Double Deluxe"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"
+              ></div>
             </div>
             <div class="px-6 pt-8 text-center">
-              <h3 class="font-display text-2xl text-primary mb-2">Double Deluxe</h3>
-              <p class="text-sm text-gray-500 mb-4 uppercase tracking-wider">King Size Bed | Garden View</p>
+              <h3 class="font-display text-2xl text-primary mb-2">
+                Double Deluxe
+              </h3>
+              <p class="text-sm text-gray-500 mb-4 uppercase tracking-wider">
+                King Size Bed | Garden View
+              </p>
               <div class="w-10 h-[1px] bg-gray-300 mx-auto mb-4"></div>
-              <a href="rooms.html" class="text-gold text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors">
+              <a
+                href="rooms.html"
+                class="text-gold text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors"
+              >
                 Discover Details
               </a>
             </div>
           </div>
 
           <!-- Room 2 -->
-          <div class="group luxury-card bg-white pb-6 rounded-sm overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="group luxury-card bg-white pb-6 rounded-sm overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div class="relative h-72 overflow-hidden">
-              <img src="img/room-54.jpg" alt="Twin Deluxe" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+              <img
+                src="img/room-54.jpg"
+                alt="Twin Deluxe"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
             </div>
             <div class="px-6 pt-8 text-center">
-              <h3 class="font-display text-2xl text-primary mb-2">Twin Deluxe</h3>
-              <p class="text-sm text-gray-500 mb-4 uppercase tracking-wider">Twin Beds | Private Balcony</p>
+              <h3 class="font-display text-2xl text-primary mb-2">
+                Twin Deluxe
+              </h3>
+              <p class="text-sm text-gray-500 mb-4 uppercase tracking-wider">
+                Twin Beds | Private Balcony
+              </p>
               <div class="w-10 h-[1px] bg-gray-300 mx-auto mb-4"></div>
-              <a href="rooms.html" class="text-gold text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors">
+              <a
+                href="rooms.html"
+                class="text-gold text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors"
+              >
                 Discover Details
               </a>
             </div>
           </div>
 
           <!-- Room 3 -->
-          <div class="group luxury-card bg-white pb-6 rounded-sm overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+          <div
+            class="group luxury-card bg-white pb-6 rounded-sm overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <div class="relative h-72 overflow-hidden">
-              <img src="img/room-70.jpg" alt="Triple Room" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+              <img
+                src="img/room-70.jpg"
+                alt="Triple Room"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
             </div>
             <div class="px-6 pt-8 text-center">
-              <h3 class="font-display text-2xl text-primary mb-2">Triple Suite</h3>
-              <p class="text-sm text-gray-500 mb-4 uppercase tracking-wider">Spacious | Family Friendly</p>
+              <h3 class="font-display text-2xl text-primary mb-2">
+                Triple Suite
+              </h3>
+              <p class="text-sm text-gray-500 mb-4 uppercase tracking-wider">
+                Spacious | Family Friendly
+              </p>
               <div class="w-10 h-[1px] bg-gray-300 mx-auto mb-4"></div>
-              <a href="rooms.html" class="text-gold text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors">
+              <a
+                href="rooms.html"
+                class="text-gold text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors"
+              >
                 Discover Details
               </a>
             </div>
           </div>
-
         </div>
-        
+
         <div class="text-center mt-12">
-            <a href="rooms.html" class="btn-gold px-10 py-3 rounded-sm uppercase text-sm tracking-widest inline-block">View All Rooms</a>
+          <a
+            href="rooms.html"
+            class="btn-gold px-10 py-3 rounded-sm uppercase text-sm tracking-widest inline-block"
+            >View All Rooms</a
+          >
         </div>
       </div>
     </section>
 
     <!-- Parallax / Quote Section -->
-    <section class="relative py-32 bg-fixed bg-cover bg-center" style="background-image: url('img/outside- (3).jpg');">
-        <div class="absolute inset-0 bg-[#1a3c34]/80"></div>
-        <div class="container mx-auto px-6 relative z-10 text-center">
-            <i class="fas fa-quote-left text-gold text-4xl mb-6 opacity-70"></i>
-            <h2 class="font-display text-3xl md:text-5xl text-white leading-tight mb-8 italic font-light">
-                "A haven of peace where time slows down,<br> and nature embraces your soul."
-            </h2>
-            <p class="text-gold uppercase tracking-[0.2em] text-sm">The Golden Pine Experience</p>
-        </div>
+    <section
+      class="relative py-32 bg-fixed bg-cover bg-center"
+      style="background-image: url('img/outside- (3).jpg')"
+    >
+      <div class="absolute inset-0 bg-[#1a3c34]/80"></div>
+      <div class="container mx-auto px-6 relative z-10 text-center">
+        <i class="fas fa-quote-left text-gold text-4xl mb-6 opacity-70"></i>
+        <h2
+          class="font-display text-3xl md:text-5xl text-white leading-tight mb-8 italic font-light"
+        >
+          "A haven of peace where time slows down,<br />
+          and nature embraces your soul."
+        </h2>
+        <p class="text-gold uppercase tracking-[0.2em] text-sm">
+          The Golden Pine Experience
+        </p>
+      </div>
     </section>
 
     <!-- Facilities / Amenities -->
     <section class="section-padding bg-white">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Image Side -->
-                <div class="grid grid-cols-2 gap-4" data-aos="fade-right">
-                    <img src="img/res- (2).jpg" alt="Dining" class="w-full h-64 object-cover rounded-sm">
-                    <img src="img/pool- (1).jpg" alt="Pool" class="w-full h-64 object-cover rounded-sm mt-12">
-                </div>
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12">
+          <!-- Image Side -->
+          <div class="grid grid-cols-2 gap-4" data-aos="fade-right">
+            <img
+              src="img/res- (2).jpg"
+              alt="Dining"
+              class="w-full h-64 object-cover rounded-sm"
+            />
+            <img
+              src="img/pool- (1).jpg"
+              alt="Pool"
+              class="w-full h-64 object-cover rounded-sm mt-12"
+            />
+          </div>
 
-                <!-- Content Side -->
-                <div class="flex flex-col justify-center" data-aos="fade-left">
-                    <span class="text-gold font-medium tracking-widest text-sm uppercase mb-2">Exquisite Facilities</span>
-                    <h2 class="font-display text-4xl text-primary mb-6">Designed for Your Pleasure</h2>
-                    <p class="text-gray-600 mb-8 leading-relaxed">
-                        Indulge in our world-class amenities designed to rejuvenate your body and mind. From the refreshing waters of our outdoor pool to the authentic flavors at Sang Chan Restaurant.
-                    </p>
+          <!-- Content Side -->
+          <div class="flex flex-col justify-center" data-aos="fade-left">
+            <span
+              class="text-gold font-medium tracking-widest text-sm uppercase mb-2"
+              >Exquisite Facilities</span
+            >
+            <h2 class="font-display text-4xl text-primary mb-6">
+              Designed for Your Pleasure
+            </h2>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+              Indulge in our world-class amenities designed to rejuvenate your
+              body and mind. From the refreshing waters of our outdoor pool to
+              the authentic flavors at Sang Chan Restaurant.
+            </p>
 
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 border border-gold/30 rounded-full flex items-center justify-center text-gold shrink-0">
-                                <i class="fas fa-utensils"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-display text-xl text-primary mb-1">Sang Chan Restaurant</h4>
-                                <p class="text-sm text-gray-500">Authentic Thai & International Cuisine</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 border border-gold/30 rounded-full flex items-center justify-center text-gold shrink-0">
-                                <i class="fas fa-swimming-pool"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-display text-xl text-primary mb-1">Outdoor Pool</h4>
-                                <p class="text-sm text-gray-500">Serene swimming amidst nature</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 border border-gold/30 rounded-full flex items-center justify-center text-gold shrink-0">
-                                <i class="fas fa-spa"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-display text-xl text-primary mb-1">Hom Nuan Spa</h4>
-                                <p class="text-sm text-gray-500">Traditional therapeutic massage</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 border border-gold/30 rounded-full flex items-center justify-center text-gold shrink-0"
+                >
+                  <i class="fas fa-utensils"></i>
                 </div>
+                <div>
+                  <h4 class="font-display text-xl text-primary mb-1">
+                    Sang Chan Restaurant
+                  </h4>
+                  <p class="text-sm text-gray-500">
+                    Authentic Thai & International Cuisine
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 border border-gold/30 rounded-full flex items-center justify-center text-gold shrink-0"
+                >
+                  <i class="fas fa-swimming-pool"></i>
+                </div>
+                <div>
+                  <h4 class="font-display text-xl text-primary mb-1">
+                    Outdoor Pool
+                  </h4>
+                  <p class="text-sm text-gray-500">
+                    Serene swimming amidst nature
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-12 h-12 border border-gold/30 rounded-full flex items-center justify-center text-gold shrink-0"
+                >
+                  <i class="fas fa-spa"></i>
+                </div>
+                <div>
+                  <h4 class="font-display text-xl text-primary mb-1">
+                    Hom Nuan Spa
+                  </h4>
+                  <p class="text-sm text-gray-500">
+                    Traditional therapeutic massage
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Nearby Attractions -->
+    <section class="section-padding bg-[#F9F9F9]">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <span class="text-gold font-medium tracking-widest text-sm uppercase"
+            >Explore Chiang Rai</span
+          >
+          <h2 class="font-display text-4xl text-primary mt-3 mb-4">
+            Destinations Nearby
+          </h2>
+          <div class="separator"></div>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Our prime location offers easy access to Chiang Rai's most famous
+            landmarks and attractions.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Attraction: Black House -->
+          <div
+            class="group luxury-card bg-white pb-6 rounded-sm overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="relative h-64 overflow-hidden">
+              <img
+                src="img/black-house.jpg"
+                alt="Baan Dam Museum"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+            </div>
+            <div class="px-6 pt-6 text-left">
+              <div class="flex justify-between items-center mb-2">
+                <h3 class="font-display text-xl text-primary">
+                  Baan Dam Museum
+                </h3>
+                <span class="text-sm font-semibold text-gold">~ 5 min</span>
+              </div>
+              <p class="text-sm text-gray-500 mb-4">
+                Discover the provocative and unique art collection of the late
+                national artist, Thawan Duchanee.
+              </p>
+            </div>
+          </div>
+
+          <!-- Attraction: Blue Temple -->
+          <div
+            class="group luxury-card bg-white pb-6 rounded-sm overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="relative h-64 overflow-hidden">
+              <img
+                src="img/blue-temple.jpg"
+                alt="Blue Temple"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+            </div>
+            <div class="px-6 pt-6 text-left">
+              <div class="flex justify-between items-center mb-2">
+                <h3 class="font-display text-xl text-primary">Blue Temple</h3>
+                <span class="text-sm font-semibold text-gold">~ 15 min</span>
+              </div>
+              <p class="text-sm text-gray-500 mb-4">
+                Be mesmerized by the stunning modern architecture and vivid blue
+                hues of Wat Rong Suea Ten.
+              </p>
+            </div>
+          </div>
+
+          <!-- Attraction: Wat Huai Pla Kang -->
+          <div
+            class="group luxury-card bg-white pb-6 rounded-sm overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="relative h-64 overflow-hidden">
+              <img
+                src="img/wat-huai-pla-kang.jpg"
+                alt="Wat Huai Pla Kang"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+            </div>
+            <div class="px-6 pt-6 text-left">
+              <div class="flex justify-between items-center mb-2">
+                <h3 class="font-display text-xl text-primary">
+                  Wat Huai Pla Kang
+                </h3>
+                <span class="text-sm font-semibold text-gold">~ 15 min</span>
+              </div>
+              <p class="text-sm text-gray-500 mb-4">
+                Visit the remarkable temple complex featuring a 9-story pagoda
+                and a giant statue of Guan Yin.
+              </p>
+            </div>
+          </div>
+
+          <!-- Attraction: Singha Park -->
+          <div
+            class="group luxury-card bg-white pb-6 rounded-sm overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="relative h-64 overflow-hidden">
+              <img
+                src="img/singha-park.jpg"
+                alt="Singha Park"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+            </div>
+            <div class="px-6 pt-6 text-left">
+              <div class="flex justify-between items-center mb-2">
+                <h3 class="font-display text-xl text-primary">Singha Park</h3>
+                <span class="text-sm font-semibold text-gold">~ 25 min</span>
+              </div>
+              <p class="text-sm text-gray-500 mb-4">
+                An agro-tourism destination with beautiful plantations, a zoo,
+                and adventure activities.
+              </p>
+            </div>
+          </div>
+
+          <!-- Attraction: Mae Fah Luang Garden -->
+          <div
+            class="group luxury-card bg-white pb-6 rounded-sm overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="relative h-64 overflow-hidden">
+              <img
+                src="img/Maefalung.jpg"
+                alt="Mae Fah Luang Garden"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+            </div>
+            <div class="px-6 pt-6 text-left">
+              <div class="flex justify-between items-center mb-2">
+                <h3 class="font-display text-xl text-primary">
+                  Mae Fah Luang Garden
+                </h3>
+                <span class="text-sm font-semibold text-gold">~ 50 min</span>
+              </div>
+              <p class="text-sm text-gray-500 mb-4">
+                Explore the beautiful landscaped gardens and flower displays on
+                Doi Tung.
+              </p>
+            </div>
+          </div>
+
+          <!-- Attraction: Mae Sai -->
+          <div
+            class="group luxury-card bg-white pb-6 rounded-sm overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="relative h-64 overflow-hidden">
+              <img
+                src="img/mae-sai.jpg"
+                alt="Mae Sai"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+            </div>
+            <div class="px-6 pt-6 text-left">
+              <div class="flex justify-between items-center mb-2">
+                <h3 class="font-display text-xl text-primary">
+                  Mae Sai Border
+                </h3>
+                <span class="text-sm font-semibold text-gold">~ 55 min</span>
+              </div>
+              <p class="text-sm text-gray-500 mb-4">
+                Experience the bustling market at the northernmost point of
+                Thailand, bordering Myanmar.
+              </p>
+            </div>
+          </div>
+
+          <!-- Attraction: Chiang Rai City -->
+          <div
+            class="group luxury-card bg-white pb-6 rounded-sm overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="relative h-64 overflow-hidden">
+              <img
+                src="img/chiang-rai-city.jpg"
+                alt="Chiang Rai City"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+            </div>
+            <div class="px-6 pt-6 text-left">
+              <div class="flex justify-between items-center mb-2">
+                <h3 class="font-display text-xl text-primary">
+                  Chiang Rai City
+                </h3>
+                <span class="text-sm font-semibold text-gold">~ 20 min</span>
+              </div>
+              <p class="text-sm text-gray-500 mb-4">
+                Explore the city center, Clock Tower, and the vibrant Night
+                Bazaar for local food and shopping.
+              </p>
+            </div>
+          </div>
+
+          <!-- Attraction: Airport -->
+          <div
+            class="group luxury-card bg-white pb-6 rounded-sm overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="relative h-64 overflow-hidden">
+              <img
+                src="img/airport.jpg"
+                alt="Mae Fah Luang Airport"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+            </div>
+            <div class="px-6 pt-6 text-left">
+              <div class="flex justify-between items-center mb-2">
+                <h3 class="font-display text-xl text-primary">
+                  Mae Fah Luang Airport
+                </h3>
+                <span class="text-sm font-semibold text-gold">~ 10 min</span>
+              </div>
+              <p class="text-sm text-gray-500 mb-4">
+                Enjoy the convenience of being just a short drive away from
+                Chiang Rai's main airport (CEI).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#1a3c34] text-white pt-20 pb-10 border-t border-white/10">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                
-                <!-- Brand -->
-                <div>
-                    <h3 class="font-display text-2xl mb-6 tracking-wide">GOLDEN PINE</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                        A sanctuary of serenity in Chiang Rai. Experience the essence of Lanna hospitality in a luxurious natural setting.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold transition-colors">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold transition-colors">
-                            <i class="fab fa-line"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Contact -->
-                <div>
-                    <h4 class="font-display text-lg mb-6 text-gold">Contact Us</h4>
-                    <ul class="space-y-4 text-sm text-gray-300">
-                        <li class="flex items-start gap-3">
-                            <i class="fas fa-map-marker-alt mt-1 text-gold"></i>
-                            <span>291 Moo 4, Nang Lae,<br>Muang Chiang Rai, 57100</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-phone text-gold"></i>
-                            <span>(+66) 53‑706270‑4</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-envelope text-gold"></i>
-                            <span>rsvn@goldenpineresorts.com</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Links -->
-                <div>
-                    <h4 class="font-display text-lg mb-6 text-gold">Explore</h4>
-                    <ul class="space-y-3 text-sm text-gray-300">
-                        <li><a href="#home" class="hover:text-gold transition-colors">Home</a></li>
-                        <li><a href="rooms.html" class="hover:text-gold transition-colors">Accommodation</a></li>
-                        <li><a href="gallery.html" class="hover:text-gold transition-colors">Gallery</a></li>
-                        <li><a href="contact.html" class="hover:text-gold transition-colors">Location</a></li>
-                        <li><a href="booking.html" class="hover:text-gold transition-colors">Check Availability</a></li>
-                    </ul>
-                </div>
-
-                <!-- Newsletter (Optional for luxury look) -->
-                <div>
-                    <h4 class="font-display text-lg mb-6 text-gold">Newsletter</h4>
-                    <p class="text-xs text-gray-400 mb-4">Subscribe for exclusive offers and updates.</p>
-                    <form class="flex flex-col gap-3">
-                        <input type="email" placeholder="Email Address" class="bg-white/5 border border-white/10 px-4 py-3 text-sm focus:outline-none focus:border-gold text-white placeholder-gray-500">
-                        <button class="btn-gold py-3 text-xs font-bold uppercase tracking-widest">Subscribe</button>
-                    </form>
-                </div>
+    <footer
+      class="bg-[#1a3c34] text-white pt-20 pb-10 border-t border-white/10"
+    >
+      <div class="container mx-auto px-6">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16"
+        >
+          <!-- Brand -->
+          <div>
+            <h3 class="font-display text-2xl mb-6 tracking-wide">
+              GOLDEN PINE
+            </h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              A sanctuary of serenity in Chiang Rai. Experience the essence of
+              Lanna hospitality in a luxurious natural setting.
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold transition-colors"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold transition-colors"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold transition-colors"
+              >
+                <i class="fab fa-line"></i>
+              </a>
             </div>
+          </div>
 
-            <!-- Bottom Bar -->
-            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-                <p>&copy; 2025 Golden Pine Resort. All Rights Reserved.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-white">Privacy Policy</a>
-                    <a href="#" class="hover:text-white">Terms & Conditions</a>
-                </div>
-            </div>
+          <!-- Contact -->
+          <div>
+            <h4 class="font-display text-lg mb-6 text-gold">Contact Us</h4>
+            <ul class="space-y-4 text-sm text-gray-300">
+              <li class="flex items-start gap-3">
+                <i class="fas fa-map-marker-alt mt-1 text-gold"></i>
+                <span>291 Moo 4, Nang Lae,<br />Muang Chiang Rai, 57100</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fas fa-phone text-gold"></i>
+                <span>(+66) 53‑706270‑4</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fas fa-envelope text-gold"></i>
+                <span>rsvn@goldenpineresorts.com</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Links -->
+          <div>
+            <h4 class="font-display text-lg mb-6 text-gold">Explore</h4>
+            <ul class="space-y-3 text-sm text-gray-300">
+              <li>
+                <a href="#home" class="hover:text-gold transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="rooms.html" class="hover:text-gold transition-colors"
+                  >Accommodation</a
+                >
+              </li>
+              <li>
+                <a href="gallery.html" class="hover:text-gold transition-colors"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a href="contact.html" class="hover:text-gold transition-colors"
+                  >Location</a
+                >
+              </li>
+              <li>
+                <a href="booking.html" class="hover:text-gold transition-colors"
+                  >Check Availability</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter (Optional for luxury look) -->
+          <div>
+            <h4 class="font-display text-lg mb-6 text-gold">Newsletter</h4>
+            <p class="text-xs text-gray-400 mb-4">
+              Subscribe for exclusive offers and updates.
+            </p>
+            <form class="flex flex-col gap-3">
+              <input
+                type="email"
+                placeholder="Email Address"
+                class="bg-white/5 border border-white/10 px-4 py-3 text-sm focus:outline-none focus:border-gold text-white placeholder-gray-500"
+              />
+              <button
+                class="btn-gold py-3 text-xs font-bold uppercase tracking-widest"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
         </div>
+
+        <!-- Bottom Bar -->
+        <div
+          class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500"
+        >
+          <p>&copy; 2025 Golden Pine Resort. All Rights Reserved.</p>
+          <div class="flex gap-6 mt-4 md:mt-0">
+            <a href="#" class="hover:text-white">Privacy Policy</a>
+            <a href="#" class="hover:text-white">Terms & Conditions</a>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <!-- Bottom Navigation (Mobile Only) -->
-    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 pb-safe lg:hidden">
-        <div class="flex justify-around items-center py-2">
-            <a href="#home" class="flex flex-col items-center py-2 px-3 text-primary">
-                <i class="fas fa-home text-lg mb-1"></i>
-                <span class="text-[10px] font-medium">Home</span>
-            </a>
-            <a href="rooms.html" class="flex flex-col items-center py-2 px-3 text-gray-400 hover:text-primary">
-                <i class="fas fa-bed text-lg mb-1"></i>
-                <span class="text-[10px] font-medium">Rooms</span>
-            </a>
-            <a href="booking.html" class="flex flex-col items-center justify-center -mt-8">
-                <div class="w-14 h-14 bg-gold rounded-full flex items-center justify-center shadow-lg text-white">
-                    <i class="fas fa-calendar-check text-xl"></i>
-                </div>
-            </a>
-            <a href="gallery.html" class="flex flex-col items-center py-2 px-3 text-gray-400 hover:text-primary">
-                <i class="fas fa-images text-lg mb-1"></i>
-                <span class="text-[10px] font-medium">Gallery</span>
-            </a>
-            <a href="contact.html" class="flex flex-col items-center py-2 px-3 text-gray-400 hover:text-primary">
-                <i class="fas fa-phone text-lg mb-1"></i>
-                <span class="text-[10px] font-medium">Contact</span>
-            </a>
-        </div>
+    <nav
+      class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 pb-safe lg:hidden"
+    >
+      <div class="flex justify-around items-center py-2">
+        <a
+          href="#home"
+          class="flex flex-col items-center py-2 px-3 text-primary"
+        >
+          <i class="fas fa-home text-lg mb-1"></i>
+          <span class="text-[10px] font-medium">Home</span>
+        </a>
+        <a
+          href="rooms.html"
+          class="flex flex-col items-center py-2 px-3 text-gray-400 hover:text-primary"
+        >
+          <i class="fas fa-bed text-lg mb-1"></i>
+          <span class="text-[10px] font-medium">Rooms</span>
+        </a>
+        <a
+          href="booking.html"
+          class="flex flex-col items-center justify-center -mt-8"
+        >
+          <div
+            class="w-14 h-14 bg-gold rounded-full flex items-center justify-center shadow-lg text-white"
+          >
+            <i class="fas fa-calendar-check text-xl"></i>
+          </div>
+        </a>
+        <a
+          href="gallery.html"
+          class="flex flex-col items-center py-2 px-3 text-gray-400 hover:text-primary"
+        >
+          <i class="fas fa-images text-lg mb-1"></i>
+          <span class="text-[10px] font-medium">Gallery</span>
+        </a>
+        <a
+          href="contact.html"
+          class="flex flex-col items-center py-2 px-3 text-gray-400 hover:text-primary"
+        >
+          <i class="fas fa-phone text-lg mb-1"></i>
+          <span class="text-[10px] font-medium">Contact</span>
+        </a>
+      </div>
     </nav>
 
     <!-- Scripts -->
@@ -501,7 +982,7 @@
         once: true,
         offset: 100,
         duration: 800,
-        easing: 'ease-out-cubic',
+        easing: "ease-out-cubic",
       });
 
       // Initialize Hero Swiper
