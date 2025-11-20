@@ -48,11 +48,13 @@
 
     <style>
       :root {
-        --primary: #2f5d50;
-        --secondary: #40524d;
-        --accent: #86b817;
-        --light: #f1f6f5;
-        --dark: #0d1f1a;
+        /* Deep Forest Green - Luxury & Calm */
+        --primary: #1a3c34; 
+        /* Muted Gold - Exquisite */
+        --gold: #c5a059;
+        --light-gold: #f3e9d2;
+        --text-dark: #2d3748;
+        --text-light: #718096;
       }
 
       * {
@@ -64,7 +66,8 @@
       body {
         font-family: "Inter", sans-serif;
         line-height: 1.6;
-        color: var(--secondary);
+        color: var(--text-dark);
+        background-color: #fdfbf7; /* Warm off-white */
       }
 
       .font-display {
@@ -73,9 +76,9 @@
 
       .hero-gradient {
         background: linear-gradient(
-          135deg,
-          rgba(47, 93, 80, 0.9) 0%,
-          rgba(64, 82, 77, 0.8) 100%
+          to bottom,
+          rgba(26, 60, 52, 0.3) 0%,
+          rgba(26, 60, 52, 0.6) 100%
         );
       }
 
@@ -88,32 +91,20 @@
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
       }
 
-      .btn-primary {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        background: linear-gradient(180deg, #86b817 0%, #2f5d50 100%);
-        color: #fff;
-        padding: 0.6rem 1.1rem;
-        border-radius: 999px;
-        font-weight: 600;
-        box-shadow: 0 8px 18px rgba(47, 93, 80, 0.25),
-          inset 0 -6px 18px rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        transition: transform 0.22s ease, box-shadow 0.22s ease;
-        text-decoration: none;
-        position: relative;
+      .text-gold {
+        color: var(--gold);
       }
 
-      .btn-primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 18px 36px rgba(47, 93, 80, 0.28),
-          inset 0 -6px 18px rgba(255, 255, 255, 0.08);
+      .btn-gold {
+        background-color: var(--gold);
+        color: white;
+        transition: all 0.4s ease;
+        letter-spacing: 0.05em;
       }
-
-      .btn-primary:active {
-        transform: translateY(-1px) scale(0.997);
-        box-shadow: 0 6px 12px rgba(47, 93, 80, 0.18);
+      .btn-gold:hover {
+        background-color: #b08d48;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
       }
 
       .section-padding {
@@ -121,8 +112,11 @@
       }
 
       .navbar-scroll {
+        background: rgba(26, 60, 52, 0.95);
         backdrop-filter: blur(10px);
-        background: rgba(47, 93, 80, 0.95);
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       }
 
       /* Gallery specific styles */
@@ -179,9 +173,6 @@
         .card-hover:hover {
           transform: none;
         }
-        .btn-primary:hover {
-          transform: none;
-        }
         .gallery-item:hover {
           transform: none;
         }
@@ -199,9 +190,6 @@
         .card-hover:hover {
           transform: none;
         }
-        .btn-primary:hover {
-          transform: none;
-        }
         .gallery-item:hover {
           transform: none;
         }
@@ -214,7 +202,7 @@
 
       /* Add bottom padding to body to prevent content from being hidden behind bottom nav */
       body {
-        padding-bottom: 80px;
+        padding-bottom: 80px; /* For mobile nav */
       }
 
       /* Touch targets */
@@ -228,120 +216,86 @@
     </style>
   </head>
   <body>
-    <!-- Top Navigation (Logo Only) -->
     <nav
       id="navbar"
-      class="fixed w-full top-0 z-50 transition-all duration-300 py-4"
+      class="fixed w-full top-0 z-50 transition-all duration-500 py-6"
     >
       <div class="container mx-auto px-6">
-        <div class="flex justify-center items-center">
+        <div class="flex justify-between items-center">
           <!-- Logo -->
-          <div class="flex items-center space-x-2 sm:space-x-3">
-            <img
-              src="/img/logo.png"
-              alt="Golden Pine Resort"
-              class="h-12 sm:h-16"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
-            />
-            <div
-              class="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center"
-              style="display: none"
-            >
-              <i class="fas fa-tree text-white text-lg sm:text-xl"></i>
+            <a href="/index.html" class="flex items-center gap-3 group">
+                <img src="/img/logo.png" alt="Golden Pine Resort" class="h-14 transition-transform group-hover:scale-105">
+                <div class="hidden md:block text-white">
+                    <h1 class="font-display text-xl font-medium tracking-wider">GOLDEN PINE</h1>
+                    <p class="text-[10px] tracking-[0.2em] uppercase opacity-80">Resort & Spa</p>
+                </div>
+            </a>
+
+            <!-- Desktop Menu (Hidden on Mobile) -->
+            <div class="hidden lg:flex items-center space-x-8 text-white text-sm tracking-wide">
+                <a href="/index.html#home" class="hover:text-gold transition-colors">HOME</a>
+                <a href="/index.html#about" class="hover:text-gold transition-colors">THE RESORT</a>
+                <a href="/rooms.html" class="hover:text-gold transition-colors">ACCOMMODATION</a>
+                <a href="/index.html#dining" class="hover:text-gold transition-colors">DINING</a>
+                <a href="/contact.html" class="hover:text-gold transition-colors">CONTACT</a>
+                <a href="/booking.html" class="btn-gold px-6 py-2.5 rounded-sm font-medium">BOOK NOW</a>
             </div>
-            <div>
-              <h1 class="font-display text-lg sm:text-2xl font-bold text-white">
-                Golden Pine Resort
-              </h1>
-              <p class="text-xs text-gray-300 hidden sm:block">
-                Chiang Rai Luxury Experience
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </nav>
 
     <!-- Bottom Navigation -->
     <nav
-      class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 pb-safe"
+      class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 pb-safe lg:hidden"
     >
       <div class="flex justify-around items-center py-2">
-        <a
-          href="/index.html"
-          class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors"
-        >
+        <a href="/index.html" class="flex flex-col items-center py-2 px-3 text-gray-400 hover:text-primary">
           <i class="fas fa-home text-xl mb-1"></i>
-          <span class="text-xs font-medium">Home</span>
+          <span class="text-[10px] font-medium">Home</span>
         </a>
-        <a
-          href="index.html#about"
-          class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors"
-        >
-          <i class="fas fa-info-circle text-xl mb-1"></i>
-          <span class="text-xs font-medium">About</span>
-        </a>
-        <a
-          href="/rooms.html"
-          class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors"
-        >
+        <a href="/rooms.html" class="flex flex-col items-center py-2 px-3 text-gray-400 hover:text-primary">
           <i class="fas fa-bed text-xl mb-1"></i>
-          <span class="text-xs font-medium">Rooms</span>
+          <span class="text-[10px] font-medium">Rooms</span>
         </a>
-        <a
-          href="index.html#restaurant"
-          class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors"
-        >
-          <i class="fas fa-utensils text-xl mb-1"></i>
-          <span class="text-xs font-medium">Restaurant</span>
+        <a href="/booking.html" class="flex flex-col items-center justify-center -mt-8">
+            <div class="w-14 h-14 bg-gold rounded-full flex items-center justify-center shadow-lg text-white">
+                <i class="fas fa-calendar-check text-xl"></i>
+            </div>
         </a>
-        <a
-          href="/gallery.html"
-          class="flex flex-col items-center py-2 px-3 text-green-600 transition-colors"
-        >
+        <a href="/gallery.html" class="flex flex-col items-center py-2 px-3 text-primary">
           <i class="fas fa-images text-xl mb-1"></i>
-          <span class="text-xs font-medium">Gallery</span>
+          <span class="text-[10px] font-medium">Gallery</span>
         </a>
-        <a
-          href="/contact.html"
-          class="flex flex-col items-center py-2 px-3 text-gray-500 hover:text-green-600 transition-colors"
-        >
+        <a href="/contact.html" class="flex flex-col items-center py-2 px-3 text-gray-400 hover:text-primary">
           <i class="fas fa-phone text-xl mb-1"></i>
-          <span class="text-xs font-medium">Contact</span>
-        </a>
-        <a
-          href="/booking.html"
-          class="flex flex-col items-center py-2 px-3 text-white bg-green-600 rounded-lg mx-1 transition-colors"
-        >
-          <i class="fas fa-calendar-check text-xl mb-1"></i>
-          <span class="text-xs font-medium">จอง</span>
+          <span class="text-[10px] font-medium">Contact</span>
         </a>
       </div>
     </nav>
 
     <!-- Hero Section -->
     <section
-      class="relative h-[60vh] flex items-center justify-center overflow-hidden"
+      class="relative h-[50vh] flex items-center justify-center overflow-hidden"
     >
       <div
         class="absolute inset-0 bg-cover bg-center"
         style="background-image: url('/img/front1.jpg')"
       ></div>
-      <div class="hero-gradient absolute inset-0"></div>
+      <div class="hero-gradient absolute inset-0 z-10"></div>
       <div class="relative z-10 text-center text-white px-6">
         <h1
           class="font-display text-3xl sm:text-4xl md:text-6xl font-bold mb-6"
         >
-          แกลลอรี่
+          Gallery
         </h1>
         <p class="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
           ชมภาพบรรยากาศและสิ่งอำนวยความสะดวกต่างๆ ของ Golden Pine Resort
         </p>
         <a
           href="#gallery"
-          class="btn-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg"
+          class="btn-gold px-8 py-3.5 rounded-sm uppercase text-sm tracking-widest"
         >
-          <i class="fas fa-images mr-2"></i>ดูภาพทั้งหมด
+          View Photos
         </a>
       </div>
     </section>
@@ -351,57 +305,57 @@
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
           <span
-            class="text-green-600 font-semibold text-sm uppercase tracking-wide"
+            class="text-gold font-semibold text-sm uppercase tracking-widest"
             >Photo Gallery</span
           >
           <h2
-            class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-4 mb-6"
+            class="font-display text-3xl sm:text-4xl font-bold text-primary mt-4 mb-6"
           >
             ภาพบรรยากาศรีสอร์ต
           </h2>
-          <p class="text-gray-600 text-lg max-w-2xl mx-auto mb-8">
+          <p class="text-text-light text-lg max-w-2xl mx-auto mb-8">
             ชมภาพบรรยากาศและสิ่งอำนวยความสะดวกต่างๆ ของ Golden Pine Resort
           </p>
 
           <!-- Gallery Filter Buttons -->
           <div class="flex flex-wrap justify-center gap-3 mb-8">
             <button
-              class="gallery-filter active bg-green-600 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all hover:bg-green-700 touch-manipulation"
+              class="gallery-filter active bg-primary text-white px-4 py-2 sm:px-6 sm:py-3 rounded-sm font-medium transition-all hover:bg-gray-700 touch-manipulation"
               data-filter="all"
               style="min-height: 44px"
             >
               All Photos
             </button>
             <button
-              class="gallery-filter bg-white text-gray-700 border border-gray-300 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all hover:bg-gray-50 touch-manipulation"
+              class="gallery-filter bg-white text-gray-700 border border-gray-300 px-4 py-2 sm:px-6 sm:py-3 rounded-sm font-medium transition-all hover:bg-gray-50 touch-manipulation"
               data-filter="pool"
               style="min-height: 44px"
             >
               Pool
             </button>
             <button
-              class="gallery-filter bg-white text-gray-700 border border-gray-300 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all hover:bg-gray-50 touch-manipulation"
+              class="gallery-filter bg-white text-gray-700 border border-gray-300 px-4 py-2 sm:px-6 sm:py-3 rounded-sm font-medium transition-all hover:bg-gray-50 touch-manipulation"
               data-filter="rooms"
               style="min-height: 44px"
             >
               Rooms
             </button>
             <button
-              class="gallery-filter bg-white text-gray-700 border border-gray-300 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all hover:bg-gray-50 touch-manipulation"
+              class="gallery-filter bg-white text-gray-700 border border-gray-300 px-4 py-2 sm:px-6 sm:py-3 rounded-sm font-medium transition-all hover:bg-gray-50 touch-manipulation"
               data-filter="restaurant"
               style="min-height: 44px"
             >
               Restaurant
             </button>
             <button
-              class="gallery-filter bg-white text-gray-700 border border-gray-300 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all hover:bg-gray-50 touch-manipulation"
+              class="gallery-filter bg-white text-gray-700 border border-gray-300 px-4 py-2 sm:px-6 sm:py-3 rounded-sm font-medium transition-all hover:bg-gray-50 touch-manipulation"
               data-filter="garden"
               style="min-height: 44px"
             >
               Garden
             </button>
             <button
-              class="gallery-filter bg-white text-gray-700 border border-gray-300 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium transition-all hover:bg-gray-50 touch-manipulation"
+              class="gallery-filter bg-white text-gray-700 border border-gray-300 px-4 py-2 sm:px-6 sm:py-3 rounded-sm font-medium transition-all hover:bg-gray-50 touch-manipulation"
               data-filter="view"
               style="min-height: 44px"
             >
@@ -419,7 +373,7 @@
             <img
               src="/img/pool- (1).jpg"
               alt="สระว่ายน้ำ"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -427,7 +381,7 @@
             <img
               src="/img/pool- (2).jpg"
               alt="สระว่ายน้ำ"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -435,7 +389,7 @@
             <img
               src="/img/pool- (3).jpg"
               alt="สระว่ายน้ำ"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -443,7 +397,7 @@
             <img
               src="/img/poolnight.jpg"
               alt="สระว่ายน้ำยามค่ำคืน"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -451,7 +405,7 @@
             <img
               src="/img/poolnight (2).jpg"
               alt="สระว่ายน้ำยามค่ำคืน"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -459,7 +413,7 @@
             <img
               src="/img/pool- (4).jpg"
               alt="สระว่ายน้ำ"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -469,7 +423,7 @@
             <img
               src="/img/room-52.jpg"
               alt="ห้องพัก Double Deluxe"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -477,7 +431,7 @@
             <img
               src="/img/room-54.jpg"
               alt="ห้องพัก Twin Deluxe"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -485,7 +439,7 @@
             <img
               src="/img/room-57.jpg"
               alt="ห้องพัก"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -493,7 +447,7 @@
             <img
               src="/img/room-70.jpg"
               alt="ห้องพัก Triple"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -501,7 +455,7 @@
             <img
               src="/img/room- (1).jpg"
               alt="ห้องพัก"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -509,7 +463,7 @@
             <img
               src="/img/room- (2).jpg"
               alt="ห้องพัก"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -517,7 +471,7 @@
             <img
               src="/img/room- (3).jpg"
               alt="ห้องพัก"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -525,7 +479,7 @@
             <img
               src="/img/toilet.jpg"
               alt="ห้องน้ำ"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -535,7 +489,7 @@
             <img
               src="/img/res- (2).jpg"
               alt="ร้านอาหาร Sang Chan"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -543,7 +497,7 @@
             <img
               src="/img/res- (5).jpg"
               alt="บาร์ในล็อบบี้"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -551,7 +505,7 @@
             <img
               src="/img/res- (10).jpg"
               alt="รูมเซอร์วิส"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -559,7 +513,7 @@
             <img
               src="/img/res- (11).jpg"
               alt="ร้านอาหาร"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -567,7 +521,7 @@
             <img
               src="/img/res22.jpg"
               alt="อาหารไทย"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -575,7 +529,7 @@
             <img
               src="/img/res- (1).jpg"
               alt="บรรยากาศร้านอาหาร"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -583,7 +537,7 @@
             <img
               src="/img/res- (3).jpg"
               alt="อาหารนานาชาติ"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -591,7 +545,7 @@
             <img
               src="/img/res- (4).jpg"
               alt="เครื่องดื่ม"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -601,7 +555,7 @@
             <img
               src="/img/garden- (1).jpg"
               alt="สวน"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -609,7 +563,7 @@
             <img
               src="/img/garden- (2).jpg"
               alt="สวน"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -617,7 +571,7 @@
             <img
               src="/img/garden- (5).jpg"
               alt="สวน"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -625,7 +579,7 @@
             <img
               src="/img/garden- (6).jpg"
               alt="สวน"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -633,7 +587,7 @@
             <img
               src="/img/bridge.jpg"
               alt="สะพานในสวน"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -641,7 +595,7 @@
             <img
               src="/img/garden- (3).jpg"
               alt="สวน"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -649,7 +603,7 @@
             <img
               src="/img/garden- (4).jpg"
               alt="สวน"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -657,7 +611,7 @@
             <img
               src="/img/garden- (7).jpg"
               alt="สวน"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -670,7 +624,7 @@
             <img
               src="/img/front1.jpg"
               alt="ด้านหน้ารีสอร์ต"
-              class="w-full h-full object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-full object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -678,7 +632,7 @@
             <img
               src="/img/outside- (1).jpg"
               alt="ภายนอก"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -686,7 +640,7 @@
             <img
               src="/img/outside- (3).jpg"
               alt="ภายนอก"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -694,7 +648,7 @@
             <img
               src="/img/outside- (5).jpg"
               alt="ภายนอก"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -702,7 +656,7 @@
             <img
               src="/img/outside- (7).jpg"
               alt="ภายนอก"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -710,7 +664,7 @@
             <img
               src="/img/outside- (9).jpg"
               alt="ภายนอก"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -718,7 +672,7 @@
             <img
               src="/img/outside1.jpg"
               alt="ภายนอก"
-              class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
+              class="w-full h-48 object-cover rounded-sm shadow-lg hover:shadow-2xl transition-shadow cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -734,25 +688,25 @@
 
     <!-- CTA Section -->
     <section
-      class="section-padding bg-gradient-to-r from-green-600 to-green-800"
+      class="section-padding bg-primary"
     >
       <div class="container mx-auto px-6 text-center">
         <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-6">
           ประทับใจกับบรรยากาศของเราแล้วใช่ไหม?
         </h2>
-        <p class="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
           มาสัมผัสประสบการณ์จริงที่ Golden Pine Resort
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="/booking.html"
-            class="bg-white text-green-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors"
+            class="btn-gold px-8 py-3.5 rounded-sm uppercase text-sm tracking-widest"
           >
-            <i class="fas fa-calendar-check mr-2"></i>จองห้องพัก
+            สำรองห้องพัก
           </a>
           <a
             href="tel:+66537062704"
-            class="bg-yellow-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-yellow-600 transition-colors"
+            class="border border-white/50 text-white px-8 py-3.5 rounded-sm uppercase text-sm tracking-widest hover:bg-white hover:text-primary transition-colors"
           >
             <i class="fas fa-phone mr-2"></i>โทรสอบถาม
           </a>
@@ -761,146 +715,125 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16">
+    <footer class="bg-primary text-white pt-20 pb-10 border-t border-white/10">
       <div class="container mx-auto px-6">
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16"
         >
           <!-- Logo & Description -->
-          <div class="lg:col-span-2">
-            <div class="flex items-center space-x-3 mb-6">
-              <img
-                src="/img/logo.png"
-                alt="Golden Pine Resort"
-                class="h-12"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
-              />
-              <div
-                class="w-12 h-12 flex items-center justify-center"
-                style="display: none"
-              >
-                <i class="fas fa-tree text-green-400 text-xl"></i>
-              </div>
-              <div>
-                <h3 class="font-display text-2xl font-bold">
-                  Golden Pine Resort
-                </h3>
-                <p class="text-gray-400 text-sm">
-                  Chiang Rai Luxury Experience
-                </p>
-              </div>
-            </div>
-            <p class="text-gray-400 mb-6 max-w-md">
-              Golden Pine Resort รีสอร์ตหรูหรา 4 ดาว ในใจกลางเชียงราย
-              พร้อมบริการครบครันและสิ่งอำนวยความสะดวกระดับโลก
+          <div>
+            <h3 class="font-display text-2xl mb-6 tracking-wide">GOLDEN PINE</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              A sanctuary of serenity in Chiang Rai. Experience the essence of Lanna hospitality in a luxurious natural setting.
             </p>
-            <div class="flex space-x-4">
+            <div class="flex gap-4">
               <a
                 href="https://www.facebook.com/goldenpineresort"
-                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
+                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold transition-colors"
               >
                 <i class="fab fa-facebook-f"></i>
               </a>
               <a
                 href="https://www.instagram.com/goldenpineresort/"
-                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
+                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold transition-colors"
               >
                 <i class="fab fa-instagram"></i>
               </a>
               <a
                 href="https://line.me/R/ti/p/@670tzncs"
-                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
+                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold transition-colors"
               >
                 <i class="fab fa-line"></i>
               </a>
               <a
                 href="https://www.youtube.com/"
-                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
+                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold transition-colors"
               >
                 <i class="fab fa-youtube"></i>
               </a>
             </div>
           </div>
 
+          <!-- Contact -->
+          <div>
+            <h4 class="font-display text-lg mb-6 text-gold">Contact Us</h4>
+            <ul class="space-y-4 text-sm text-gray-300">
+              <li class="flex items-start gap-3">
+                <i class="fas fa-map-marker-alt mt-1 text-gold"></i>
+                <span>291 Moo 4, Nang Lae,<br>Muang Chiang Rai, 57100</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fas fa-phone text-gold"></i>
+                <span>(+66) 53‑706270‑4</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fas fa-envelope text-gold"></i>
+                <span>rsvn@goldenpineresorts.com</span>
+              </li>
+            </ul>
+          </div>
+
           <!-- Quick Links -->
           <div>
-            <h4 class="font-semibold text-lg mb-6">ลิงก์ด่วน</h4>
-            <ul class="space-y-3">
+            <h4 class="font-display text-lg mb-6 text-gold">Explore</h4>
+            <ul class="space-y-3 text-sm text-gray-300">
               <li>
                 <a
                   href="/index.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >หน้าแรก</a
-                >
-              </li>
-              <li>
-                <a
-                  href="index.html#about"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >เกี่ยวกับเรา</a
+                  class="hover:text-gold transition-colors"
+                  >Home</a
                 >
               </li>
               <li>
                 <a
                   href="/rooms.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >ห้องพัก</a
-                >
-              </li>
-              <li>
-                <a
-                  href="index.html#restaurant"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >ร้านอาหาร</a
+                  class="hover:text-gold transition-colors"
+                  >Accommodation</a
                 >
               </li>
               <li>
                 <a
                   href="/gallery.html"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >แกลลอรี่</a
+                  class="hover:text-gold transition-colors"
+                  >Gallery</a
                 >
               </li>
               <li>
                 <a
-                  href="index.html#contact"
-                  class="text-gray-400 hover:text-white transition-colors"
-                  >ติดต่อ</a
+                  href="/contact.html"
+                  class="hover:text-gold transition-colors"
+                  >Location</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/booking.html"
+                  class="hover:text-gold transition-colors"
+                  >Check Availability</a
                 >
               </li>
             </ul>
           </div>
 
-          <!-- Contact Info -->
+          <!-- Newsletter (Optional for luxury look) -->
           <div>
-            <h4 class="font-semibold text-lg mb-6">ติดต่อเรา</h4>
-            <div class="space-y-3 text-gray-400">
-              <p class="flex items-start">
-                <i class="fas fa-map-marker-alt mr-3 mt-1 text-green-400"></i>
-                <span
-                  >291 หมู่ 4 ตำบลนางแล<br />อำเภอเมืองเชียงราย จังหวัดเชียงราย
-                  57100</span
-                >
-              </p>
-              <p class="flex items-center">
-                <i class="fas fa-phone mr-3 text-green-400"></i>
-                <span>(+66) 53‑706270‑4</span>
-              </p>
-              <p class="flex items-center">
-                <i class="fas fa-envelope mr-3 text-green-400"></i>
-                <span>rsvn@goldenpineresorts.com</span>
-              </p>
-            </div>
+            <h4 class="font-display text-lg mb-6 text-gold">Newsletter</h4>
+            <p class="text-xs text-gray-400 mb-4">Subscribe for exclusive offers and updates.</p>
+            <form class="flex flex-col gap-3">
+              <input type="email" placeholder="Email Address" class="bg-white/5 border border-white/10 px-4 py-3 text-sm focus:outline-none focus:border-gold text-white placeholder-gray-500">
+              <button class="btn-gold py-3 text-xs font-bold uppercase tracking-widest">Subscribe</button>
+            </form>
           </div>
         </div>
 
         <div
-          class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400"
+          class="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500"
         >
-          <p>
-            &copy; 2024 Golden Pine Resort. All rights reserved. | Designed with
-            ❤️ in Thailand
-          </p>
+          <p>&copy; 2025 Golden Pine Resort. All Rights Reserved.</p>
+          <div class="flex gap-6 mt-4 md:mt-0">
+            <a href="#" class="hover:text-white">Privacy Policy</a>
+            <a href="#" class="hover:text-white">Terms & Conditions</a>
+          </div>
         </div>
       </div>
     </footer>
@@ -919,7 +852,7 @@
 
           // Update active button
           document.querySelectorAll(".gallery-filter").forEach((btn) => {
-            btn.classList.remove("active", "bg-green-600", "text-white");
+            btn.classList.remove("active", "bg-primary", "text-white");
             btn.classList.add(
               "bg-white",
               "text-gray-700",
@@ -928,7 +861,7 @@
             );
           });
 
-          this.classList.add("active", "bg-green-600", "text-white");
+          this.classList.add("active", "bg-primary", "text-white");
           this.classList.remove(
             "bg-white",
             "text-gray-700",
